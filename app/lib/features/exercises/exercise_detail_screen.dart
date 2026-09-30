@@ -36,6 +36,7 @@ class _ExerciseDetailScreenState extends ConsumerState<ExerciseDetailScreen> {
 
   Future<void> _addToWorkout(Exercise ex) async {
     final routines = await ref.read(routinesProvider.future);
+    if (!mounted) return;
     final active = ref.read(activeWorkoutProvider);
     final choice = await showModalBottomSheet<Object>(
       context: context,

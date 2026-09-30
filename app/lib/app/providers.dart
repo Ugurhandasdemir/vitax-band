@@ -16,11 +16,16 @@ final bandTransportProvider = Provider<BandTransport>(
   (ref) => OfflineBandTransport(),
 );
 
+final bandPollTicksProvider = Provider<Stream<void>>(
+  (ref) => Stream<void>.periodic(const Duration(seconds: 60)),
+);
+
 final bandControllerProvider = Provider<BandController>((ref) {
   final c = BandController(
     transport: ref.watch(bandTransportProvider),
     repo: ref.watch(bandSampleRepositoryProvider),
     clock: ref.watch(clockProvider),
+    pollTicks: ref.watch(bandPollTicksProvider),
   );
   ref.onDispose(c.dispose);
   return c;

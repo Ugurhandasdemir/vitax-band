@@ -69,10 +69,12 @@ Future<TestEnv> pumpScreen(
       workoutRepositoryProvider.overrideWithValue(workouts),
       exerciseCatalogProvider.overrideWith((ref) async => fixtureCatalog()),
       exerciseMediaBuilderProvider.overrideWithValue(fakeMedia),
+      bandPollTicksProvider.overrideWithValue(const Stream.empty()),
       ...overrides,
     ],
   );
   addTearDown(container.dispose);
+  addTearDown(() => tester.pumpWidget(const SizedBox()));
   await tester.pumpWidget(
     UncontrolledProviderScope(
       container: container,

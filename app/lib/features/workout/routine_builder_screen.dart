@@ -142,7 +142,8 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
         TextButton(
           onPressed: () async {
             final r = await _save();
-            if (r != null && mounted) Navigator.of(context).maybePop();
+            if (!context.mounted) return;
+            if (r != null) Navigator.of(context).maybePop();
           },
           child: Text(
             'Kaydet',
@@ -239,6 +240,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
             physics: const NeverScrollableScrollPhysics(),
             buildDefaultDragHandles: false,
             itemCount: d.items.length,
+            // ignore: deprecated_member_use
             onReorder: ctl.moveExercise,
             itemBuilder: (context, i) {
               final item = d.items[i];

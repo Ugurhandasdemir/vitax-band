@@ -69,8 +69,9 @@ class BleBandTransport implements BandTransport {
       await d.connect(license: License.nonprofit, mtu: null);
       _connSub?.cancel();
       _connSub = d.connectionState.listen((s) {
-        if (s == BluetoothConnectionState.disconnected)
+        if (s == BluetoothConnectionState.disconnected) {
           _set(BandLink.disconnected);
+        }
       });
       final services = await d.discoverServices();
       final svc = services.firstWhere(

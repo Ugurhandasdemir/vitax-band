@@ -56,11 +56,10 @@ class BandController {
   BandController({
     required this.transport,
     required this.repo,
-    required DateTime Function() clock,
+    required this.clock,
     Stream<void>? pollTicks,
     int Function()? timezoneOffsetMinutes,
-  }) : _clock = clock,
-       _tz =
+  }) : _tz =
            timezoneOffsetMinutes ??
            (() => DateTime.now().timeZoneOffset.inMinutes),
        _pollTicks =
@@ -71,7 +70,7 @@ class BandController {
 
   final BandTransport transport;
   final BandSampleRepository repo;
-  final DateTime Function() _clock;
+  final DateTime Function() clock;
   final int Function() _tz;
   final Stream<void> _pollTicks;
 
@@ -102,7 +101,7 @@ class BandController {
     try {
       await transport.connect();
       await transport.write(
-        buildPasswordPacket(now: _clock(), timezoneOffsetMinutes: _tz()),
+        buildPasswordPacket(now: clock(), timezoneOffsetMinutes: _tz()),
       );
     } catch (e) {
       _emit(_state.copyWith(link: BandLink.disconnected, error: '$e'));
@@ -160,7 +159,7 @@ class BandController {
       case BandFrameKind.steps:
         final total = parseSteps(f);
         if (total == null) return;
-        final now = _clock();
+        final now = clock();
         if (total != _lastStepTotal) {
           _lastStepTotal = total;
           repo.insertSteps([StepSample(at: now, total: total)]);
@@ -170,7 +169,7 @@ class BandController {
         if (!_liveHrOn) return;
         final h = parseHr(f);
         if (h.status == HrStatus.value) {
-          repo.insertHr([HrSample(at: _clock(), bpm: h.bpm!)]);
+          repo.insertHr([HrSample(at: clock(), bpm: h.bpm!)]);
           _liveHr.add(h.bpm!);
           _emit(_state.copyWith(hr: HrStatus.value, lastBpm: h.bpm));
         } else {

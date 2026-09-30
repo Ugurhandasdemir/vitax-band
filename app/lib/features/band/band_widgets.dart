@@ -9,7 +9,7 @@ import 'band_status.dart';
 
 /// Kırmızı/mavi sol şeritli kompakt durum bildirimi (Bağlantı Durumları tasarımı).
 class BandBanner extends StatelessWidget {
-  BandBanner({
+  const BandBanner({
     super.key,
     required this.color,
     required this.icon,
@@ -29,51 +29,62 @@ class BandBanner extends StatelessWidget {
   final VoidCallback? onAction;
 
   @override
-  Widget build(BuildContext context) => Container(
-    decoration: BoxDecoration(
-      color: VColors.surfaceContainerLowest,
-      borderRadius: BorderRadius.circular(VRadius.card),
-      border: Border(
-        left: BorderSide(color: color, width: 4),
-        top: const BorderSide(color: VColors.surfaceContainerHighest),
-        right: const BorderSide(color: VColors.surfaceContainerHighest),
-        bottom: const BorderSide(color: VColors.surfaceContainerHighest),
+  Widget build(BuildContext context) => ClipRRect(
+    borderRadius: BorderRadius.circular(VRadius.card),
+    child: Container(
+      decoration: const BoxDecoration(
+        color: VColors.surfaceContainerLowest,
+        border: Border.fromBorderSide(
+          BorderSide(color: VColors.surfaceContainerHighest),
+        ),
       ),
-    ),
-    padding: const EdgeInsets.all(VSpace.md),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Icon(icon, color: color),
-            const SizedBox(width: VSpace.sm),
+            Container(width: 4, color: color),
             Expanded(
-              child: Text(
-                title,
-                style: VText.bodyLgMedium.copyWith(color: color),
+              child: Padding(
+                padding: const EdgeInsets.all(VSpace.md),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(icon, color: color),
+                        const SizedBox(width: VSpace.sm),
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: VText.bodyLgMedium.copyWith(color: color),
+                          ),
+                        ),
+                        if (tag != null) Text(tag!, style: VText.microTag),
+                      ],
+                    ),
+                    const SizedBox(height: VSpace.sm),
+                    Text(message, style: VText.bodyMd),
+                    if (actionLabel != null) ...[
+                      const SizedBox(height: VSpace.gutter),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: FilledButton(
+                          onPressed: onAction,
+                          style: FilledButton.styleFrom(
+                            backgroundColor: color,
+                            shape: const StadiumBorder(),
+                          ),
+                          child: Text(actionLabel!),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
               ),
             ),
-            if (tag != null) Text(tag!, style: VText.microTag),
           ],
         ),
-        const SizedBox(height: VSpace.sm),
-        Text(message, style: VText.bodyMd),
-        if (actionLabel != null) ...[
-          const SizedBox(height: VSpace.gutter),
-          Align(
-            alignment: Alignment.centerRight,
-            child: FilledButton(
-              onPressed: onAction,
-              style: FilledButton.styleFrom(
-                backgroundColor: color,
-                shape: const StadiumBorder(),
-              ),
-              child: Text(actionLabel!),
-            ),
-          ),
-        ],
-      ],
+      ),
     ),
   );
 }
