@@ -491,8 +491,10 @@ class _BandLiveCard extends ConsumerWidget {
               Container(
                 width: 8,
                 height: 8,
-                decoration: const BoxDecoration(
-                  color: VColors.secondary,
+                decoration: BoxDecoration(
+                  color: band.connected
+                      ? VColors.secondary
+                      : VColors.outlineVariant,
                   shape: BoxShape.circle,
                 ),
               ),

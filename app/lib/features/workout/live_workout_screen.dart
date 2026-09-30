@@ -16,6 +16,7 @@ import '../../core/widgets/v_segmented.dart';
 import '../../core/workout_calc.dart';
 import '../../data/exercise_catalog.dart';
 import '../../data/models.dart';
+import '../band/band_status.dart';
 import '../exercises/exercise_picker_screen.dart';
 import 'active_workout.dart';
 import 'workout_providers.dart';
@@ -139,6 +140,7 @@ class _LiveWorkoutScreenState extends ConsumerState<LiveWorkoutScreen> {
     }
 
     final now = ref.watch(clockProvider)();
+    final band = ref.watch(bandStatusProvider);
     final profile = ref.watch(profileProvider).value ?? const Profile();
     final catalog = ref.watch(exerciseCatalogProvider).value;
     final ex = s.currentExerciseId == null
@@ -251,7 +253,12 @@ class _LiveWorkoutScreenState extends ConsumerState<LiveWorkoutScreen> {
             ),
           ),
           const SizedBox(height: VSpace.gutter),
-          _HrCard(s: s, now: now, profile: profile),
+          _HrCard(
+            s: s,
+            now: now,
+            profile: profile,
+            bandConnected: band.connected,
+          ),
           if (s.suggestion != null) ...[
             const SizedBox(height: VSpace.gutter),
             _SuggestionBanner(
@@ -305,10 +312,16 @@ class _LiveWorkoutScreenState extends ConsumerState<LiveWorkoutScreen> {
 }
 
 class _HrCard extends StatelessWidget {
-  const _HrCard({required this.s, required this.now, required this.profile});
+  const _HrCard({
+    required this.s,
+    required this.now,
+    required this.profile,
+    this.bandConnected = false,
+  });
   final ActiveWorkoutState s;
   final DateTime now;
   final Profile profile;
+  final bool bandConnected;
 
   @override
   Widget build(BuildContext context) {
@@ -376,6 +389,17 @@ class _HrCard extends StatelessWidget {
                         ),
                       ],
                     ),
+                    if (bandConnected && !fresh)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 2),
+                        child: Text(
+                          'Nabız hazırlanıyor...',
+                          style: VText.microTag.copyWith(
+                            color: VColors.primary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/v_card.dart';
+import '../band/band_connect_screen.dart';
+import '../settings/data_vault_screen.dart';
+import '../settings/notifications_screen.dart';
 import '../weight/weight_screen.dart';
 import 'profile_screen.dart';
 
@@ -25,9 +28,21 @@ class ProfileHubScreen extends StatelessWidget {
         'Kilo Analizi',
         () => open(const WeightScreen()),
       ),
-      (Icons.watch_outlined, 'Bilekliğim', null),
-      (Icons.lock_outline, 'Veri Kasası ve Gizlilik', null),
-      (Icons.notifications_none, 'Bildirimler ve Uyarılar', null),
+      (
+        Icons.watch_outlined,
+        'Bilekliğim',
+        () => open(const BandConnectScreen()),
+      ),
+      (
+        Icons.lock_outline,
+        'Veri Kasası ve Gizlilik',
+        () => open(const DataVaultScreen()),
+      ),
+      (
+        Icons.notifications_none,
+        'Bildirimler ve Uyarılar',
+        () => open(const NotificationsScreen()),
+      ),
     ];
     return Scaffold(
       key: const ValueKey('screen-profile-hub'),

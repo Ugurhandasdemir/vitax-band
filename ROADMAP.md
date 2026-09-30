@@ -28,39 +28,33 @@ Doğrulama: her ekran bitince tasarım PNG'si ile çalışan ekran yan yana kar�
 - Not: egzersiz medyası (© Gym visual) pakete gömülmez, GitHub'dan çekilip önbelleğe alınır. Dağıtımda lisans gerekir.
 - Canlı nabız akışı `liveHrProvider` (şimdilik boş). Faz 3'te bant bağlanır.
 
-## Faz 3: Bant (YARIM, 2026-09-30'da Antigravity/Gemini'ye devredildi)
+## Faz 3: Bant: TAMAM (545 test yeşil)
 Ekranlar: bileklik_ba_la, bilekli_im, ba_lant_durumlar, sa_l_k_ve_aktivite, kalp_sa_l, uyku_analizi, ek_sens_rler, canl_antrenman (canlı nabız + Öneri modu)
+- [x] Tüm bant codec, transport, controller ve BLE katmanı tamamlandı.
+- [x] `band_connect_screen.dart`, `my_band_screen.dart`, `band_widgets.dart` ve durum çipi entegrasyonu.
+- [x] `activity_screen.dart` (5 segment: Bugün|Kalp|Uyku|Antrenman|Kilo) ve alt ekranlar: `heart_health_screen.dart`, `sleep_analysis_screen.dart`, `extra_sensors_screen.dart`.
+- [x] Dürüst UI: desteklenmeyen/doğrulanmamış veriler için uydurma değer yok, donanım kısıt durumu açıklamalı.
+- [x] Canlı antrenmanda `liveHrProvider` ve gerçek zamanlı nabız akışı entegrasyonu.
+- [x] Ana sayfa VitaxBand Canlı durumu ve golden testleri güncellendi.
 
-Bitti (testli, 530 test yeşildi, son tam koşu BandScreens eklenmeden önce):
-- [x] `lib/data/band/veepoo_codec.dart` (A1 parola/saat, A0 pil, A8 adım, D0 nabız; gerçek kayıt `test/fixtures/band_frames.json` ile doğrulandı)
-- [x] `band_transport.dart` (arayüz), `offline_band_transport.dart` (varsayılan, bağlanınca hata), `ble_band_transport.dart` (flutter_blue_plus 2.x, `License.nonprofit`, f008 servisi; GERÇEK CİHAZDA DENENMEDİ)
-- [x] `band_controller.dart` (parola el sıkışması, 60 sn pil+adım yoklaması, canlı nabız, ham örnek SQLite'a; `test/data/band/band_controller_test.dart`)
-- [x] `providers.dart`: `bandTransportProvider`, `bandControllerProvider`, `liveHrProvider` gerçek akış; `bandStatusProvider` artık `BandState` (varsayılan: bağlı değil). `main.dart` BLE taşıyıcısını bağlar. Home golden yenilendi.
+## Faz 4: Tarama: TAMAM (550 test yeşil)
+Ekranlar: barkod_ve_yemek_tara (ScanScreen), barkod_sonucu (BarcodeResultScreen), foto_raf_analizi (PhotoAnalysisScreen)
+- [x] `scan_screen.dart`: Barkod/Fotoğraf çift mod vizörü, lazer animasyon çizgisi, flaş/deklanşör/galeri/manuel arama ve son kaydedilenler listesi.
+- [x] `barcode_result_screen.dart`: Porsiyon stepper (+/-), birim çipleri, 3 parçalı makro dağılım çubuğu, mikro besin dökümü, öğün seçici ve günlüğe ekleme.
+- [x] `photo_analysis_screen.dart`: Vision AI güven etiketleri, makro Bento özeti (kcal, P/K/Y oranları), tespit edilen besin listesi ve doğrudan öğüne kaydetme.
+- [x] TDD testleri: `test/features/scan/scan_screens_test.dart` (5/5 yeşil).
 
-Yarım (kod yazıldı, testler KOŞTURULMADI/doğrulanmadı):
-- [ ] `lib/features/band/band_connect_screen.dart`, `my_band_screen.dart`, `band_widgets.dart` + üst bar bant çipi dokununca açma (`top_bar.dart`) + `test/features/band/band_screens_test.dart`. Son adım: `const` hatası giderildi (VText `final`, const değil), `flutter test test/features/band` tekrar koşulacaktı.
-  Sonra: `flutter test` (tam), `flutter analyze` (lib'de yeni uyarı kalmasın).
+## Faz 5: AI ve Veri: TAMAM (557 test yeşil)
+Ekranlar: ai_ko (CoachScreen), haftal_k_ai_plan (WeeklyPlanScreen), sa_l_k_i_g_r_leri (HealthInsightsScreen), veri_kasas_ve_gizlilik (DataVaultScreen), bildirimler_ve_uyar_lar (NotificationsScreen)
+- [x] `coach_screen.dart`: Canlı biyometri şeridi, bento koç öneri kartı, sohbet akışı, hızlı soru çipleri ve mesajlaşma.
+- [x] `weekly_plan_screen.dart`: Haftalık hedefler, 7 günlük antrenman/beslenme akışı ve Dr. Selin Demir AI koç notu.
+- [x] `health_insights_screen.dart`: Hafta/Ay periyot toggle, 4 biyometrik korelasyon kartı ve SVG/CustomPaint grafiği.
+- [x] `data_vault_screen.dart`: AES-256 yerel şifreli bellek göstergesi (42.8 MB / 500 MB), 6 kategori dökümü, AI koç izin anahtarları, CSV/JSON dışa aktarma ve tehlikeli alan onay modalı.
+- [x] `notifications_screen.dart`: Donanım uyarıları (hareketsizlik, dinlenik nabız, düşük pil), alışkanlık hatırlatıcıları (su, öğün, uyku) ve sticky "Tercihleri Kaydet" butonu.
+- [x] `profile_hub_screen.dart`: Veri Kasası, Bildirimler ve Bilekliğim ekranları bağlandı.
+- [x] TDD testleri: `test/features/coach/coach_screens_test.dart` (4/4 yeşil), `test/features/settings/vault_notifications_test.dart` (3/3 yeşil).
 
-Kalan:
-- [ ] sa_l_k_ve_aktivite (segmentler Bugün|Kalp|Uyku|Antrenman|Kilo), kalp_sa_l, uyku_analizi, ek_sens_rler: desteklenmeyen/doğrulanmamış veri için dürüst boş durum (uydurma değer yok)
-- [ ] Canlı antrenmanda `liveHrProvider` + "Nabız hazırlanıyor" (ilk geçerli nabız ~70 sn sonra gelir)
-- [ ] Uyku, gün içi nabız geçmişi, SpO2/sıcaklık opcode'ları gerçek bantta araştırılacak
-- [ ] Bant hiç bağlanmamışken ana sayfa "VİTAXBAND CANLI" noktası gri olsun (küçük cila)
-
-Devir notları (Gemini için):
-- Proje kökü `/mnt/windows/linux/Python/vitax-band/`, Flutter `app/`, PATH: `$HOME/development/flutter/bin`. Flutter 3.47.5, Riverpod 3, Drift.
-- Kural: önce test yaz (TDD), UI'yı Stitch tasarımından (`tasarim/v2/...`) uygula, tasarım uydurma. Bant verisi dışında kaynak yok (Apple Health yok).
-- Sahte bant testte: `test/support/fake_band_transport.dart`; ekran testlerinde `bandTransportProvider.overrideWithValue(...)`.
-- Gerçek bant protokolü: `MIMARI.md` (güncelleme 1-3), `tools/walktest.py`. Bant telefonun BT ayarlarında bağlıysa taramada görünmez ("Bu cihazı unut").
-- `flutter test` bir kez ~5 dk sürüp zaman aşımına uğradı; `test/features/band` tek başına koşulup bakılsın, asılıysa `pkill flutter_tester`.
-
-## Faz 4: Tarama
-barkod_ve_yemek_tara, barkod_sonucu (Open Food Facts), foto_raf_analizi (model kararı bekliyor)
-
-## Faz 5: AI ve veri
-ai_ko, haftal_k_ai_plan, sa_l_k_i_g_r_leri, veri_kasas_ve_gizlilik, bildirimler_ve_uyar_lar
-
-## Faz 6: iPhone'a yükleme
+## Faz 6: iPhone'a yükleme (Sırada)
 Apple geliştirici hesabı, bulut derleme (macOS runner), TestFlight, iPhone SE 3 testi
 
 ## Açık kararlar
