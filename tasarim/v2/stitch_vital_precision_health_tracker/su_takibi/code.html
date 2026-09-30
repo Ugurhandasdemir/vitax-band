@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#00210c", "background": "#fbf8ff", "on-error-container": "#93000a", "inverse-surface": "#2f3037", "outline-variant": "#e3beb4", "primary": "#a83100", "on-tertiary-fixed-variant": "#005227", "on-secondary-fixed": "#001c39", "on-error": "#ffffff", "on-tertiary": "#ffffff", "secondary": "#0060ab", "on-tertiary-container": "#f5fff2", "surface-variant": "#e3e1eb", "surface-container-low": "#f4f2fd", "surface-container-highest": "#e3e1eb", "surface-container-high": "#e8e7f1", "error": "#ba1a1a", "primary-fixed-dim": "#ffb59e", "on-secondary-fixed-variant": "#004883", "on-primary-fixed": "#3a0b00", "secondary-fixed": "#d3e3ff", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-container": "#fffbff", "on-secondary-container": "#004076", "inverse-primary": "#ffb59e", "on-surface": "#1a1b22", "tertiary-fixed-dim": "#81d997", "surface": "#fbf8ff", "surface-dim": "#dad9e3", "tertiary-container": "#2b844b", "on-background": "#1a1b22", "on-primary-fixed-variant": "#842500", "surface-bright": "#fbf8ff", "surface-container-lowest": "#ffffff", "secondary-container": "#6eaeff", "surface-container": "#eeedf7", "inverse-on-surface": "#f1effa", "on-primary": "#ffffff", "outline": "#8f7067", "tertiary-fixed": "#9df6b1", "primary-container": "#d34000", "primary-fixed": "#ffdbd0", "surface-tint": "#ad3300", "tertiary": "#016a34", "on-surface-variant": "#5b4139", "secondary-fixed-dim": "#a3c9ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-lg": "1.25rem", "space-md": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem", "gutter": "0.75rem", "space-sm": "0.5rem" }, fontFamily: { "headline-md": ["Inter"], "body-lg-medium": ["Inter"], "body-lg": ["Inter"], "label-caps": ["Inter"], "label-md": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "micro-tag": ["Inter"], "body-md-medium": ["Inter"] }, fontSize: { "headline-md": ["18px", { lineHeight: "24px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-lg-medium": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }], "label-caps": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }], "label-md": ["14px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }], "display-lg": ["32px", { lineHeight: "38px", letterSpacing: "-0.03em", fontWeight: "800" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "700" }], "micro-tag": ["10px", { lineHeight: "12px", letterSpacing: "0.04em", fontWeight: "700" }], "body-md-medium": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-full"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Geri dön" class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-variant/40 active:bg-surface-variant/60 transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><img alt="Brand logo. - Primary color: #d34000
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain hidden sm:block" src="https://lh3.googleusercontent.com/aida/AEtjO1XsrfKBdEWF2dod18l1ws8F3IHaVGgAfi2WMLny8CxrVZAB4LlwLKS_jHdrBQO-CMIvkNX58BnrjRxteJO59_Ro2di7cxod8sDF_JKEAjcS1LngD-wKSWQd8YEM8wTBskU0eGFgFDDmu5uSzlNk-zkjaYacWsAXaiwAvg1ACwrhTj_SIcA1DbpQ0Eg607BBGeYuvQHZrooQtkuSuq9W0NAncU5F_CJ_Ds-d1gZxNC4oPMXgPv759BBB"/></div><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight text-center truncate max-w-[200px]">Hydration Log</h1><div class="flex items-center justify-end gap-space-xs"><button aria-label="Detay ve Seçenekler" class="w-11 h-11 -mr-2 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/40 active:bg-surface-variant/60 transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover hidden" src="https://lh3.googleusercontent.com/aida/AEtjO1V2gzmkZg_wULMkpCt46AzAlg73rO0whEKzGETyoDMnwv3yP4S3P8ljjjkR849WpdiZgagkornTPcMcBCnKeWFmXENcInUo-3RSeGG7FnaZTdWYS-tFAo__9CxlBpUKC_FBCNqYeXYKsninFKeYPVotxfd-JEzu7rpjlwrQ8bR9DOXqpTMKHG5clYm3MsMZOmBRz4VvkNqpjLNm8xlejuLpGM94h9xBKlEOYFhqAFpCCW47VHirxDxHBQ"/></div></div></header><main class="flex flex-col relative w-full pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full pb-safe">
+<!-- Subtle encouragement banner with health blue accent -->
+<div class="px-margin pt-space-sm pb-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Hücresel Canlılık</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Vücudun bugün dengeli ve uyanık.</span>
+</div>
+</div>
+<span class="font-micro-tag text-micro-tag px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold shrink-0">Stabil</span>
+</div>
+</div>
+<!-- Large Hydration Visual Hero Card -->
+<div class="px-margin pt-space-xs pb-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col items-center text-center shadow-sm relative overflow-hidden">
+<!-- Top meta row in card -->
+<div class="w-full flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">GÜNLÜK HİDRASYON</span>
+<button class="flex items-center gap-1 text-secondary font-label-md text-label-md active:opacity-75 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+<span>Hedefi Düzenle (2.5 L)</span>
+</button>
+</div>
+<!-- Animated Liquid Vessel Illustration -->
+<div class="relative w-36 h-44 my-space-sm flex items-center justify-center">
+<!-- SVG Water Glass with liquid & wave -->
+<svg class="w-full h-full drop-shadow-sm" fill="none" viewbox="0 0 144 176" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clippath id="glass-inner-clip">
+<path d="M26 18 L34 154 C34.5 162 41 168 49 168 H95 C103 168 109.5 162 110 154 L118 18 H26 Z"></path>
+</clippath>
+<lineargradient gradientunits="userSpaceOnUse" id="water-gradient" x1="72" x2="72" y1="80" y2="168">
+<stop stop-color="#6EAEFF" stop-opacity="0.85"></stop>
+<stop stop-color="#0060AB" stop-opacity="0.95"></stop>
+</lineargradient>
+<lineargradient id="glass-reflection" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"></stop>
+<stop offset="25%" stop-color="#ffffff" stop-opacity="0.05"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<!-- Glass Outline Outer -->
+<path d="M22 14 C22 11.79 23.79 10 26 10 H118 C120.21 10 122 11.79 122 14 L114 154 C113.2 165 104.5 174 93.5 174 H50.5 C39.5 174 30.8 165 30 154 L22 14 Z" fill="#EEEDF7" fill-opacity="0.45"></path>
+<!-- Water Content via Clip -->
+<g clip-path="url(#glass-inner-clip)">
+<!-- Background base liquid -->
+<rect fill="url(#water-gradient)" height="90" width="144" x="0" y="88"></rect>
+<!-- Wave 1 (Subtle back wave) -->
+<path d="M 0 92 Q 36 98 72 92 T 144 92 V 176 H 0 Z" fill="#6EAEFF" opacity="0.4">
+<animate attributename="d" dur="4s" repeatcount="indefinite" values="M 0 92 Q 36 98 72 92 T 144 92 V 176 H 0 Z; M 0 94 Q 36 86 72 94 T 144 94 V 176 H 0 Z; M 0 92 Q 36 98 72 92 T 144 92 V 176 H 0 Z"></animate>
+</path>
+<!-- Wave 2 (Foreground crest wave at 48% height) -->
+<path d="M 0 90 Q 36 84 72 90 T 144 90 V 176 H 0 Z" fill="url(#water-gradient)">
+<animate attributename="d" dur="3s" repeatcount="indefinite" values="M 0 90 Q 36 84 72 90 T 144 90 V 176 H 0 Z; M 0 88 Q 36 96 72 88 T 144 88 V 176 H 0 Z; M 0 90 Q 36 84 72 90 T 144 90 V 176 H 0 Z"></animate>
+</path>
+<!-- Bubbles -->
+<circle cx="56" cy="130" fill="#FFFFFF" opacity="0.6" r="2.5">
+<animate attributename="cy" dur="2.4s" repeatcount="indefinite" values="140;100"></animate>
+<animate attributename="opacity" dur="2.4s" repeatcount="indefinite" values="0.7;0"></animate>
+</circle>
+<circle cx="86" cy="144" fill="#FFFFFF" opacity="0.5" r="3">
+<animate attributename="cy" dur="3.1s" repeatcount="indefinite" values="150;96"></animate>
+<animate attributename="opacity" dur="3.1s" repeatcount="indefinite" values="0.6;0"></animate>
+</circle>
+</g>
+<!-- Measurement Hashmarks on Glass -->
+<line opacity="0.3" stroke="#8F7067" stroke-linecap="round" stroke-width="1.5" x1="38" x2="48" y1="50" y2="50"></line>
+<line opacity="0.3" stroke="#8F7067" stroke-linecap="round" stroke-width="1.5" x1="39" x2="52" y1="84" y2="84"></line>
+<line opacity="0.3" stroke="#8F7067" stroke-linecap="round" stroke-width="1.5" x1="41" x2="49" y1="118" y2="118"></line>
+<!-- Specular Highlight Strip -->
+<path d="M34 20 L40 150 C40 152 42 154 44 154" stroke="url(#glass-reflection)" stroke-linecap="round" stroke-width="4"></path>
+<path d="M26 14 H118" opacity="0.2" stroke="#8F7067" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<!-- Center Floating Percentage Pill -->
+<div class="absolute bottom-4 bg-surface-container-lowest/95 backdrop-blur-sm px-space-sm py-0.5 rounded-full shadow-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">%48</span>
+</div>
+</div>
+<!-- Quantitative Readout -->
+<div class="flex items-baseline justify-center gap-1.5 mt-space-xs">
+<span class="font-display-lg text-display-lg text-secondary tracking-tight">1.2</span>
+<span class="font-headline-md text-headline-md text-secondary">L</span>
+<span class="font-body-lg-medium text-body-lg-medium text-on-surface-variant ml-1">/ 2.5 L Hedef</span>
+</div>
+<!-- Remaining Microcopy -->
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+        Hedefe <strong class="text-on-surface font-body-md-medium">1.3 L kaldı</strong> (%48 tamamlandı)
+      </p>
+<!-- Mini Progress bar line -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-space-md overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 48%;"></div>
+</div>
+</div>
+</div>
+<!-- Hızlı Ekleme Butonları (Quick Add 3-button row) -->
+<div class="px-margin pt-space-xs pb-space-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">HIZLI EKLE</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">TEK DOKUNUŞ</span>
+</div>
+<div class="grid grid-cols-3 gap-gutter">
+<!-- Quick Add 1: Bardak -->
+<button class="h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center gap-1.5 px-space-xs shadow-sm active:bg-surface-container-high transition-colors text-on-surface" onclick="logHydration(200, 'Bardak')" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">local_cafe</span>
+<div class="flex flex-col text-left leading-tight">
+<span class="font-label-md text-label-md text-on-surface font-bold">+200</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Bardak</span>
+</div>
+</button>
+<!-- Quick Add 2: Kupa -->
+<button class="h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center gap-1.5 px-space-xs shadow-sm active:bg-surface-container-high transition-colors text-on-surface" onclick="logHydration(300, 'Kupa')" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">emoji_food_beverage</span>
+<div class="flex flex-col text-left leading-tight">
+<span class="font-label-md text-label-md text-on-surface font-bold">+300</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Kupa</span>
+</div>
+</button>
+<!-- Quick Add 3: Şişe (Prominent Health Blue) -->
+<button class="h-12 bg-secondary text-on-secondary rounded-xl flex items-center justify-center gap-1.5 px-space-xs shadow-sm active:bg-on-secondary-container transition-colors" onclick="logHydration(500, 'Şişe')" type="button">
+<span class="material-symbols-outlined text-on-secondary text-[18px]">water_bottle</span>
+<div class="flex flex-col text-left leading-tight">
+<span class="font-label-md text-label-md text-on-secondary font-bold">+500</span>
+<span class="font-micro-tag text-micro-tag text-secondary-fixed">Şişe</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Özel Miktar Girişi (Custom Amount Field) -->
+<div class="px-margin pt-space-xs pb-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="custom-water-input">
+        Özel Miktar Girişi
+      </label>
+<div class="flex items-center gap-gutter">
+<div class="flex-1 h-12 bg-surface-container-low rounded-lg px-space-md flex items-center justify-between">
+<button aria-label="50 ml azalt" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-variant active:bg-surface-container transition-colors" onclick="adjustAmount(-50)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-baseline gap-1">
+<input class="w-14 text-center bg-transparent font-headline-md text-headline-md text-on-surface focus:outline-none p-0 m-0" id="custom-water-input" step="50" type="number" value="250"/>
+<span class="font-body-md text-body-md text-on-surface-variant">ml</span>
+</div>
+<button aria-label="50 ml artır" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-variant active:bg-surface-container transition-colors" onclick="adjustAmount(50)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Action Button: Kinetic Orange -->
+<button class="h-12 px-space-lg bg-primary-container text-on-primary rounded-lg font-label-md text-label-md active:bg-primary transition-colors flex items-center justify-center gap-1 shadow-sm shrink-0" onclick="logCustomAmount()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Ekle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bugünün Su Kayıtları (Today's entries list with Undo) -->
+<div class="px-margin pt-space-xs pb-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">history</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Bugünün Kayıtları</h2>
+</div>
+<span class="font-label-caps text-label-caps px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant" id="entry-count-badge">4 Giriş</span>
+</div>
+<!-- Interactive List -->
+<div class="flex flex-col gap-space-xs" id="entries-container">
+<!-- Row 1 -->
+<div class="flex items-center justify-between py-space-sm px-space-xs rounded-lg hover:bg-surface-container-low transition-colors" id="entry-1">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[15px]">emoji_food_beverage</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">300 ml <span class="text-on-surface-variant font-normal">(Kupa)</span></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">14:15 • İkindi Hidrasyonu</span>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary active:opacity-60 px-space-xs py-1 transition-opacity" onclick="removeEntry('entry-1', '300 ml (Kupa)')" type="button">
+            Geri Al
+          </button>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between py-space-sm px-space-xs rounded-lg hover:bg-surface-container-low transition-colors" id="entry-2">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[15px]">water_bottle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">500 ml <span class="text-on-surface-variant font-normal">(Şişe)</span></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">11:30 • Yürüyüş Sonrası</span>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary active:opacity-60 px-space-xs py-1 transition-opacity" onclick="removeEntry('entry-2', '500 ml (Şişe)')" type="button">
+            Geri Al
+          </button>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between py-space-sm px-space-xs rounded-lg hover:bg-surface-container-low transition-colors" id="entry-3">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[15px]">local_cafe</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">200 ml <span class="text-on-surface-variant font-normal">(Bardak)</span></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">09:00 • Kahvaltı Masası</span>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary active:opacity-60 px-space-xs py-1 transition-opacity" onclick="removeEntry('entry-3', '200 ml (Bardak)')" type="button">
+            Geri Al
+          </button>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between py-space-sm px-space-xs rounded-lg hover:bg-surface-container-low transition-colors" id="entry-4">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[15px]">wb_sunny</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">200 ml <span class="text-on-surface-variant font-normal">(Sabah Aç Karna)</span></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">07:45 • Güne Başlangıç</span>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary active:opacity-60 px-space-xs py-1 transition-opacity" onclick="removeEntry('entry-4', '200 ml (Sabah Aç Karna)')" type="button">
+            Geri Al
+          </button>
+</div>
+</div>
+<!-- Subtle Undo Hint Banner -->
+<div class="mt-space-sm pt-space-xs bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-xs" id="undo-hint-banner">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] shrink-0">info</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant flex-1">
+          Son silinen kayıt 5 saniye içinde geri alınabilir.
+        </span>
+</div>
+</div>
+</div>
+<!-- 7 Günlük Geçmiş Çubukları (7-Day History Bars Card) -->
+<div class="px-margin pt-space-xs pb-space-xl">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">HİDRASYON DÖNGÜSÜ</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Haftalık Su Dengesi</h2>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Hedefe Ulaşıldı</span>
+</div>
+</div>
+<!-- Chart Canvas Area with 2.5L Target Reference -->
+<div class="relative w-full pt-space-md pb-space-xs">
+<!-- Target Dashed Line at ~80% height relative to 3.0L max -->
+<div class="absolute inset-x-0 top-[26%] flex items-center pointer-events-none z-10">
+<div class="w-full border-t border-dashed border-outline-variant"></div>
+<span class="absolute right-0 -top-3 font-micro-tag text-micro-tag bg-surface-container-lowest pl-1 text-on-surface-variant">2.5L Hedef</span>
+</div>
+<!-- 7 Vertical Bars -->
+<div class="flex items-end justify-between gap-1.5 h-36 w-full pt-4">
+<!-- Pzt: 2.4L (Achieved/Close) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-micro-tag text-micro-tag text-on-surface-variant mb-1 group-hover:text-on-surface">2.4</span>
+<div class="w-full max-w-[28px] bg-tertiary-fixed rounded-t-lg transition-all" style="height: 76%;"></div>
+<div class="mt-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-[13px] text-tertiary mb-0.5">check_circle</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Pzt</span>
+</div>
+</div>
+<!-- Sal: 2.6L (Achieved) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-micro-tag text-micro-tag text-on-surface-variant mb-1 group-hover:text-on-surface">2.6</span>
+<div class="w-full max-w-[28px] bg-tertiary-fixed rounded-t-lg transition-all" style="height: 84%;"></div>
+<div class="mt-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-[13px] text-tertiary mb-0.5">check_circle</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Sal</span>
+</div>
+</div>
+<!-- Çar: 2.5L (Achieved exact) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-micro-tag text-micro-tag text-on-surface-variant mb-1 group-hover:text-on-surface">2.5</span>
+<div class="w-full max-w-[28px] bg-tertiary-fixed rounded-t-lg transition-all" style="height: 80%;"></div>
+<div class="mt-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-[13px] text-tertiary mb-0.5">check_circle</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Çar</span>
+</div>
+</div>
+<!-- Per: 1.2L [Bugün] (Active Blue Bar) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end">
+<span class="font-micro-tag text-micro-tag text-secondary font-bold mb-1">1.2</span>
+<div class="w-full max-w-[28px] bg-secondary rounded-t-lg relative transition-all" style="height: 44%;">
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-secondary-fixed"></div>
+</div>
+<div class="mt-2 flex flex-col items-center">
+<span class="font-micro-tag text-micro-tag px-1 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">Bugün</span>
+</div>
+</div>
+<!-- Cum: 2.2L (Past average) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-micro-tag text-micro-tag text-on-surface-variant mb-1 group-hover:text-on-surface">2.2</span>
+<div class="w-full max-w-[28px] bg-surface-container-highest rounded-t-lg transition-all" style="height: 70%;"></div>
+<div class="mt-2 flex flex-col items-center">
+<span class="w-3.5 h-3.5 mb-0.5"></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Cum</span>
+</div>
+</div>
+<!-- Cmt: 2.7L (Achieved) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-micro-tag text-micro-tag text-on-surface-variant mb-1 group-hover:text-on-surface">2.7</span>
+<div class="w-full max-w-[28px] bg-tertiary-fixed rounded-t-lg transition-all" style="height: 88%;"></div>
+<div class="mt-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-[13px] text-tertiary mb-0.5">check_circle</span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Cmt</span>
+</div>
+</div>
+<!-- Paz: 2.3L -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-micro-tag text-micro-tag text-on-surface-variant mb-1 group-hover:text-on-surface">2.3</span>
+<div class="w-full max-w-[28px] bg-surface-container-highest rounded-t-lg transition-all" style="height: 73%;"></div>
+<div class="mt-2 flex flex-col items-center">
+<span class="w-3.5 h-3.5 mb-0.5"></span>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant">Paz</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Weekly Diagnostic Insight Footer -->
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low rounded-lg p-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+<span class="font-body-md text-body-md text-on-surface">Haftalık Başarı: <strong class="font-body-md-medium">4/7 Gün</strong></span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary font-bold">ORT. 2.3 L</span>
+</div>
+</div>
+</div>
+<!-- Interactive Toast for Undo Action (Dynamic Overlay) -->
+<div class="fixed bottom-6 inset-x-margin max-w-[343px] mx-auto z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="undo-toast">
+<div class="bg-inverse-surface text-inverse-on-surface p-space-sm rounded-xl shadow-lg flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-space-xs min-w-0 pr-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md truncate" id="toast-text">Kayıt silindi</span>
+</div>
+<button class="font-label-md text-label-md text-primary-fixed-dim px-space-xs py-1 active:opacity-75 uppercase tracking-wide" onclick="undoLastRemoval()" type="button">
+        Geri Al
+      </button>
+</div>
+</div>
+</div>
+<script>
+  let lastRemovedElement = null;
+  let undoTimeout = null;
+
+  function adjustAmount(delta) {
+    const input = document.getElementById('custom-water-input');
+    let current = parseInt(input.value) || 0;
+    current = Math.max(50, Math.min(1500, current + delta));
+    input.value = current;
+  }
+
+  function logCustomAmount() {
+    const input = document.getElementById('custom-water-input');
+    const val = parseInt(input.value) || 250;
+    logHydration(val, 'Özel');
+  }
+
+  function logHydration(amount, type) {
+    const container = document.getElementById('entries-container');
+    const now = new Date();
+    const timeStr = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+    const id = 'entry-' + Date.now();
+
+    const row = document.createElement('div');
+    row.id = id;
+    row.className = 'flex items-center justify-between py-space-sm px-space-xs rounded-lg hover:bg-surface-container-low transition-colors';
+    row.innerHTML = `
+      <div class="flex items-center gap-space-sm min-w-0">
+        <div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+          <span class="material-symbols-outlined text-[15px]">water_drop</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-body-md-medium text-body-md-medium text-on-surface truncate">${amount} ml <span class="text-on-surface-variant font-normal">(${type})</span></span>
+          <span class="font-micro-tag text-micro-tag text-on-surface-variant">${timeStr} • Yeni Kayıt</span>
+        </div>
+      </div>
+      <button type="button" onclick="removeEntry('${id}', '${amount} ml (${type})')" class="font-label-md text-label-md text-primary active:opacity-60 px-space-xs py-1 transition-opacity">
+        Geri Al
+      </button>
+    `;
+
+    container.prepend(row);
+    updateEntryCount();
+  }
+
+  function removeEntry(id, label) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    lastRemovedElement = {
+      parent: el.parentElement,
+      element: el,
+      nextSibling: el.nextElementSibling
+    };
+
+    el.remove();
+    updateEntryCount();
+
+    // Show toast
+    const toast = document.getElementById('undo-toast');
+    const toastText = document.getElementById('toast-text');
+    toastText.textContent = label + ' silindi';
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    if (undoTimeout) clearTimeout(undoTimeout);
+    undoTimeout = setTimeout(() => {
+      hideToast();
+      lastRemovedElement = null;
+    }, 5000);
+  }
+
+  function undoLastRemoval() {
+    if (!lastRemovedElement) return;
+    if (lastRemovedElement.nextSibling && lastRemovedElement.nextSibling.parentElement === lastRemovedElement.parent) {
+      lastRemovedElement.parent.insertBefore(lastRemovedElement.element, lastRemovedElement.nextSibling);
+    } else {
+      lastRemovedElement.parent.appendChild(lastRemovedElement.element);
+    }
+    updateEntryCount();
+    hideToast();
+    lastRemovedElement = null;
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('undo-toast');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('translate-y-24', 'opacity-0');
+  }
+
+  function updateEntryCount() {
+    const count = document.getElementById('entries-container').children.length;
+    const badge = document.getElementById('entry-count-badge');
+    badge.textContent = count + ' Giriş';
+  }
+</script></main></body></html>

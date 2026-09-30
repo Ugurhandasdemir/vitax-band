@@ -1,0 +1,278 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Exercise Details - Strict Pull-Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#005227",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#001c39",
+                        "inverse-on-surface": "#f1effa",
+                        "primary-container": "#d34000",
+                        "tertiary-fixed": "#6dfe9c",
+                        "surface-container-low": "#f4f2fd",
+                        "on-secondary-fixed-variant": "#004883",
+                        "inverse-primary": "#ffb59e",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb59e",
+                        "surface-container-highest": "#e3e1ec",
+                        "surface-variant": "#e3e1ec",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d4e3ff",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#008644",
+                        "on-tertiary-container": "#f6fff3",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "surface-bright": "#fbf8ff",
+                        "inverse-surface": "#2f3038",
+                        "secondary": "#0060ac",
+                        "surface": "#fbf8ff",
+                        "on-background": "#1a1b22",
+                        "tertiary-fixed-dim": "#4de082",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#64a8fe",
+                        "on-secondary-container": "#003c70",
+                        "primary": "#a93100",
+                        "outline-variant": "#e6beb2",
+                        "on-primary-fixed": "#3a0b00",
+                        "on-primary-container": "#fffbff",
+                        "on-surface": "#1a1b22",
+                        "on-tertiary-fixed": "#00210c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary": "#006a34",
+                        "surface-tint": "#ad3300",
+                        "surface-dim": "#dad9e3",
+                        "on-primary-fixed-variant": "#842500",
+                        "background": "#fbf8ff",
+                        "on-surface-variant": "#5c4037",
+                        "surface-container": "#eeedf7",
+                        "outline": "#916f65",
+                        "primary-fixed": "#ffdbd0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "16px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "40px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "micro-tag": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.07em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md-mobile": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "micro-tag": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #e4e4e7;
+        }
+        .muscle-gradient {
+            background: linear-gradient(135deg, #f4f2fd 0%, #ffffff 100%);
+        }
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-8 flex flex-col md:items-center">
+<!-- Top Navigation (Transactional/Task Focused - Custom Header) -->
+<header class="w-full max-w-[1200px] sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-container-highest px-margin-mobile md:px-margin-desktop py-sm flex justify-between items-center h-14">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Exercise Details</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Canvas -->
+<main class="w-full max-w-[1200px] px-margin-mobile md:px-margin-desktop pt-md md:pt-lg flex-1 grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Left Column / Top Mobile: Hero Image & Title -->
+<div class="md:col-span-5 lg:col-span-4 flex flex-col gap-md">
+<!-- Hero Image -->
+<div class="w-full aspect-[4/3] rounded-[16px] overflow-hidden border border-surface-container-highest relative bg-surface-container group">
+<img alt="Strict Pull-up demonstration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-quality, professional fitness instructional photograph of an athletic person performing a strict pull-up on a matte black bar. The lighting is crisp and even, highlighting muscle definition against a clean, light-mode minimal gym studio background. Shot in a clear, modern aesthetic emphasizing health, strength, and clinical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_lQm-vo7hnpdBa3y3zkpJWNDnE5RK2it64CwTUgVAjDFb-0jAAejMb3XMWdtdraLp9jTFjG7lAPbCGFxD-XgzCGIEXIkqxtJ8MMHN2xduBbVFhcqWqofb940a64_ohorZbFJ4jtbQp0Ze29GnMItCY4oixcivraAg0i-wYqdfL72qmy6agIEwxbWT_wmPmdmIVa6iC6tcuXQ8VexeXW6iaUTb-K-wjLPQqmEUgpkk3OQIg1rkuVJPZw">
+<div class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-2 border border-surface-container-highest shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">videocam</span>
+<span class="font-label-caps text-label-caps text-on-surface">WATCH VIDEO</span>
+</div>
+</div>
+<!-- Title & Badges -->
+<div class="flex flex-col gap-sm">
+<h2 class="font-display-lg text-display-lg text-on-surface">Strict Pull-Up</h2>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container font-label-bold text-label-bold px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                        High Intensity
+                    </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface font-label-bold text-label-bold px-3 py-1 rounded-full border border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">accessibility_new</span>
+                        Bodyweight
+                    </span>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 gap-sm mt-2">
+<div class="glass-card rounded-[12px] p-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<div>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant uppercase tracking-wider">Equipment</p>
+<p class="font-label-bold text-label-bold text-on-surface">Pull-up Bar</p>
+</div>
+</div>
+<div class="glass-card rounded-[12px] p-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<div>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant uppercase tracking-wider">Mechanics</p>
+<p class="font-label-bold text-label-bold text-on-surface">Compound</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column / Bottom Mobile: Details & Instructions -->
+<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-lg">
+<!-- Primary Muscle Focus Bento -->
+<section class="glass-card rounded-[16px] p-md flex flex-col gap-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Muscle Focus</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Muscle 1 -->
+<div class="muscle-gradient rounded-xl p-3 border border-surface-container-highest flex flex-col items-center justify-center text-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="font-label-bold text-label-bold">1</span>
+</div>
+<p class="font-label-bold text-label-bold text-on-surface">Latissimus Dorsi</p>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant">Primary Target</p>
+</div>
+<!-- Muscle 2 -->
+<div class="bg-surface rounded-xl p-3 border border-surface-container-highest flex flex-col items-center justify-center text-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="font-label-bold text-label-bold">2</span>
+</div>
+<p class="font-label-bold text-label-bold text-on-surface">Biceps</p>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant">Secondary</p>
+</div>
+<!-- Muscle 3 -->
+<div class="bg-surface rounded-xl p-3 border border-surface-container-highest flex flex-col items-center justify-center text-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="font-label-bold text-label-bold">3</span>
+</div>
+<p class="font-label-bold text-label-bold text-on-surface">Rhomboids</p>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant">Stabilizer</p>
+</div>
+</div>
+</section>
+<!-- Instructions -->
+<section class="glass-card rounded-[16px] p-md flex flex-col gap-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">list_alt</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Execution</h3>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-primary text-primary font-label-bold text-label-bold flex items-center justify-center mt-1">1</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">The Setup</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Grip the bar slightly wider than shoulder-width using an overhand grip (palms facing away). Hang freely with arms fully extended.</p>
+</div>
+</div>
+<div class="w-px h-6 bg-surface-container-highest ml-4"></div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-primary text-primary font-label-bold text-label-bold flex items-center justify-center mt-1">2</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">The Pull</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Engage your core and pull your chest toward the bar by driving your elbows down and back. Squeeze your shoulder blades together.</p>
+</div>
+</div>
+<div class="w-px h-6 bg-surface-container-highest ml-4"></div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-primary text-primary font-label-bold text-label-bold flex items-center justify-center mt-1">3</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">The Descent</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Lower yourself under control back to the starting position until your arms are fully extended. Do not drop rapidly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits -->
+<section class="glass-card rounded-[16px] p-md flex flex-col gap-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">health_and_safety</span>
+                    Key Benefits
+                </h3>
+<ul class="flex flex-col gap-3 mt-2">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Builds exceptional upper body pulling strength and muscle mass.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Improves posture by strengthening the back and counteracting forward-shoulder rounding.</span>
+</li>
+</ul>
+</section>
+</div>
+</main>
+<!-- Sticky Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-surface-container-highest px-margin-mobile md:px-margin-desktop py-4 z-40 pb-safe shadow-[0_-8px_24px_rgba(0,0,0,0.04)]">
+<div class="max-w-[1200px] mx-auto flex justify-end">
+<button class="w-full md:w-auto bg-primary hover:bg-surface-tint text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-[10px] flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md hover:shadow-lg">
+<span class="material-symbols-outlined">add</span>
+                Add to Workout
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'primary-fixed': '#ffdbd0', 'on-secondary-container': '#004076', 'secondary-container': '#6eaeff', 'surface-container-highest': '#e3e1eb', 'on-secondary': '#ffffff', 'inverse-surface': '#2f3037', 'secondary-fixed-dim': '#a3c9ff', 'tertiary': '#016a34', 'on-surface-variant': '#5b4139', 'surface-tint': '#ad3300', 'tertiary-fixed': '#9df6b1', 'error': '#ba1a1a', 'inverse-on-surface': '#f1effa', 'on-primary': '#ffffff', 'surface-bright': '#fbf8ff', 'on-tertiary-container': '#f5fff2', 'on-secondary-fixed': '#001c39', 'on-primary-fixed-variant': '#842500', 'on-background': '#1a1b22', 'on-tertiary-fixed-variant': '#005227', 'background': '#fbf8ff', 'on-error': '#ffffff', 'surface': '#fbf8ff', 'surface-variant': '#e3e1eb', 'surface-container-lowest': '#ffffff', 'on-tertiary': '#ffffff', 'primary-fixed-dim': '#ffb59e', 'on-error-container': '#93000a', 'inverse-primary': '#ffb59e', 'error-container': '#ffdad6', 'surface-dim': '#dad9e3', 'on-secondary-fixed-variant': '#004883', 'tertiary-container': '#2b844b', 'on-surface': '#1a1b22', 'on-tertiary-fixed': '#00210c', 'primary': '#a83100', 'primary-container': '#d34000', 'on-primary-container': '#fffbff', 'surface-container': '#eeedf7', 'tertiary-fixed-dim': '#81d997', 'secondary-fixed': '#d3e3ff', 'surface-container-high': '#e8e7f1', 'surface-container-low': '#f4f2fd', 'outline-variant': '#e3beb4', 'on-primary-fixed': '#3a0b00', 'outline': '#8f7067', 'secondary': '#0060ab' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'space-sm': '0.5rem', 'space-xl': '1.5rem', 'space-xs': '0.25rem', 'margin': '1rem', 'space-md': '1rem', 'gutter': '0.75rem', 'space-lg': '1.25rem' }, 'fontFamily': { 'label-caps': ['Inter'], 'display-lg': ['Inter'], 'headline-md': ['Inter'], 'body-md-medium': ['Inter'], 'headline-lg': ['Inter'], 'body-lg': ['Inter'], 'micro-tag': ['Inter'], 'label-md': ['Inter'], 'body-lg-medium': ['Inter'], 'body-md': ['Inter'] }, 'fontSize': { 'label-caps': ['11px', { 'lineHeight': '14px', 'letterSpacing': '0.08em', 'fontWeight': '700' }], 'display-lg': ['32px', { 'lineHeight': '38px', 'letterSpacing': '-0.03em', 'fontWeight': '800' }], 'headline-md': ['18px', { 'lineHeight': '24px', 'letterSpacing': '-0.015em', 'fontWeight': '700' }], 'body-md-medium': ['14px', { 'lineHeight': '20px', 'letterSpacing': '0em', 'fontWeight': '500' }], 'headline-lg': ['22px', { 'lineHeight': '28px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'body-lg': ['16px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '400' }], 'micro-tag': ['10px', { 'lineHeight': '12px', 'letterSpacing': '0.04em', 'fontWeight': '700' }], 'label-md': ['14px', { 'lineHeight': '18px', 'letterSpacing': '0.01em', 'fontWeight': '600' }], 'body-lg-medium': ['16px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '500' }], 'body-md': ['14px', { 'lineHeight': '20px', 'letterSpacing': '0em', 'fontWeight': '400' }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fbf8ff;color:#1a1b22;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="Vital Precision Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xm-OHqGkEaClie1OdONp9ASoWUPLCMj8Wtp587g2WmPUwvQB-_Hh4Fr5QWlOg--6P-yi8txhuSnaoBBuHxVtIlzMvZRovlCXryIvsNCbYzDhiQ-lPC3aXImMH5W1i0xnzu5PhKx0dxHMbx2I-wGT4L2Vs0UxAvzLM4gF_uhU_4SFPigrZ9tq_LsSuzyxP6J_xvwctTBlXlykq-3XqJnSrxNA1Vjd8XlNGBimcUxKYMexEehn40oVNSnA"/><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3SclfA7GBrddZ2ANfSoorof-ynpYjJ7JhmX6tQjwiXRBR42OU2v8cgz5c_WqOlHvwNvMOKguMk71J8lS3j17sj6tSN8pT5IILOy0B1wRFm8W49kwspUp5JjQdmYliN6CCVFcmwbeEpZ2gUGlSM5Xj0OU0HUVXqdyyO6E8bJ7RCN-QyMBsAzJUfg4qIv2HovQOZjnsP4r_SUEz9OdBYiGeSA7iF7RLhowjRD_37l80FP1M3fGdP0c"/></div><div class="flex flex-col items-center justify-center flex-1 px-space-xs text-center"><h1 class="font-headline-md text-headline-md text-on-surface leading-none tracking-tight">Vital Precision</h1><span class="font-micro-tag text-micro-tag text-on-surface-variant uppercase tracking-wider">Ai Koç</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="material-symbols-outlined text-[15px] text-tertiary">watch</span><div class="flex flex-col items-end leading-none"><span class="font-micro-tag text-micro-tag text-on-surface font-bold">%92</span><span class="font-micro-tag text-[9px] text-on-surface-variant leading-none">2 dk</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<div class="w-full overflow-x-auto py-space-sm px-margin flex items-center gap-space-xs no-scrollbar bg-surface/95 sticky top-0 z-20">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-caps font-label-caps shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="material-symbols-outlined text-[13px] text-secondary">bolt</span>
+<span>VitaxBand Canlı</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-caps font-label-caps shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">bedtime</span>
+<span>Uyku 7s 12dk</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-caps font-label-caps shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-error">favorite</span>
+<span>Dinlenik 58 bpm</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-caps font-label-caps shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">directions_walk</span>
+<span>8.432 Adım</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-caps font-label-caps shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">restaurant</span>
+<span>1.420 kcal</span>
+</div>
+</div>
+<div class="flex flex-col px-margin pt-space-xs pb-32 gap-space-md">
+<div class="flex items-center justify-center my-1">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-micro-tag font-micro-tag">
+        Bugün, 24 Ekim
+      </span>
+</div>
+<div class="flex gap-space-xs max-w-[92%] self-start items-start">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1.5 min-w-0">
+<div class="flex items-center gap-1.5 px-1">
+<span class="font-label-md text-label-md text-on-surface">Vital AI Koç</span>
+<span class="text-micro-tag font-micro-tag text-on-surface-variant">14:15</span>
+</div>
+<div class="bg-surface-container-lowest text-on-surface p-space-md rounded-2xl rounded-tl-sm shadow-sm space-y-3">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+            Bugünkü <span class="font-semibold text-secondary">8.432 adımın</span> ve dün geceki derin uykun harika toparlanma sağladı! Öğle yemeğindeki kinoa ve tavuk salatası protein hedefine güçlü bir ivme kazandırdı.
+          </p>
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">track_changes</span>
+                Günün Önerisi
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-micro-tag text-micro-tag">%75 Hazır</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-start gap-2 bg-surface-container-lowest p-2.5 rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-md bg-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface">Aktif Toparlanma</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-[13px] leading-tight">45 dk hafif tempo koşu veya alt vücut kuvvet rutini.</span>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-lowest p-2.5 rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-md bg-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-tertiary">dinner_dining</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface">Akşam Menüsü Odağı</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-[13px] leading-tight">Kalan 38g protein &amp; 680 kcal. Fırın somon ve brokoli harika eşleşir.</span>
+</div>
+</div>
+</div>
+<button class="w-full h-10 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+              Antrenmanı Başlat
+            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 max-w-[85%] self-end items-end">
+<div class="flex items-center gap-1.5 px-1">
+<span class="text-micro-tag font-micro-tag text-on-surface-variant">14:18</span>
+<span class="material-symbols-outlined text-[13px] text-tertiary" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+<div class="bg-primary text-on-primary p-space-md rounded-2xl rounded-tr-sm shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed text-on-primary">
+          Akşam yemeğinde dışarıda olacağım, tavsiye edebileceğin pratik bir alternatif var mı?
+        </p>
+</div>
+</div>
+<div class="flex gap-space-xs max-w-[85%] self-start items-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<div class="bg-surface-container-lowest text-on-surface px-4 py-3 rounded-2xl rounded-tl-sm shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-bounce"></span>
+<span class="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:0.18s]"></span>
+<span class="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:0.36s]"></span>
+<span class="text-micro-tag font-micro-tag text-on-surface-variant ml-1">Yanıt yazılıyor...</span>
+</div>
+</div>
+</div>
+<div class="fixed bottom-16 inset-x-0 z-40 bg-surface/95 backdrop-blur-md pt-2 pb-2 px-margin flex flex-col gap-2">
+<div class="w-full overflow-x-auto flex items-center gap-1.5 no-scrollbar py-0.5">
+<button class="suggestion-chip px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md text-[12px] whitespace-nowrap shadow-sm active:bg-surface-container transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px] text-primary">help_outline</span>
+        Proteinimi nasıl tamamlarım?
+      </button>
+<button class="suggestion-chip px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md text-[12px] whitespace-nowrap shadow-sm active:bg-surface-container transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px] text-secondary">update</span>
+        Antrenmanı yarına erteleyeyim mi?
+      </button>
+<button class="suggestion-chip px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md text-[12px] whitespace-nowrap shadow-sm active:bg-surface-container transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px] text-tertiary">insights</span>
+        VitaxBand verimi özetle
+      </button>
+</div>
+<div class="w-full flex items-center gap-1.5 bg-surface-container-lowest p-1.5 rounded-2xl shadow-sm">
+<button aria-label="Görsel veya Besin Ekle" class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-primary active:bg-surface-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">add_a_photo</span>
+</button>
+<input class="flex-1 bg-transparent border-0 outline-none text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/60 min-w-0 px-1 py-1" id="coach-input" placeholder="AI Koç'a bir soru sorun..." type="text"/>
+<button aria-label="Sesli Giriş" class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-primary active:bg-surface-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button aria-label="Mesaj Gönder" class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center active:scale-95 transition-transform shrink-0 shadow-sm" id="send-btn" type="button">
+<span class="material-symbols-outlined text-[19px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const input = document.getElementById('coach-input');
+    const sendBtn = document.getElementById('send-btn');
+    const chips = document.querySelectorAll('.suggestion-chip');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (input) {
+          input.value = chip.textContent.trim();
+          input.focus();
+        }
+      });
+    });
+
+    if (sendBtn && input) {
+      sendBtn.addEventListener('click', () => {
+        if (input.value.trim().length > 0) {
+          input.value = '';
+        }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && input.value.trim().length > 0) {
+          input.value = '';
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="bg-primary text-on-primary font-bold"><div class="flex justify-between items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded-full text-on-surface-variant transition-all duration-200 min-h-[44px]" data-path="genel-bakis" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-micro-tag text-micro-tag mt-space-xs">Genel</span></a><a class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded-full text-on-surface-variant transition-all duration-200 min-h-[44px]" data-path="aktivite" href="#"><span class="material-symbols-outlined text-[20px]">vital_signs</span><span class="font-micro-tag text-micro-tag mt-space-xs">Aktivite</span></a><a class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded-full text-on-surface-variant transition-all duration-200 min-h-[44px]" data-path="tara" href="#"><span class="material-symbols-outlined text-[20px]">barcode_scanner</span><span class="font-micro-tag text-micro-tag mt-space-xs">Tara</span></a><a class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded-full text-on-surface-variant transition-all duration-200 min-h-[44px]" data-path="ai-koc" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span class="font-micro-tag text-micro-tag mt-space-xs">AI Koç</span></a><a class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded-full text-on-surface-variant transition-all duration-200 min-h-[44px]" data-path="egzersizler" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-micro-tag text-micro-tag mt-space-xs">Egzersiz</span></a></div></nav></body></html>

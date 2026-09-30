@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Exercise Library - Vital Precision</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fbf8ff",
+                        "on-secondary-fixed": "#001c39",
+                        "surface-container-highest": "#e3e1ec",
+                        "on-primary-fixed": "#3a0b00",
+                        "surface-container": "#eeedf7",
+                        "tertiary": "#006a34",
+                        "background": "#fbf8ff",
+                        "on-primary-fixed-variant": "#842500",
+                        "inverse-on-surface": "#f1effa",
+                        "primary-container": "#d34000",
+                        "inverse-primary": "#ffb59e",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#f6fff3",
+                        "on-background": "#1a1b22",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdbd0",
+                        "outline-variant": "#e6beb2",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e7f1",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "surface-dim": "#dad9e3",
+                        "surface-container-low": "#f4f2fd",
+                        "secondary": "#0060ac",
+                        "error-container": "#ffdad6",
+                        "primary": "#a93100",
+                        "tertiary-fixed-dim": "#4de082",
+                        "secondary-fixed": "#d4e3ff",
+                        "secondary-container": "#64a8fe",
+                        "surface-variant": "#e3e1ec",
+                        "on-secondary-fixed-variant": "#004883",
+                        "tertiary-fixed": "#6dfe9c",
+                        "on-secondary-container": "#003c70",
+                        "surface-bright": "#fbf8ff",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "tertiary-container": "#008644",
+                        "surface-tint": "#ad3300",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb59e",
+                        "on-surface": "#1a1b22",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#00210c",
+                        "outline": "#916f65",
+                        "inverse-surface": "#2f3038",
+                        "on-surface-variant": "#5c4037"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "margin-desktop": "32px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md-mobile": ["Inter"],
+                        "micro-tag": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.07em", "fontWeight": "700" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-md-mobile": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "micro-tag": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-hover:hover { border-color: #a93100; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed font-body-md overflow-x-hidden pt-16 md:pt-0 pb-20 md:pb-0">
+<!-- TopAppBar (Mobile & Desktop) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-surface-container-highest flex justify-between items-center px-margin-mobile md:px-margin-desktop py-sm">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A clean, modern headshot of a fitness enthusiast against a solid light gray background. Soft studio lighting. Health tracking aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwIoMNq_9MiW5AgaFXGcGTj_qG-mDrW4bFxGqYZ1uBaDfBKy8Z3okY9oSTb_2ffu7nosf9Tbzpr1uaj66La1oTpPn9ytdvXq8RTu67ddMJIp-2Urbx1lvlt2l-GjtfLNuO5Nem1x6MSUwUj-PQHNhv2OU1xdPdTFxyk1W1y4gcpMnCxf_FIQdTlzpxggyomAvFWs1uoEbDbOgRS3ksz_Q9bhjledC_TaVTgPWahw_0eXEJLL2BlPFk_A">
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary truncate hidden md:block">Vital Precision</h1>
+</div>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold text-primary truncate md:hidden">Vital Precision</h1>
+<div class="flex items-center gap-6 hidden md:flex">
+<nav class="flex gap-6">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg" href="#">Dashboard</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg" href="#">Activity</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg" href="#">Scan</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg" href="#">AI Coach</a>
+<a class="font-label-bold text-label-bold text-primary flex flex-col items-center" href="#">
+<span class="px-3 py-2 bg-primary-container text-on-primary-container rounded-xl">Exercises</span>
+</a>
+</nav>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg md:py-xl md:mt-20">
+<!-- Header & Search -->
+<section class="mb-lg flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-background mb-2">Exercise Library</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Browse and filter highly detailed instructional movements for your routine.</p>
+</div>
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full bg-surface-container-low border border-surface-container-highest rounded-[10px] pl-10 pr-4 py-3 font-body-md text-on-background placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search exercises, muscles, equipment..." type="text">
+</div>
+</section>
+<!-- Filters (Chips) -->
+<section class="mb-lg overflow-x-auto hide-scrollbar -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 flex gap-2">
+<button class="shrink-0 px-4 py-2 rounded-full border border-primary bg-primary/8 text-primary font-label-bold text-label-bold transition-colors">All</button>
+<button class="shrink-0 px-4 py-2 rounded-full border border-surface-container-highest bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-label-bold transition-colors">Chest</button>
+<button class="shrink-0 px-4 py-2 rounded-full border border-surface-container-highest bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-label-bold transition-colors">Back</button>
+<button class="shrink-0 px-4 py-2 rounded-full border border-surface-container-highest bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-label-bold transition-colors">Legs</button>
+<button class="shrink-0 px-4 py-2 rounded-full border border-surface-container-highest bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-label-bold transition-colors">Arms</button>
+<button class="shrink-0 px-4 py-2 rounded-full border border-surface-container-highest bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-label-bold transition-colors">Core</button>
+</section>
+<!-- Bento Grid / Exercise Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border border-surface-container-highest rounded-2xl overflow-hidden card-hover transition-all duration-300 cursor-pointer group flex flex-col">
+<div class="aspect-[4/3] w-full relative bg-surface-container overflow-hidden">
+<img alt="Barbell Deadlift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-contrast fitness photo showing a person performing a barbell deadlift in a modern gym. Bright clinical lighting, clean background, kinetic orange accents on the weights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV7HgOiYlKr0hn4oew1wRKCS2OQzkHyKIy8alpkjjH_uc7ROkJazHzOE05rCVXdhZbme4qo05vteQZUPKcZXHbhslBh88Hu9ifZ3uTBqJnl38OjC5AUsL1ZW0hyxonwaSXkYnkQVmlb_gLBNOKXlctbHxZ0mklyQgTZfFZtxP0w7Myu7nXpivFifOqf2ODIa_WlSoceWg99lgs2W8jel2BDerZzqFHhgT4h8LiJD76JsHN0Ap-mZ4ANg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-micro-tag text-micro-tag text-on-background border border-surface-container-highest/50">LOWER BODY</span>
+<span class="px-2 py-1 bg-primary/90 backdrop-blur-sm rounded-md font-micro-tag text-micro-tag text-on-primary">COMPOUND</span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Barbell Deadlift</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Primary: Glutes, Hamstrings, Lower Back. A fundamental full-body movement for overall strength.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center gap-1 text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">fitness_center</span> Barbell
+                        </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border border-surface-container-highest rounded-2xl overflow-hidden card-hover transition-all duration-300 cursor-pointer group flex flex-col">
+<div class="aspect-[4/3] w-full relative bg-surface-container overflow-hidden">
+<img alt="Dumbbell Bench Press" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-contrast fitness photo showing a person performing a dumbbell bench press. Bright clinical lighting, clean white gym background. Focused action shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv2bMpMwJAO0pPcdXngKqiegDFMnr3jYYUM0v6B6i403f75XmfOA_xSscOPWgOxJVcUdj8mkj26gZLk-i5seFthSMWortZrxqEzVn5wvQxgSDe1hzHl4GleI3J2O61b25RjXwcBbjICmJbvR_Ztux-3O3NWTviI4BwTApxOCF9BK759RzKrjsMzTQBgZDmosCc8__8lvLxumiUqsrH1r8KIWt2zAzJC9Jua9YemfQlYAi6oMJ4tKVJnQ">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-micro-tag text-micro-tag text-on-background border border-surface-container-highest/50">CHEST</span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Dumbbell Bench Press</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Primary: Pectorals, Triceps, Anterior Deltoids. Excellent for unilateral strength development.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center gap-1 text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">fitness_center</span> Dumbbells
+                        </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 (Feature/Wide) -->
+<article class="sm:col-span-2 bg-surface-container-lowest border border-surface-container-highest rounded-2xl overflow-hidden card-hover transition-all duration-300 cursor-pointer group flex flex-col sm:flex-row">
+<div class="sm:w-1/2 aspect-[4/3] sm:aspect-auto sm:h-full relative bg-surface-container overflow-hidden">
+<img alt="Strict Pull-Up" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-contrast wide shot of a person performing pull-ups. Bright clinical lighting, sleek modern pull-up bar, minimal background. Athletic tension." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb00ytHxEUaXRpWwQmJMLBHF9NMNTWTGzihWjAiQKiuW7Sm_gnX93q0BC-F5spy9wFTaabVK-W2P-M6I9RziIfrlBr0iX9A_T1P3wypx5KHZF_vl7xkemTouPunLJnxcewxthTg8pIiv5wicSckbRIRGZ_lJzC7asaHPk-5WEhk2rPrsTIK5T4ba01_pbZJf7pAg515kqjG84cntX9FO0MYrBlPoaFRDwc5D2Prb_P7oM8B2_okDBnBA">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-micro-tag text-micro-tag text-on-background border border-surface-container-highest/50">BACK</span>
+<span class="px-2 py-1 bg-secondary-container/90 backdrop-blur-sm rounded-md font-micro-tag text-micro-tag text-on-secondary-container">BODYWEIGHT</span>
+</div>
+</div>
+<div class="p-6 sm:w-1/2 flex flex-col justify-center">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Strict Pull-Up</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Primary: Latissimus Dorsi, Biceps. The ultimate test of upper body relative strength and back development.</p>
+<div class="flex items-center gap-4 mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">local_fire_department</span>
+<span class="font-label-bold text-label-bold text-on-background">High Intensity</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center gap-1 text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">horizontal_rule</span> Pull-up Bar
+                        </span>
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-primary font-label-bold text-label-bold group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-surface border-t border-surface-container-highest flex justify-around items-center px-xs pb-safe pt-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1">fitness_center</span>
+<span class="font-label-caps text-label-caps">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1">barcode_scanner</span>
+<span class="font-label-caps text-label-caps">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-caps text-label-caps">AI Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-90 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-caps text-label-caps">Exercises</span>
+</a>
+</nav>
+</body></html>

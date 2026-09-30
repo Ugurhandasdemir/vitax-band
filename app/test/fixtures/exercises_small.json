@@ -1,0 +1,229 @@
+[
+ {
+  "id": "0001",
+  "name": "barbell bench press",
+  "bodyPart": "chest",
+  "equipment": "barbell",
+  "target": "pectorals",
+  "muscle": "chest",
+  "secondary": [
+   "triceps",
+   "delts"
+  ],
+  "stepsTr": [
+   "Dizleriniz bükülü ve ayaklarınız yere düz basacak şekilde sırt üstü yatın.",
+   "Ellerinizi başınızın arkasına, dirsekleriniz dışarı bakacak şekilde yerleştirin.",
+   "Karın kaslarınızı devreye sokarak üst bedeninizi yavaşça yerden kaldırın ve gövdeniz 45 derecelik bir açıya gelene kadar öne doğru kıvrılın.",
+   "Tepe noktasında bir an duraklayın, ardından üst vücudunuzu yavaşça başlangıç pozisyonuna indirin.",
+   "İstenilen sayıda tekrar için tekrarlayın."
+  ],
+  "stepsEn": [
+   "Lie flat on your back with your knees bent and feet flat on the ground.",
+   "Place your hands behind your head with your elbows pointing outwards.",
+   "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+   "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+   "Repeat for the desired number of repetitions."
+  ],
+  "image": "images/0001-2gPfomN.jpg",
+  "gif": "videos/0001-2gPfomN.gif"
+ },
+ {
+  "id": "0002",
+  "name": "dumbbell fly",
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "target": "pectorals",
+  "muscle": "chest",
+  "secondary": [
+   "delts"
+  ],
+  "stepsTr": [
+   "Başınız bir ucunda ve ayaklarınız yerde olacak şekilde bir bankın üzerine düz bir şekilde uzanın.",
+   "Halteri omuz genişliğinde tutun ve kollarınızı göğsünüzün üzerine düz bir şekilde uzatın.",
+   "Kollarınızı hafifçe bükülmüş halde tutarak halteri başınızın arkasına indirin.",
+   "Bir süre duraklayın, ardından halteri tekrar başlangıç pozisyonuna kaldırın.",
+   "İstenilen sayıda tekrar için tekrarlayın."
+  ],
+  "stepsEn": [
+   "Lie flat on a bench with your head at one end and your feet on the floor.",
+   "Hold a barbell with a shoulder-width grip and extend your arms straight above your chest.",
+   "Lower the barbell behind your head while keeping your arms slightly bent.",
+   "Pause for a moment, then raise the barbell back to the starting position.",
+   "Repeat for the desired number of repetitions."
+  ],
+  "image": "images/1316-cA9FuWG.jpg",
+  "gif": "videos/1316-cA9FuWG.gif"
+ },
+ {
+  "id": "0003",
+  "name": "pull up",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "lats",
+  "muscle": "upper back",
+  "secondary": [
+   "biceps",
+   "forearms"
+  ],
+  "stepsTr": [
+   "Kablo makinesini alçak makara konumuna ayarlayın.",
+   "Kabloya düz bir çubuk takın.",
+   "Ayaklarınız omuz genişliğinde açık olacak şekilde, yüzünüz makineden uzakta durun.",
+   "Çubuğu üstten kavrayarak kavrayın ve kollarınızı düz bir şekilde yukarı doğru uzatın.",
+   "Hafifçe öne doğru eğilin, sırtınızı düz ve göbek bölgenizi meşgul tutun.",
+   "Dirseklerinizi bükün ve üst kollarınızı kulaklarınıza yakın tutarak barı başınızın arkasına indirin.",
+   "Bir an duraklayın, ardından kollarınızı başlangıç pozisyonuna geri uzatın.",
+   "İstenilen sayıda tekrar için tekrarlayın."
+  ],
+  "stepsEn": [
+   "Adjust the cable machine to a low pulley position.",
+   "Attach a straight bar to the cable.",
+   "Stand facing away from the machine with your feet shoulder-width apart.",
+   "Grasp the bar with an overhand grip and extend your arms straight overhead.",
+   "Lean forward slightly, keeping your back straight and core engaged.",
+   "Bend your elbows and lower the bar behind your head, keeping your upper arms close to your ears.",
+   "Pause for a moment, then extend your arms back to the starting position.",
+   "Repeat for the desired number of repetitions."
+  ],
+  "image": "images/0173-Hx1WC8I.jpg",
+  "gif": "videos/0173-Hx1WC8I.gif"
+ },
+ {
+  "id": "0004",
+  "name": "barbell squat",
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "target": "quads",
+  "muscle": "quadriceps",
+  "secondary": [
+   "glutes",
+   "hamstrings"
+  ],
+  "stepsTr": [
+   "Bir elinizde dambılla, göğsünüzün üzerinde dinlenerek bir bench sehpasına uzanın.",
+   "Dirseğinizi hafifçe bükerek kolunuzu düz bir şekilde yukarı doğru uzatın.",
+   "Dirseğinizi vücudunuza yakın tutarak dambılı omzunuza doğru indirin.",
+   "Dambılı tekrar başlangıç pozisyonuna doğru bastırın.",
+   "İstenilen tekrar sayısı kadar tekrarlayın, ardından kolları değiştirin."
+  ],
+  "stepsEn": [
+   "Lie on a decline bench with a dumbbell in one hand, resting on your chest.",
+   "Extend your arm straight up, keeping your elbow slightly bent.",
+   "Lower the dumbbell down towards your shoulder, keeping your elbow close to your body.",
+   "Press the dumbbell back up to the starting position.",
+   "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "image": "images/1617-SHUMp5H.jpg",
+  "gif": "videos/1617-SHUMp5H.gif"
+ },
+ {
+  "id": "0005",
+  "name": "dumbbell curl",
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "target": "biceps",
+  "muscle": "biceps",
+  "secondary": [
+   "forearms"
+  ],
+  "stepsTr": [
+   "Ayaklarınız omuz genişliğinde açık olacak şekilde ayakta durun, her iki elinizde de birer dambıl tutun.",
+   "Göğsünüzü yukarıda ve göbek bölgenizi meşgul tutarak, sanki bir sandalyeye oturuyormuş gibi dizlerinizi ve kalçalarınızı bükerek vücudunuzu aşağı indirin.",
+   "Uyluklarınız yere paralel veya rahatça gidebileceğiniz kadar alçalana kadar alçaltmaya devam edin.",
+   "Altta bir an duraklayın, ardından başlangıç pozisyonuna dönmek için topuklarınızı itin.",
+   "İstenilen sayıda tekrar için tekrarlayın."
+  ],
+  "stepsEn": [
+   "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at your sides.",
+   "Keeping your chest up and core engaged, lower your body down by bending at the knees and hips, as if sitting back into a chair.",
+   "Continue lowering until your thighs are parallel to the ground, or as low as you can comfortably go.",
+   "Pause for a moment at the bottom, then push through your heels to return to the starting position.",
+   "Repeat for the desired number of repetitions."
+  ],
+  "image": "images/0413-HsvHqgf.jpg",
+  "gif": "videos/0413-HsvHqgf.gif"
+ },
+ {
+  "id": "0006",
+  "name": "crunch",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "muscle": "obliques",
+  "secondary": [
+   "hip flexors"
+  ],
+  "stepsTr": [
+   "Elleriniz kettlebell'lerin üzerinde, omuz genişliğinde açık olacak şekilde yüksek bir plank pozisyonuyla başlayın.",
+   "Dirseklerinizi vücudunuza yakın tutarak göğsünüzü yere doğru indirin.",
+   "Ellerinizi patlayıcı bir şekilde itin, ellerinizi kettlebell'lerden kaldırın ve kollarınızı tamamen uzatın.",
+   "Kettlebell'lerin üzerine yavaşça inin ve bir sonraki tekrar için hemen göğsünüzü aşağıya doğru indirin.",
+   "İstenilen sayıda tekrar için tekrarlayın."
+  ],
+  "stepsEn": [
+   "Start in a high plank position with your hands on the kettlebells, shoulder-width apart.",
+   "Lower your chest towards the ground, keeping your elbows close to your body.",
+   "Push through your hands explosively, lifting your hands off the kettlebells and extending your arms fully.",
+   "Land softly back on the kettlebells and immediately lower your chest back down for the next repetition.",
+   "Repeat for the desired number of repetitions."
+  ],
+  "image": "images/0545-ktf3nvW.jpg",
+  "gif": "videos/0545-ktf3nvW.gif"
+ },
+ {
+  "id": "0007",
+  "name": "shoulder press",
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "target": "delts",
+  "muscle": "shoulders",
+  "secondary": [
+   "triceps"
+  ],
+  "stepsTr": [
+   "Bacaklarınız önünüzde uzatılmış halde yere oturarak başlayın.",
+   "Silindiri vücudunuza dik olarak kalça kaslarınızın hemen altına yerleştirin.",
+   "Vücudunuzu yavaşça geriye doğru yuvarlayın, silindirin sırtınıza doğru hareket etmesine izin verin.",
+   "Silindir sırtınızın üst kısmına ulaşana kadar yuvarlanmaya devam edin.",
+   "Bir an duraklayın ve ardından yavaşça başlangıç pozisyonuna dönün.",
+   "İstenilen sayıda tekrar için tekrarlayın."
+  ],
+  "stepsEn": [
+   "Start by sitting on the ground with your legs extended in front of you.",
+   "Place the roller perpendicular to your body, just below your glutes.",
+   "Slowly roll your body backwards, allowing the roller to move up your back.",
+   "Continue rolling until the roller reaches your upper back.",
+   "Pause for a moment, then slowly roll back to the starting position.",
+   "Repeat for the desired number of repetitions."
+  ],
+  "image": "images/2208-isofgzg.jpg",
+  "gif": "videos/2208-isofgzg.gif"
+ },
+ {
+  "id": "0008",
+  "name": "run",
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "target": "cardiovascular system",
+  "muscle": "cardiovascular system",
+  "secondary": [],
+  "stepsTr": [
+   "Dizleriniz bükülü ve ayaklarınız yere düz basacak şekilde yere oturun.",
+   "Ağırlığı iki elinizle göğsünüzün önünde tutun.",
+   "Çekirdek kaslarınızı çalıştırmak için hafifçe geriye yaslanın.",
+   "Ağırlığı vücudunuzun sağ tarafına doğru getirerek gövdenizi sağa doğru çevirin.",
+   "Bir an duraklayın, ardından ağırlığınızı vücudunuzun sol tarafına doğru getirerek gövdenizi sola doğru çevirin.",
+   "İstenilen tekrar sayısı için alternatif taraflara devam edin."
+  ],
+  "stepsEn": [
+   "Sit on the ground with your knees bent and feet flat on the floor.",
+   "Hold the weight with both hands in front of your chest.",
+   "Lean back slightly to engage your core muscles.",
+   "Twist your torso to the right, bringing the weight towards the right side of your body.",
+   "Pause for a moment, then twist your torso to the left, bringing the weight towards the left side of your body.",
+   "Continue alternating sides for the desired number of repetitions."
+  ],
+  "image": "images/2371-YIUAtYf.jpg",
+  "gif": "videos/2371-YIUAtYf.gif"
+ }
+]

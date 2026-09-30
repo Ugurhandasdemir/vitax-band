@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'primary-fixed': '#ffdbd0',
+            'on-secondary-container': '#004076',
+            'secondary-container': '#6eaeff',
+            'surface-container-highest': '#e3e1eb',
+            'on-secondary': '#ffffff',
+            'inverse-surface': '#2f3037',
+            'secondary-fixed-dim': '#a3c9ff',
+            'tertiary': '#016a34',
+            'on-surface-variant': '#5b4139',
+            'surface-tint': '#ad3300',
+            'tertiary-fixed': '#9df6b1',
+            'error': '#ba1a1a',
+            'inverse-on-surface': '#f1effa',
+            'on-primary': '#ffffff',
+            'surface-bright': '#fbf8ff',
+            'on-tertiary-container': '#f5fff2',
+            'on-secondary-fixed': '#001c39',
+            'on-primary-fixed-variant': '#842500',
+            'on-background': '#1a1b22',
+            'on-tertiary-fixed-variant': '#005227',
+            'background': '#fbf8ff',
+            'on-error': '#ffffff',
+            'surface': '#fbf8ff',
+            'surface-variant': '#e3e1eb',
+            'surface-container-lowest': '#ffffff',
+            'on-tertiary': '#ffffff',
+            'primary-fixed-dim': '#ffb59e',
+            'on-error-container': '#93000a',
+            'inverse-primary': '#ffb59e',
+            'error-container': '#ffdad6',
+            'surface-dim': '#dad9e3',
+            'on-secondary-fixed-variant': '#004883',
+            'tertiary-container': '#2b844b',
+            'on-surface': '#1a1b22',
+            'on-tertiary-fixed': '#00210c',
+            'primary': '#a83100',
+            'primary-container': '#d34000',
+            'on-primary-container': '#fffbff',
+            'surface-container': '#eeedf7',
+            'tertiary-fixed-dim': '#81d997',
+            'secondary-fixed': '#d3e3ff',
+            'surface-container-high': '#e8e7f1',
+            'surface-container-low': '#f4f2fd',
+            'outline-variant': '#e3beb4',
+            'on-primary-fixed': '#3a0b00',
+            'outline': '#8f7067',
+            'secondary': '#0060ab'
+          },
+          borderRadius: {
+            'DEFAULT': '0.25rem',
+            'lg': '0.5rem',
+            'xl': '0.75rem',
+            'full': '9999px'
+          },
+          spacing: {
+            'space-sm': '0.5rem',
+            'space-xl': '1.5rem',
+            'space-xs': '0.25rem',
+            'margin': '1rem',
+            'space-md': '1rem',
+            'gutter': '0.75rem',
+            'space-lg': '1.25rem'
+          },
+          fontFamily: {
+            'label-caps': ['Inter'],
+            'display-lg': ['Inter'],
+            'headline-md': ['Inter'],
+            'body-md-medium': ['Inter'],
+            'headline-lg': ['Inter'],
+            'body-lg': ['Inter'],
+            'micro-tag': ['Inter'],
+            'label-md': ['Inter'],
+            'body-lg-medium': ['Inter'],
+            'body-md': ['Inter']
+          },
+          fontSize: {
+            'label-caps': ['11px', { 'lineHeight': '14px', 'letterSpacing': '0.08em', 'fontWeight': '700' }],
+            'display-lg': ['32px', { 'lineHeight': '38px', 'letterSpacing': '-0.03em', 'fontWeight': '800' }],
+            'headline-md': ['18px', { 'lineHeight': '24px', 'letterSpacing': '-0.015em', 'fontWeight': '700' }],
+            'body-md-medium': ['14px', { 'lineHeight': '20px', 'letterSpacing': '0em', 'fontWeight': '500' }],
+            'headline-lg': ['22px', { 'lineHeight': '28px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }],
+            'body-lg': ['16px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '400' }],
+            'micro-tag': ['10px', { 'lineHeight': '12px', 'letterSpacing': '0.04em', 'fontWeight': '700' }],
+            'label-md': ['14px', { 'lineHeight': '18px', 'letterSpacing': '0.01em', 'fontWeight': '600' }],
+            'body-lg-medium': ['16px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '500' }],
+            'body-md': ['14px', { 'lineHeight': '20px', 'letterSpacing': '0em', 'fontWeight': '400' }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #fbf8ff;
+        color: #1a1b22;
+      }
+      body {
+        overscroll-behavior: none;
+        min-height: max(667px, 100dvh);
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+<div class="h-14 px-margin flex items-center justify-between">
+<div class="flex items-center min-w-[44px]">
+<button aria-label="Geri Dön" class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span>
+</button>
+</div>
+<div class="flex-1 flex flex-col items-center text-center px-space-xs truncate">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate">Antrenman Özeti</h1>
+</div>
+<div class="flex items-center justify-end min-w-[44px]">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-14 pb-safe bg-surface min-h-screen">
+<div class="flex flex-col w-full px-margin pb-space-xl space-y-space-md">
+<!-- Sub-header bar for workout state actions -->
+<div class="flex items-center justify-between pt-space-xs">
+<button aria-label="Kapat" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-tertiary-container/10">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-micro-tag text-micro-tag text-tertiary uppercase tracking-wider">Senkronize Edildi</span>
+</div>
+<button class="w-11 h-11 flex items-center justify-center rounded-full bg-primary-container text-on-primary-container transition-transform active:scale-95" title="Kaydet ve Bitir" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+</div>
+<!-- Success Hero Tile -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-tertiary tracking-wide">Tebrikler! Antrenman Tamamlandı</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Göğüs &amp; Triceps Güç Rutini</h2>
+<div class="flex items-center gap-space-xs font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Bugün, 16:45</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-md text-label-md text-secondary">VitaxBand v3 Bağlı</span>
+</div>
+</section>
+<!-- PR Celebratory Banner -->
+<section class="bg-primary text-on-primary rounded-2xl p-space-md flex items-center gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute -right-3 -bottom-3 opacity-15 text-on-primary pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">trophy</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-on-primary/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px] text-on-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="flex flex-col min-w-0 pr-space-xs z-10">
+<span class="font-micro-tag text-micro-tag uppercase tracking-wider text-primary-fixed">Yeni Kişisel Rekor (PR)</span>
+<p class="font-body-md-medium text-body-md-medium text-on-primary leading-tight mt-0.5">
+        Barbell Bench Press: <strong class="font-bold">85 kg × 6 tekrar</strong>
+</p>
+</div>
+</section>
+<!-- Summary Metrics Grid (VitaxBand data) -->
+<section class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Toplam Süre</span>
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<div class="mt-2">
+<div class="font-display-lg text-display-lg text-on-surface leading-none">46<span class="font-headline-md text-headline-md ml-1 text-on-surface-variant">dk</span></div>
+<span class="font-micro-tag text-micro-tag text-tertiary">38 dk aktif efor</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Yakılan Kalori</span>
+<span class="material-symbols-outlined text-[18px] text-primary">local_fire_department</span>
+</div>
+<div class="mt-2">
+<div class="font-display-lg text-display-lg text-on-surface leading-none">385<span class="font-headline-md text-headline-md ml-1 text-on-surface-variant">kcal</span></div>
+<span class="font-micro-tag text-micro-tag text-secondary">VitaxBand Sensör</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Ortalama Nabız</span>
+<span class="material-symbols-outlined text-[18px] text-error">favorite</span>
+</div>
+<div class="mt-2">
+<div class="font-display-lg text-display-lg text-on-surface leading-none">136<span class="font-headline-md text-headline-md ml-1 text-on-surface-variant">bpm</span></div>
+<span class="font-micro-tag text-micro-tag text-error">Zirve: 168 bpm</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Toplam Hacim</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">fitness_center</span>
+</div>
+<div class="mt-2">
+<div class="font-display-lg text-display-lg text-on-surface leading-none">6.420<span class="font-headline-md text-headline-md ml-1 text-on-surface-variant">kg</span></div>
+<span class="font-micro-tag text-micro-tag text-tertiary">14 toplam set</span>
+</div>
+</div>
+</section>
+<!-- Interactive Session Timeline & Heart-Rate Curve -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col space-y-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Nabız &amp; Egzersiz Akışı</h3>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant">46 dakikalık dinamik biyometrik harita</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-micro-tag text-micro-tag font-bold">1 Hz Veri</span>
+</div>
+<!-- SVG Curve Chart with Shaded Segments -->
+<div class="w-full relative bg-surface-container-low rounded-xl p-2 overflow-hidden">
+<!-- Axis Legend -->
+<div class="flex justify-between items-center text-[10px] text-on-surface-variant font-label-caps mb-1">
+<span>168 max</span>
+<span class="text-primary font-bold">● Kalp Ritmi</span>
+<span>85 dinlenme</span>
+</div>
+<svg class="w-full h-32 overflow-visible" preserveaspectratio="none" viewbox="0 0 340 130">
+<defs>
+<lineargradient id="hrLineGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#0060ab"></stop>
+<stop offset="35%" stop-color="#d34000"></stop>
+<stop offset="70%" stop-color="#d34000"></stop>
+<stop offset="100%" stop-color="#016a34"></stop>
+</lineargradient>
+<lineargradient id="hrFillGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#d34000" stop-opacity="0.28"></stop>
+<stop offset="100%" stop-color="#d34000" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Segment Zones Background -->
+<!-- Bench Press: 0 - 95 -->
+<rect fill="#6eaeff" fill-opacity="0.14" height="110" rx="4" width="95" x="0" y="10"></rect>
+<!-- Incline DB: 98 - 180 -->
+<rect fill="#ffb59e" fill-opacity="0.18" height="110" rx="4" width="82" x="98" y="10"></rect>
+<!-- Dips: 183 - 255 -->
+<rect fill="#6eaeff" fill-opacity="0.14" height="110" rx="4" width="72" x="183" y="10"></rect>
+<!-- Triceps: 258 - 340 -->
+<rect fill="#81d997" fill-opacity="0.22" height="110" rx="4" width="82" x="258" y="10"></rect>
+<!-- Grid Lines -->
+<line stroke="#dad9e3" stroke-dasharray="3 3" stroke-width="0.8" x1="0" x2="340" y1="35" y2="35"></line>
+<line stroke="#dad9e3" stroke-dasharray="3 3" stroke-width="0.8" x1="0" x2="340" y1="75" y2="75"></line>
+<!-- Area Fill under curve -->
+<path d="M 0,95 Q 25,35 48,22 T 95,50 T 140,28 T 180,68 T 220,38 T 260,78 T 300,55 T 340,88 L 340,120 L 0,120 Z" fill="url(#hrFillGrad)"></path>
+<!-- Pulse Curve Path -->
+<path d="M 0,95 Q 25,35 48,22 T 95,50 T 140,28 T 180,68 T 220,38 T 260,78 T 300,55 T 340,88" fill="none" stroke="url(#hrLineGrad)" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Highlight Points -->
+<circle cx="48" cy="22" fill="#ba1a1a" r="3.5"></circle>
+<circle cx="140" cy="28" fill="#d34000" r="3"></circle>
+<circle cx="220" cy="38" fill="#0060ab" r="3"></circle>
+</svg>
+<!-- Segment Labels under timeline -->
+<div class="grid grid-cols-4 gap-1 pt-1.5 text-center">
+<div class="bg-surface-container px-1 py-1 rounded">
+<p class="font-micro-tag text-micro-tag font-bold text-on-surface truncate">Bench Press</p>
+<span class="text-[9px] text-on-surface-variant font-label-caps">4 Set • 14dk</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded">
+<p class="font-micro-tag text-micro-tag font-bold text-on-surface truncate">Incline DB</p>
+<span class="text-[9px] text-on-surface-variant font-label-caps">3 Set • 11dk</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded">
+<p class="font-micro-tag text-micro-tag font-bold text-on-surface truncate">Dips</p>
+<span class="text-[9px] text-on-surface-variant font-label-caps">3 Set • 9dk</span>
+</div>
+<div class="bg-surface-container px-1 py-1 rounded">
+<p class="font-micro-tag text-micro-tag font-bold text-on-surface truncate">Triceps</p>
+<span class="text-[9px] text-on-surface-variant font-label-caps">4 Set • 12dk</span>
+</div>
+</div>
+</div>
+<!-- Segment Controls (Band detected micro actions) -->
+<div class="flex items-center justify-between gap-space-xs pt-1">
+<button class="flex-1 h-8 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center gap-1 font-label-md text-[12px] transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+<span>Düzenle</span>
+</button>
+<button class="flex-1 h-8 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center gap-1 font-label-md text-[12px] transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">call_merge</span>
+<span>Birleştir</span>
+</button>
+<button class="flex-1 h-8 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center gap-1 font-label-md text-[12px] transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">call_split</span>
+<span>Böl</span>
+</button>
+</div>
+</section>
+<!-- Per-Movement Detailed Performance Cards -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Hareket Detayları</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant">4 Egzersiz</span>
+</div>
+<!-- Movement 1: Bench Press -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h4 class="font-body-lg-medium text-body-lg-medium text-on-surface">Barbell Bench Press</h4>
+</div>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant pl-4">Göğüs • Serbest Ağırlık</p>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps">4 Set</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1 text-center bg-surface-container-low rounded-xl p-2">
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Ağırlık</span>
+<span class="font-label-md text-label-md text-on-surface">80 kg ort.</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Nabız (Ort/Zirve)</span>
+<span class="font-label-md text-label-md text-error">142 / 164</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Efor Süresi</span>
+<span class="font-label-md text-label-md text-on-surface">48 sn/set</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[12px] font-body-md text-on-surface-variant pt-1 px-1">
+<span class="text-tertiary font-medium">Toparlanma Hızı: -26 bpm/dk</span>
+<span>120 kcal</span>
+</div>
+</div>
+<!-- Movement 2: Incline DB -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h4 class="font-body-lg-medium text-body-lg-medium text-on-surface">Incline Dumbbell Press</h4>
+</div>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant pl-4">Üst Göğüs • Dumbbell</p>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">3 Set</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1 text-center bg-surface-container-low rounded-xl p-2">
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Ağırlık</span>
+<span class="font-label-md text-label-md text-on-surface">24 kg / el</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Ort. Nabız</span>
+<span class="font-label-md text-label-md text-error">134 bpm</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Toparlanma</span>
+<span class="font-label-md text-label-md text-tertiary">-22 bpm</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[12px] font-body-md text-on-surface-variant pt-1 px-1">
+<span class="text-on-surface-variant">Hedeflenen eğim: 30°</span>
+<span>85 kcal</span>
+</div>
+</div>
+<!-- Movement 3: Dips -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<h4 class="font-body-lg-medium text-body-lg-medium text-on-surface">Dips (Vücut Ağırlığı)</h4>
+</div>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant pl-4">Alt Göğüs &amp; Kol</p>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps">3 Set</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1 text-center bg-surface-container-low rounded-xl p-2">
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Tekrar</span>
+<span class="font-label-md text-label-md text-on-surface">12 - 10 - 10</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Ort. Nabız</span>
+<span class="font-label-md text-label-md text-error">138 bpm</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Tükeniş</span>
+<span class="font-label-md text-label-md text-secondary">RPE 8.5</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[12px] font-body-md text-on-surface-variant pt-1 px-1">
+<span class="text-tertiary">Stabil ritim ve tam hareket açıklığı</span>
+<span>75 kcal</span>
+</div>
+</div>
+<!-- Movement 4: Triceps Halat -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span>
+<h4 class="font-body-lg-medium text-body-lg-medium text-on-surface">Triceps Halat İtiş</h4>
+</div>
+<p class="font-micro-tag text-micro-tag text-on-surface-variant pl-4">İzolasyon • Makara</p>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-caps text-label-caps">4 Set</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1 text-center bg-surface-container-low rounded-xl p-2">
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Ağırlık</span>
+<span class="font-label-md text-label-md text-on-surface">25 kg</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Ort. Nabız</span>
+<span class="font-label-md text-label-md text-error">128 bpm</span>
+</div>
+<div>
+<span class="font-micro-tag text-micro-tag text-on-surface-variant block">Tempo</span>
+<span class="font-label-md text-label-md text-on-surface">2-0-1-1</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[12px] font-body-md text-on-surface-variant pt-1 px-1">
+<span class="text-on-surface-variant">Son set drop-set uygulandı</span>
+<span>65 kcal</span>
+</div>
+</div>
+</section>
+<!-- Coach Insight & Workout Reflection -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">AI Koç Değerlendirmesi</h3>
+<span class="font-micro-tag text-micro-tag text-secondary uppercase font-bold">Kişiselleştirilmiş İyileşme Analizi</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm text-body-md text-on-surface leading-relaxed">
+      Harika bir toparlanma performansı gösterdin. Kalp hızı düşüşün kardiyovasküler dayanıklılığının arttığını gösteriyor. Akşam <strong class="text-primary font-semibold">38g protein</strong> ve <strong class="text-secondary font-semibold">2.5L su</strong> hedefini tamamlamayı unutma.
+    </div>
+<!-- Notes Textarea -->
+<div class="pt-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant block mb-1" for="workout-note">Kişisel Not</label>
+<div class="bg-surface-container-lowest rounded-xl p-space-xs">
+<textarea class="w-full bg-surface-container-low rounded-lg p-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none resize-none" id="workout-note" placeholder="Antrenman hissi, yorgunluk notları..." rows="2"></textarea>
+</div>
+</div>
+</section>
+<!-- Sticky / Bottom Floating Action Button -->
+<div class="pt-space-xs pb-space-sm">
+<button class="w-full h-12 rounded-xl bg-primary-container hover:bg-primary active:scale-[0.98] transition-all text-on-primary-container font-label-md text-label-md flex items-center justify-center gap-space-xs shadow-md" id="save-summary-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">save_alt</span>
+<span>Özeti Kaydet ve Kapat</span>
+</button>
+</div>
+</div>
+<script>
+  document.getElementById('save-summary-btn')?.addEventListener('click', function() {
+    this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Kaydediliyor...</span>';
+    setTimeout(() => {
+      this.classList.remove('bg-primary-container', 'text-on-primary-container');
+      this.classList.add('bg-tertiary', 'text-on-tertiary');
+      this.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Başarıyla Kaydedildi</span>';
+    }, 700);
+  });
+</script>
+</main>
+</body></html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Vital Precision - Calorie Scanning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#fbf8ff",
+                      "on-secondary-fixed": "#001c39",
+                      "surface-container-highest": "#e3e1ec",
+                      "on-primary-fixed": "#3a0b00",
+                      "surface-container": "#eeedf7",
+                      "tertiary": "#006a34",
+                      "background": "#fbf8ff",
+                      "on-primary-fixed-variant": "#842500",
+                      "inverse-on-surface": "#f1effa",
+                      "primary-container": "#d34000",
+                      "inverse-primary": "#ffb59e",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#f6fff3",
+                      "on-background": "#1a1b22",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#ffdbd0",
+                      "outline-variant": "#e6beb2",
+                      "on-error": "#ffffff",
+                      "surface-container-high": "#e8e7f1",
+                      "secondary-fixed-dim": "#a4c9ff",
+                      "surface-dim": "#dad9e3",
+                      "surface-container-low": "#f4f2fd",
+                      "secondary": "#0060ac",
+                      "error-container": "#ffdad6",
+                      "primary": "#a93100",
+                      "tertiary-fixed-dim": "#4de082",
+                      "secondary-fixed": "#d4e3ff",
+                      "secondary-container": "#64a8fe",
+                      "surface-variant": "#e3e1ec",
+                      "on-secondary-fixed-variant": "#004883",
+                      "tertiary-fixed": "#6dfe9c",
+                      "on-secondary-container": "#003c70",
+                      "surface-bright": "#fbf8ff",
+                      "on-tertiary-fixed-variant": "#005227",
+                      "tertiary-container": "#008644",
+                      "surface-tint": "#ad3300",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#ffb59e",
+                      "on-surface": "#1a1b22",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#fffbff",
+                      "on-tertiary-fixed": "#00210c",
+                      "outline": "#916f65",
+                      "inverse-surface": "#2f3038",
+                      "on-surface-variant": "#5c4037"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "2xl": "1rem",
+                      "3xl": "1.5rem"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "sm": "8px",
+                      "margin-desktop": "32px",
+                      "lg": "24px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "base": "4px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "safe": "env(safe-area-inset-bottom)"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "label-bold": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md-mobile": ["Inter"],
+                      "micro-tag": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.07em", "fontWeight": "700"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-md-mobile": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "micro-tag": ["10px", {"lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .scanner-overlay {
+            background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.6) 100%);
+        }
+        .scanner-frame {
+            border: 2px solid theme('colors.primary');
+            box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+            border-radius: 24px;
+        }
+        .scan-line {
+            animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            background: linear-gradient(to bottom, transparent, theme('colors.primary'), transparent);
+        }
+        @keyframes scan {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(200px); opacity: 0; }
+        }
+        .bottom-sheet {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Hide scrollbar for clean horizontal lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface flex flex-col h-screen overflow-hidden selection:bg-primary/20 selection:text-primary">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-surface-container-highest flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-sm docked full-width top-0 z-40 relative">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, modern headshot of a young professional in an athletic top, smiling warmly. Shot with bright, natural lighting against a neutral light grey background, conveying health and approachability in a premium app context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv1HQv1pvzvl4h8tnOqVIJ2ir4iT05byzHVxvaJyR8ouGEIE9twiT7vLz79Yf3mdvv0uJ3mLS8osiNKJz4yhB9YNKlRt141vJUH_gA1FSmOb9VoLwir0AKfRezz_MW7dSKamGzM2QJXpmo8La1Cicr7FoTxKpQ8TrJ3VljRjHUiyhbCtfOMTNgJHVPJxZkNc6G2HilYYCV-e7b2QpyUjvxag4yyTAYxRc7gki7maQpTxCiEyPoKiTouQ">
+</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary">Vital Precision</div>
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas (Camera Viewfinder) -->
+<main class="flex-1 relative w-full overflow-hidden bg-black flex flex-col">
+<!-- Mock Camera Feed -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-80 blur-sm scale-105" data-alt="A blurred, first-person view holding a granola bar or healthy snack package over a kitchen counter. The lighting is bright, natural daylight, focusing on the center as if a smartphone camera is trying to focus on a barcode. The colors are muted except for the bright packaging." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYXXDOcKo70k-bMFFsJJzPX9XY0OCyT_U09Fl1RltzXlb8kV0Mhfg_lf2ZbJ89pfGBiMCuxYD65giGG7VoKa2jqYVPTb02KfVapSz2nM7FnaQImNhgrvekAsDCftiR65-fGZ3ADfiF2hZL2aHdEqzByZq9KdH1q45ME5F7SLImzhGrimguzI9C3wsSwzHD6voEzC__S-PuZacKzhaqf7r3W6cmwfWmRhAV30rCB5cKHrLqutWvk3hrhg')"></div>
+</div>
+<!-- Scanner UI Overlay -->
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center pt-10 pb-[200px] px-margin-mobile">
+<!-- Instruction Text -->
+<div class="bg-black/40 backdrop-blur-md rounded-full px-lg py-sm mb-8 border border-white/10 text-white font-label-bold text-label-bold shadow-lg">
+                Position barcode in frame
+            </div>
+<!-- Scanner Frame -->
+<div class="relative w-64 h-64 flex-shrink-0">
+<!-- Frame Corners -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-primary rounded-tl-2xl"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-primary rounded-tr-2xl"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-primary rounded-bl-2xl"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-primary rounded-br-2xl"></div>
+<!-- Animated Scan Line -->
+<div class="absolute left-4 right-4 h-1 top-4 scan-line"></div>
+<!-- Center Focus Reticle -->
+<div class="absolute inset-0 flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-white/50 text-4xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+</div>
+<!-- Action Buttons Overlaid on Camera -->
+<div class="flex gap-md mt-10">
+<button class="bg-primary/90 backdrop-blur-sm text-on-primary font-label-bold text-label-bold px-lg py-3 rounded-2xl flex items-center gap-xs shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:bg-primary transition-colors hover:scale-105 duration-200">
+<span class="material-symbols-outlined text-lg" data-icon="barcode_scanner">barcode_scanner</span>
+                    Scan Barcode
+                </button>
+<button class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-bold text-label-bold px-lg py-3 rounded-2xl border border-outline-variant flex items-center gap-xs shadow-[0_8px_24px_rgba(0,0,0,0.1)] hover:bg-surface transition-colors hover:scale-105 duration-200">
+<span class="material-symbols-outlined text-lg" data-icon="lunch_dining">lunch_dining</span>
+                    Photo Entry
+                </button>
+</div>
+</div>
+<!-- Bottom Sheet (Recently Scanned) -->
+<div class="absolute bottom-[60px] md:bottom-0 left-0 w-full bg-surface rounded-t-3xl shadow-[0_-8px_32px_rgba(0,0,0,0.1)] border-t border-surface-container-highest z-20 bottom-sheet flex flex-col max-h-[353px]">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing">
+<div class="w-12 h-1.5 bg-surface-dim rounded-full"></div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-sm flex justify-between items-center bg-surface sticky top-0 z-10">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Logs</h2>
+<button class="text-primary font-label-bold text-label-bold hover:bg-surface-container px-sm py-1 rounded-md transition-colors">See All</button>
+</div>
+<div class="overflow-x-auto no-scrollbar pb-lg px-margin-mobile md:px-margin-desktop flex gap-sm items-start">
+<!-- Recent Item Card 1 -->
+<div class="flex-shrink-0 w-40 bg-surface-container-low border border-surface-container-highest rounded-2xl p-sm flex flex-col gap-xs hover:border-primary transition-colors cursor-pointer group">
+<div class="w-full h-24 rounded-xl bg-surface-dim overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A clean, studio-lit photo of an organic protein bar in its wrapper, placed against a pure white background. The lighting highlights the texture of the packaging. Vibrant colors suggest a healthy, premium snack product." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrmyu4hYIGXbbqinOQmA6jBJ0SQiS6uT0b-JxZ7D3wDPvrFfV-SCWWOyI4rRbRkk_8R9aBP8FYz7C3wCGSrhesY3ff5sBfh7UPFAt1yt4xV-RasCazfYXxfy2SeheSpXqt8CDqSv_nPEPKNFhsKt8QoUS7AY91_30lXV91bbYwyAP21GUPVvpvwNsbUnI6TdtesXYM7AOOBrl1rDQl-UiW1VJsmwXmYMpRVyCTCV8t9XLnOtBB8li66g')"></div>
+<div class="absolute top-1 right-1 bg-surface/90 backdrop-blur-sm rounded-full w-6 h-6 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="px-1">
+<div class="font-label-bold text-label-bold text-on-surface truncate mt-1 group-hover:text-primary transition-colors">Keto Protein Bar</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-body-md text-body-md text-on-surface-variant text-xs">210 kcal</span>
+<span class="bg-secondary/10 text-secondary font-micro-tag text-micro-tag px-2 py-0.5 rounded-full">Snack</span>
+</div>
+</div>
+</div>
+<!-- Recent Item Card 2 -->
+<div class="flex-shrink-0 w-40 bg-surface-container-low border border-surface-container-highest rounded-2xl p-sm flex flex-col gap-xs hover:border-primary transition-colors cursor-pointer group">
+<div class="w-full h-24 rounded-xl bg-surface-dim overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A top-down view of a fresh, green kale smoothie in a clear glass bottle. Condensation is on the glass. Placed on a light gray marble surface with soft, diffused morning sunlight, conveying freshness and vitality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGmRfANAQc5aL7pcSLsY9QEhLPMGXuv_dv7MAi7gmpZ5gYtCU6bHWk1Mx5D7dqqp6jZHob4p55YBWH4B0exjye34Irh2Zv70hQEpKG6WU4uVC_phO2DZ9WHFdnko5LugeI27-lSbop1z4TBaU3_7wjrBYpN0xrRu67QSBfm7VQvINKAXPmK1CiJ40_jVBdBfuxy7U5d2UpXTONourQiwMumSgv7uu1lEALSrQGrix3JHHat6nn2aDiug')"></div>
+</div>
+<div class="px-1">
+<div class="font-label-bold text-label-bold text-on-surface truncate mt-1 group-hover:text-primary transition-colors">Green Smoothie</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-body-md text-body-md text-on-surface-variant text-xs">145 kcal</span>
+<span class="bg-secondary/10 text-secondary font-micro-tag text-micro-tag px-2 py-0.5 rounded-full">Breakfast</span>
+</div>
+</div>
+</div>
+<!-- Recent Item Card 3 -->
+<div class="flex-shrink-0 w-40 bg-surface-container-low border border-surface-container-highest rounded-2xl p-sm flex flex-col gap-xs hover:border-primary transition-colors cursor-pointer group">
+<div class="w-full h-24 rounded-xl bg-surface-dim overflow-hidden relative flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-surface-variant" data-icon="local_cafe">local_cafe</span>
+</div>
+<div class="px-1">
+<div class="font-label-bold text-label-bold text-on-surface truncate mt-1 group-hover:text-primary transition-colors">Oat Milk Latte</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-body-md text-body-md text-on-surface-variant text-xs">120 kcal</span>
+<span class="bg-secondary/10 text-secondary font-micro-tag text-micro-tag px-2 py-0.5 rounded-full">Morning</span>
+</div>
+</div>
+</div>
+<!-- Spacer for scrolling -->
+<div class="w-4 flex-shrink-0"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface border-t border-surface-container-highest fixed bottom-0 left-0 w-full flex justify-around items-center px-xs pb-safe pt-2 z-50 md:hidden h-[60px]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-label-caps text-label-caps mt-1">Activity</span>
+</a>
+<!-- Active Tab: Scan -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-90 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="barcode_scanner" style="font-variation-settings: 'FILL' 1;">barcode_scanner</span>
+<span class="font-label-caps text-label-caps mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-caps text-label-caps mt-1">AI Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-caps text-label-caps mt-1">Exercises</span>
+</a>
+</nav>
+<!-- Web Navigation Cluster (Hidden on Mobile) -->
+<div class="hidden md:flex absolute top-0 left-1/2 transform -translate-x-1/2 h-[72px] items-center gap-lg z-50">
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-lg transition-colors font-label-bold text-label-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="dashboard">dashboard</span>
+            Dashboard
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-lg transition-colors font-label-bold text-label-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="fitness_center">fitness_center</span>
+            Activity
+        </a>
+<a class="text-primary bg-primary/10 px-4 py-2 rounded-lg transition-colors font-label-bold text-label-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="barcode_scanner" style="font-variation-settings: 'FILL' 1;">barcode_scanner</span>
+            Scan
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-lg transition-colors font-label-bold text-label-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+            AI Coach
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-lg transition-colors font-label-bold text-label-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+            Exercises
+        </a>
+</div>
+</body></html>
