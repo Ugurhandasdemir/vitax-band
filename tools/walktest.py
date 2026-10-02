@@ -5,6 +5,7 @@ Kullanım: python tools/walktest.py [süre_sn]
 Protokol: Veepoo ham 20 baytlık paket, servis F0080001 (yaz F0080003, bildirim F0080002).
   A1 parola onayı, A8 adım, D0 01 nabız başlat / D0 00 durdur, A0 pil.
 """
+import os
 import asyncio
 import datetime
 import json
@@ -14,7 +15,7 @@ from pathlib import Path
 
 from bleak import BleakClient
 
-ADDR = "AA:BB:CC:DD:EE:FF"
+ADDR = os.environ.get("VITAX_ADDR", "AA:BB:CC:DD:EE:FF")  # kendi bilekliğinin adresi
 NOTIFY = "f0080002-0451-4000-b000-000000000000"
 WRITE = "f0080003-0451-4000-b000-000000000000"
 

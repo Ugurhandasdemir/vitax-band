@@ -20,7 +20,7 @@ from bleak import BleakClient
 
 from .auth import get_encrypted_auth_data
 
-ADDR_DEFAULT = "AA:BB:CC:DD:EE:FF"
+ADDR_DEFAULT = os.environ.get("VITAX_ADDR", "AA:BB:CC:DD:EE:FF")  # kendi bilekliğinin adresi
 SVC = "0000ae00-0000-1000-8000-00805f9b34fb"
 AE01 = "0000ae01-0000-1000-8000-00805f9b34fb"  # write-without-response
 AE02 = "0000ae02-0000-1000-8000-00805f9b34fb"  # notify

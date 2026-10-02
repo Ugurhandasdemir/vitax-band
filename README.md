@@ -1,7 +1,14 @@
 # vitax-band
 
-VitaxBand akıllı bilekliğe kendi bağlantı katmanı. Resmi app (`com.vitaxgo.vitaxband`)
-kötü olduğu için sıfırdan kontrol.
+VitaxBand akıllı bileklik için açık kaynak uygulama ve bağlantı katmanı: Flutter uygulaması
+(`app/`) ve Python BLE istemcisi (`vitax_ble/`). Resmi app (`com.vitaxgo.vitaxband`) kötü olduğu
+için sıfırdan yazıldı.
+
+> **Uyumluluk:** yalnızca tek bir VitaxBand bileklikte denendi. Aynı çipi/protokolü kullanan başka
+> bilekliklerde çalışabilir ama doğrulanmadı; sensör ve paket düzeni modele göre değişebilir.
+> Bu proje Vitax ile bağlantılı değildir, resmi bir ürün değildir ve tıbbi cihaz değildir.
+
+Bileklik adresini `VITAX_ADDR` ortam değişkeniyle ver: `export VITAX_ADDR=AA:BB:CC:DD:EE:FF`
 
 ## Ne çözüldü (2026-09-30, gerçek donanımda kanıtlı)
 
@@ -52,3 +59,11 @@ asyncio.run(main())
 - `vitax_ble/tables.py` — Jieli SBOX/ISBOX/KS_TABLE (256'şar bayt)
 - `vitax_ble/auth.py`   — RCSP blok şifresi + handshake yardımcıları
 - `vitax_ble/client.py` — BLE bağlantı, auth handshake, FE-frame gönder/ayrıştır
+
+## Lisans ve kaynaklar
+
+Kod [MIT](LICENSE) lisanslıdır.
+
+- Jieli RCSP kripto: [hybridherbst/web-bluetooth-e87](https://github.com/hybridherbst/web-bluetooth-e87)
+- Egzersiz verisi: [hasaneyldrm/exercises-dataset](https://github.com/hasaneyldrm/exercises-dataset) (veri MIT; görsel/GIF © Gym visual, pakete gömülü değil)
+- Inter yazı tipi: SIL Open Font License (`app/assets/fonts/Inter-LICENSE.txt`)

@@ -28,3 +28,6 @@ savasan-beyin/
 *~
 .DS_Store
 Thumbs.db
+
+# Kişisel ölçüm kayıtları
+data/
