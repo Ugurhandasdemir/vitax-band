@@ -52,7 +52,8 @@ static void my_application_activate(GApplication* application) {
     gtk_window_set_title(window, "vitax_app");
   }
 
-  gtk_window_set_default_size(window, 1280, 720);
+  // iPhone SE 3 logical size (375x667 pt)
+  gtk_window_set_default_size(window, 375, 667);
 
   g_autoptr(FlDartProject) project = fl_dart_project_new();
   fl_dart_project_set_dart_entrypoint_arguments(
