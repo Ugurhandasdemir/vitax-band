@@ -28,6 +28,11 @@ jobs:
             grep -nE "error:|requires a (development team|provisioning)|Signing for|No profiles|\*\* BUILD FAILED|The following build commands failed" -A3 build.log | cut -c1-400 | head -80
             exit 1
           }
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: build-log
+          path: app/build.log
       - name: IPA paketle
         run: |
           mkdir Payload
