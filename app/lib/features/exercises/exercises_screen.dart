@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -96,13 +97,13 @@ class _ExercisesScreenState extends ConsumerState<ExercisesScreen> {
                   ),
                   _RoundIcon(
                     key: const ValueKey('open-history'),
-                    icon: Icons.history,
+                    icon: PhosphorIconsRegular.clockCounterClockwise,
                     onTap: () => _push(const WorkoutHistoryScreen()),
                   ),
                   const SizedBox(width: 8),
                   _RoundIcon(
                     key: const ValueKey('equipment-filter'),
-                    icon: Icons.tune,
+                    icon: PhosphorIconsRegular.slidersHorizontal,
                     highlighted: _equipment != null,
                     onTap: catalog == null
                         ? () {}
@@ -116,7 +117,7 @@ class _ExercisesScreenState extends ConsumerState<ExercisesScreen> {
                   color: VColors.primaryFixed,
                   child: Row(
                     children: [
-                      const Icon(Icons.timer_outlined, color: VColors.primary),
+                      const Icon(PhosphorIconsRegular.timer, color: VColors.primary),
                       const SizedBox(width: VSpace.gutter),
                       Expanded(
                         child: Column(
@@ -311,7 +312,7 @@ class _RoutinesTab extends ConsumerWidget {
               ),
             ),
             onPressed: onNew,
-            icon: const Icon(Icons.add, color: VColors.primary),
+            icon: const Icon(PhosphorIconsRegular.plus, color: VColors.primary),
             label: Text(
               'Yeni Rutin',
               style: VText.labelMd.copyWith(color: VColors.primary),
@@ -347,7 +348,7 @@ class _RoutinesTab extends ConsumerWidget {
                             color: VColors.primaryFixed,
                             borderRadius: BorderRadius.circular(VRadius.md),
                           ),
-                          child: const Icon(Icons.bolt, color: VColors.primary),
+                          child: const Icon(PhosphorIconsRegular.lightning, color: VColors.primary),
                         ),
                         const SizedBox(width: VSpace.gutter),
                         Expanded(
@@ -372,14 +373,14 @@ class _RoutinesTab extends ConsumerWidget {
                       runSpacing: 4,
                       children: [
                         _Meta(
-                          Icons.fitness_center,
+                          PhosphorIconsRegular.barbell,
                           '${r.items.length} Egzersiz',
                         ),
                         _Meta(
-                          Icons.timer_outlined,
+                          PhosphorIconsRegular.timer,
                           '${routineEstimatedMinutes(r)} dk',
                         ),
-                        _Meta(Icons.history, lastDone(r)),
+                        _Meta(PhosphorIconsRegular.clockCounterClockwise, lastDone(r)),
                       ],
                     ),
                     const SizedBox(height: VSpace.gutter),
@@ -399,7 +400,7 @@ class _RoutinesTab extends ConsumerWidget {
                               ),
                               onPressed: () => onStart(r),
                               icon: const Icon(
-                                Icons.play_arrow,
+                                PhosphorIconsRegular.play,
                                 color: VColors.onPrimary,
                               ),
                               label: Text(
@@ -424,7 +425,7 @@ class _RoutinesTab extends ConsumerWidget {
                                 VRadius.button,
                               ),
                             ),
-                            child: const Icon(Icons.edit_note),
+                            child: const Icon(PhosphorIconsRegular.notePencil),
                           ),
                         ),
                       ],

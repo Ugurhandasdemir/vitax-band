@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/tokens.dart';
@@ -71,7 +72,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.verified, size: 18, color: VColors.onTertiary),
+                      const Icon(PhosphorIconsFill.sealCheck, size: 18, color: VColors.onTertiary),
                       const SizedBox(width: 6),
                       Text(
                         'Uyku Skoru: 89 / 100 • Dinlendirici',
@@ -99,7 +100,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
                                 color: VColors.surfaceContainerHighest,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.bedtime, size: 18, color: VColors.secondary),
+                              child: const Icon(PhosphorIconsFill.moon, size: 18, color: VColors.secondary),
                             ),
                             const SizedBox(width: 8),
                             Column(
@@ -130,7 +131,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
                                 color: VColors.surfaceContainerHighest,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.alarm, size: 18, color: VColors.primary),
+                              child: const Icon(PhosphorIconsRegular.alarm, size: 18, color: VColors.primary),
                             ),
                             const SizedBox(width: 8),
                             Column(
@@ -161,7 +162,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.waves, size: 20, color: VColors.secondary),
+                        const Icon(PhosphorIconsRegular.waves, size: 20, color: VColors.secondary),
                         const SizedBox(width: 6),
                         Text('Uyku Evreleri', style: VText.headlineMd),
                       ],
@@ -290,7 +291,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
                         color: VColors.tertiaryFixed,
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.auto_graph, size: 20, color: VColors.onTertiaryFixed),
+                      child: const Icon(PhosphorIconsRegular.chartLineUp, size: 20, color: VColors.onTertiaryFixed),
                     ),
                     const SizedBox(width: 10),
                     Column(
@@ -317,7 +318,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Icon(Icons.psychology, size: 20, color: VColors.primary),
+                      const Icon(PhosphorIconsFill.brain, size: 20, color: VColors.primary),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Column(
@@ -350,7 +351,7 @@ class SleepAnalysisScreen extends ConsumerWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.info_outline, size: 16, color: VColors.secondary),
+                const Icon(PhosphorIconsRegular.info, size: 16, color: VColors.secondary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(

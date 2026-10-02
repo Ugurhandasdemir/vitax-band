@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -30,7 +31,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
       kcal: 295,
       confidence: '%98 GÜVEN',
       badgeColor: VColors.tertiaryFixed,
-      icon: Icons.restaurant,
+      icon: PhosphorIconsRegular.forkKnife,
     ),
     (
       name: 'Haşlanmış Kinoa & Nar',
@@ -38,7 +39,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
       kcal: 165,
       confidence: '%94 GÜVEN',
       badgeColor: VColors.tertiaryFixed,
-      icon: Icons.eco,
+      icon: PhosphorIconsFill.leaf,
     ),
     (
       name: 'Dilim Avokado',
@@ -46,7 +47,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
       kcal: 64,
       confidence: '%89 ORTA',
       badgeColor: VColors.secondaryFixed,
-      icon: Icons.eco,
+      icon: PhosphorIconsFill.leaf,
     ),
   ];
 
@@ -88,14 +89,14 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
         backgroundColor: VColors.surface,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, size: 20, color: VColors.onSurface),
+          icon: const Icon(PhosphorIconsRegular.caretLeft, size: 20, color: VColors.onSurface),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text('Photo Estimate Result', style: VText.headlineMd),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.more_vert, color: VColors.onSurfaceVariant),
+            icon: const Icon(PhosphorIconsRegular.dotsThreeVertical, color: VColors.onSurfaceVariant),
             onPressed: () {},
           ),
         ],
@@ -121,7 +122,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
                         children: [
                           // Background pattern simulation
                           Center(
-                            child: Icon(Icons.restaurant_menu, size: 96, color: Colors.white.withOpacity(0.08)),
+                            child: Icon(PhosphorIconsRegular.bowlFood, size: 96, color: Colors.white.withOpacity(0.08)),
                           ),
                           // AI Engine Badge
                           Positioned(
@@ -135,7 +136,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
                               ),
                               child: Row(
                                 children: [
-                                  const Icon(Icons.auto_awesome, size: 14, color: VColors.tertiaryFixed),
+                                  const Icon(PhosphorIconsBold.sparkle, size: 14, color: VColors.tertiaryFixed),
                                   const SizedBox(width: 6),
                                   Text(
                                     'AI Besin Tanıma • VitaxVision AI',
@@ -234,7 +235,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
                                 color: VColors.surfaceContainerLowest.withOpacity(0.9),
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.photo_camera, size: 18, color: VColors.onSurface),
+                              child: const Icon(PhosphorIconsRegular.camera, size: 18, color: VColors.onSurface),
                             ),
                           ),
                         ],
@@ -304,7 +305,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
                               ),
                               child: Row(
                                 children: [
-                                  const Icon(Icons.verified, size: 16, color: VColors.tertiary),
+                                  const Icon(PhosphorIconsFill.sealCheck, size: 16, color: VColors.tertiary),
                                   const SizedBox(width: 4),
                                   Text(
                                     'Optimum Denge',
@@ -508,7 +509,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
                             color: VColors.surfaceContainerLowest,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(Icons.help_outline, size: 20, color: VColors.primary),
+                          child: const Icon(PhosphorIconsRegular.question, size: 20, color: VColors.primary),
                         ),
                         const SizedBox(width: 12),
                         Expanded(
@@ -550,7 +551,7 @@ class _PhotoAnalysisScreenState extends ConsumerState<PhotoAnalysisScreen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.button)),
                   ),
                   onPressed: _handleConfirm,
-                  icon: const Icon(Icons.done_all, size: 20),
+                  icon: const Icon(PhosphorIconsRegular.checks, size: 20),
                   label: Text(
                     'Onayla ve ${mealLabel}ne Ekle (524 kcal)',
                     style: VText.labelMd.copyWith(fontWeight: FontWeight.bold),

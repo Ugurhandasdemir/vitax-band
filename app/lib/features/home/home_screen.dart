@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -107,7 +108,7 @@ class _DateHeader extends ConsumerWidget {
               border: Border.all(color: VColors.surfaceContainerHighest),
             ),
             child: const Icon(
-              Icons.calendar_month_outlined,
+              PhosphorIconsRegular.calendarDots,
               size: 22,
               color: VColors.onSurface,
             ),
@@ -132,7 +133,7 @@ class _CoachCard extends ConsumerWidget {
           Row(
             children: [
               const Icon(
-                Icons.psychology_outlined,
+                PhosphorIconsRegular.brain,
                 color: VColors.primary,
                 size: 22,
               ),
@@ -198,7 +199,7 @@ class _CoachCard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Icon(
-                    Icons.auto_awesome,
+                    PhosphorIconsRegular.sparkle,
                     size: 20,
                     color: VColors.tertiary,
                   ),
@@ -222,7 +223,7 @@ class _CoachCard extends ConsumerWidget {
                   children: [
                     Text('Planı gör', style: VText.labelMd),
                     const SizedBox(width: 4),
-                    const Icon(Icons.chevron_right, size: 18),
+                    const Icon(PhosphorIconsRegular.caretRight, size: 18),
                   ],
                 ),
               ),
@@ -518,7 +519,7 @@ class _BandLiveCard extends ConsumerWidget {
             children: [
               Expanded(
                 child: _LiveTile(
-                  icon: Icons.favorite_border,
+                  icon: PhosphorIconsRegular.heart,
                   iconColor: VColors.error,
                   value: hrFresh ? '${hr.bpm}' : '--',
                   label: 'bpm Nabız',
@@ -527,7 +528,7 @@ class _BandLiveCard extends ConsumerWidget {
               const SizedBox(width: 8),
               Expanded(
                 child: _LiveTile(
-                  icon: Icons.directions_walk,
+                  icon: PhosphorIconsRegular.personSimpleWalk,
                   iconColor: VColors.secondary,
                   value: steps > 0 ? formatTr(steps) : '--',
                   label: 'Adım',
@@ -536,7 +537,7 @@ class _BandLiveCard extends ConsumerWidget {
               const SizedBox(width: 8),
               Expanded(
                 child: _LiveTile(
-                  icon: Icons.bedtime_outlined,
+                  icon: PhosphorIconsRegular.moon,
                   iconColor: VColors.tertiary,
                   value: sleep == null
                       ? '--'
@@ -624,7 +625,7 @@ class _WaterCard extends ConsumerWidget {
             ),
             child: Row(
               children: [
-                const Icon(Icons.water_drop_outlined, color: VColors.secondary),
+                const Icon(PhosphorIconsRegular.drop, color: VColors.secondary),
                 const SizedBox(width: 8),
                 Text('Su Takibi', style: VText.headlineMd),
                 const Spacer(),
@@ -733,10 +734,10 @@ class _MealsCard extends ConsumerWidget {
   final DateTime day;
 
   static const _icons = {
-    MealType.breakfast: Icons.wb_sunny_outlined,
-    MealType.lunch: Icons.restaurant_menu,
-    MealType.dinner: Icons.nightlight_outlined,
-    MealType.snack: Icons.eco_outlined,
+    MealType.breakfast: PhosphorIconsRegular.sun,
+    MealType.lunch: PhosphorIconsRegular.bowlFood,
+    MealType.dinner: PhosphorIconsRegular.moon,
+    MealType.snack: PhosphorIconsRegular.leaf,
   };
 
   @override
@@ -773,7 +774,7 @@ class _MealsCard extends ConsumerWidget {
                   color: VColors.primaryContainer,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.add, color: VColors.onPrimaryContainer),
+                child: const Icon(PhosphorIconsRegular.plus, color: VColors.onPrimaryContainer),
               ),
             ),
           ],

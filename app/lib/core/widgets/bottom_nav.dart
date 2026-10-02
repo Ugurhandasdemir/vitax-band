@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../theme/tokens.dart';
 
 class _NavItem {
-  const _NavItem(this.label, this.icon);
+  const _NavItem(this.label, this.icon, this.activeIcon);
   final String label;
   final IconData icon;
+  final IconData activeIcon;
 }
 
 const _items = [
-  _NavItem('Genel', Icons.space_dashboard_outlined),
-  _NavItem('Aktivite', Icons.monitor_heart_outlined),
-  _NavItem('Tara', Icons.qr_code_scanner),
-  _NavItem('AI Koç', Icons.smart_toy_outlined),
-  _NavItem('Egzersiz', Icons.fitness_center),
+  _NavItem('Genel', PhosphorIconsRegular.squaresFour, PhosphorIconsFill.squaresFour),
+  _NavItem('Aktivite', PhosphorIconsRegular.heartbeat, PhosphorIconsFill.heartbeat),
+  _NavItem('Tara', PhosphorIconsRegular.scan, PhosphorIconsFill.scan),
+  _NavItem('AI Koç', PhosphorIconsRegular.robot, PhosphorIconsFill.robot),
+  _NavItem('Egzersiz', PhosphorIconsRegular.barbell, PhosphorIconsFill.barbell),
 ];
 
 /// Alt sekme çubuğu: seçili sekme turuncu hap.
@@ -57,7 +59,7 @@ class VBottomNav extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        _items[i].icon,
+                        i == selected ? _items[i].activeIcon : _items[i].icon,
                         size: 22,
                         color: i == selected
                             ? VColors.onPrimaryContainer

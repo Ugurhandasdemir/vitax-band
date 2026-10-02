@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/tokens.dart';
@@ -40,7 +41,7 @@ class VTopBar extends ConsumerWidget implements PreferredSizeWidget {
                 color: VColors.primaryFixed,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.person, color: VColors.primary),
+              child: const Icon(PhosphorIconsFill.user, color: VColors.primary),
             ),
           ),
           Expanded(

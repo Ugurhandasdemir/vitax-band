@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/tokens.dart';
@@ -75,7 +76,7 @@ class ExerciseRow extends ConsumerWidget {
             ),
             trailing ??
                 const Icon(
-                  Icons.chevron_right,
+                  PhosphorIconsRegular.caretRight,
                   color: VColors.onSurfaceVariant,
                 ),
           ],
@@ -148,7 +149,7 @@ class ExerciseSearchField extends StatelessWidget {
     ),
     child: Row(
       children: [
-        const Icon(Icons.search, color: VColors.onSurfaceVariant),
+        const Icon(PhosphorIconsRegular.magnifyingGlass, color: VColors.onSurfaceVariant),
         const SizedBox(width: 8),
         Expanded(
           child: TextField(
@@ -193,7 +194,7 @@ Future<String?> pickEquipment(
           ListTile(
             title: const Text('Tümü'),
             trailing: current == null
-                ? const Icon(Icons.check, color: VColors.primary)
+                ? const Icon(PhosphorIconsRegular.check, color: VColors.primary)
                 : null,
             onTap: () => Navigator.of(ctx).pop('__all__'),
           ),
@@ -201,7 +202,7 @@ Future<String?> pickEquipment(
             ListTile(
               title: Text(equipmentLabelTr(e)),
               trailing: current == e
-                  ? const Icon(Icons.check, color: VColors.primary)
+                  ? const Icon(PhosphorIconsRegular.check, color: VColors.primary)
                   : null,
               onTap: () => Navigator.of(ctx).pop(e),
             ),

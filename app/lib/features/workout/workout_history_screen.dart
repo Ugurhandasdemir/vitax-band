@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -80,7 +81,7 @@ class WorkoutHistoryScreen extends ConsumerWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Icon(
-                    Icons.local_fire_department,
+                    PhosphorIconsFill.flame,
                     size: 16,
                     color: VColors.primary,
                   ),
@@ -421,7 +422,7 @@ class _SessionCard extends StatelessWidget {
                       style: VText.labelMd.copyWith(color: VColors.primary),
                     ),
                     const Icon(
-                      Icons.chevron_right,
+                      PhosphorIconsRegular.caretRight,
                       size: 18,
                       color: VColors.primary,
                     ),

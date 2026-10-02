@@ -1,4 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -85,7 +86,7 @@ class _BalanceScreenState extends ConsumerState<BalanceScreen> {
                 Row(
                   children: [
                     const Icon(
-                      Icons.show_chart,
+                      PhosphorIconsRegular.chartLine,
                       size: 18,
                       color: VColors.tertiary,
                     ),
@@ -243,7 +244,7 @@ class _BalanceScreenState extends ConsumerState<BalanceScreen> {
                 ),
                 const SizedBox(height: VSpace.gutter),
                 _Row(
-                  icon: Icons.bed_outlined,
+                  icon: PhosphorIconsRegular.bed,
                   iconBg: VColors.secondaryFixed,
                   iconColor: VColors.secondary,
                   title: 'Bazal Metabolizma (BMR)',
@@ -253,7 +254,7 @@ class _BalanceScreenState extends ConsumerState<BalanceScreen> {
                 ),
                 const SizedBox(height: 8),
                 _Row(
-                  icon: Icons.directions_walk,
+                  icon: PhosphorIconsRegular.personSimpleWalk,
                   iconBg: VColors.secondaryFixed,
                   iconColor: VColors.secondary,
                   title: 'Aktif Efor & Adım',
@@ -263,7 +264,7 @@ class _BalanceScreenState extends ConsumerState<BalanceScreen> {
                 ),
                 const SizedBox(height: 8),
                 _Row(
-                  icon: Icons.local_fire_department_outlined,
+                  icon: PhosphorIconsRegular.flame,
                   iconBg: VColors.surfaceContainerHigh,
                   iconColor: VColors.onSurface,
                   title: 'Toplam Harcama',
@@ -272,7 +273,7 @@ class _BalanceScreenState extends ConsumerState<BalanceScreen> {
                 ),
                 const SizedBox(height: 8),
                 _Row(
-                  icon: Icons.restaurant,
+                  icon: PhosphorIconsRegular.forkKnife,
                   iconBg: VColors.primaryFixed,
                   iconColor: VColors.primary,
                   title: 'Alınan Gıda',
@@ -299,7 +300,7 @@ class _BalanceScreenState extends ConsumerState<BalanceScreen> {
                 MaterialPageRoute<void>(builder: (_) => const AddFoodScreen()),
               ),
               icon: const Icon(
-                Icons.add_circle_outline,
+                PhosphorIconsRegular.plusCircle,
                 color: VColors.onPrimary,
               ),
               label: Text(

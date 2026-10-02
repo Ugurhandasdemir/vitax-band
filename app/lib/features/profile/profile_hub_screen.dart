@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/v_card.dart';
@@ -19,27 +20,27 @@ class ProfileHubScreen extends StatelessWidget {
 
     final entries = <(IconData, String, VoidCallback?)>[
       (
-        Icons.person_outline,
+        PhosphorIconsRegular.user,
         'Profil ve Hedefler',
         () => open(const ProfileScreen()),
       ),
       (
-        Icons.monitor_weight_outlined,
+        PhosphorIconsRegular.scales,
         'Kilo Analizi',
         () => open(const WeightScreen()),
       ),
       (
-        Icons.watch_outlined,
+        PhosphorIconsRegular.watch,
         'Bilekliğim',
         () => open(const BandConnectScreen()),
       ),
       (
-        Icons.lock_outline,
+        PhosphorIconsRegular.lock,
         'Veri Kasası ve Gizlilik',
         () => open(const DataVaultScreen()),
       ),
       (
-        Icons.notifications_none,
+        PhosphorIconsRegular.bell,
         'Bildirimler ve Uyarılar',
         () => open(const NotificationsScreen()),
       ),
@@ -68,7 +69,7 @@ class ProfileHubScreen extends StatelessWidget {
                       const SizedBox(width: VSpace.md),
                       Expanded(child: Text(e.$2, style: VText.labelMd)),
                       Icon(
-                        Icons.chevron_right,
+                        PhosphorIconsRegular.caretRight,
                         color: e.$3 == null
                             ? VColors.outlineVariant
                             : VColors.onSurfaceVariant,

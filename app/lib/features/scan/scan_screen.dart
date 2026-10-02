@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -30,7 +31,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
       time: 'Bugün 08:30',
       kcal: 260,
       macro: '26g Protein',
-      icon: Icons.local_drink,
+      icon: PhosphorIconsFill.pintGlass,
     ),
     (
       name: 'Wasa Sade Çavdar Gevreği',
@@ -39,7 +40,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
       time: 'Dün 16:15',
       kcal: 105,
       macro: '4.2g Lif',
-      icon: Icons.bakery_dining,
+      icon: PhosphorIconsRegular.bread,
     ),
     (
       name: 'Züber Fıstık Ezmeli Bar',
@@ -48,7 +49,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
       time: '12 Nis',
       kcal: 182,
       macro: 'Şekersiz',
-      icon: Icons.cookie,
+      icon: PhosphorIconsRegular.cookie,
     ),
   ];
 
@@ -244,7 +245,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                       foregroundColor: _flashOn ? VColors.onPrimaryFixed : VColors.onSurface,
                       fixedSize: const Size(44, 44),
                     ),
-                    icon: Icon(_flashOn ? Icons.flash_on : Icons.flash_off, size: 20),
+                    icon: Icon(_flashOn ? PhosphorIconsRegular.lightning : PhosphorIconsRegular.lightningSlash, size: 20),
                     onPressed: () => setState(() => _flashOn = !_flashOn),
                   ),
                   const SizedBox(width: 20),
@@ -273,7 +274,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(
-                          Icons.center_focus_strong,
+                          PhosphorIconsRegular.frameCorners,
                           size: 26,
                           color: VColors.onPrimaryContainer,
                         ),
@@ -289,7 +290,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                       foregroundColor: VColors.onSurface,
                       fixedSize: const Size(44, 44),
                     ),
-                    icon: const Icon(Icons.photo_library, size: 20),
+                    icon: const Icon(PhosphorIconsRegular.images, size: 20),
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Fotoğraf galerisi açılıyor')),
@@ -306,7 +307,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                     MaterialPageRoute<void>(builder: (_) => const AddFoodScreen()),
                   );
                 },
-                icon: const Icon(Icons.search, size: 18, color: VColors.primary),
+                icon: const Icon(PhosphorIconsRegular.magnifyingGlass, size: 18, color: VColors.primary),
                 label: Text('Elle ara', style: VText.labelMd.copyWith(color: VColors.primary)),
               ),
               const SizedBox(height: VSpace.xs),
@@ -317,7 +318,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.history, size: 20, color: VColors.primary),
+                      const Icon(PhosphorIconsRegular.clockCounterClockwise, size: 20, color: VColors.primary),
                       const SizedBox(width: 6),
                       Text('Son Kaydedilenler', style: VText.headlineMd),
                     ],
@@ -395,7 +396,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.sm)),
                           ),
                           onPressed: () => _handleQuickAdd(i),
-                          icon: const Icon(Icons.add, size: 16),
+                          icon: const Icon(PhosphorIconsRegular.plus, size: 16),
                           label: const Text('Ekle'),
                         ),
                       ],

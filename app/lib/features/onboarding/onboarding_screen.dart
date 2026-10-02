@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -128,7 +129,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 border: Border.all(color: VColors.surfaceContainerHighest),
               ),
               child: const Icon(
-                Icons.monitor_heart_outlined,
+                PhosphorIconsRegular.heartbeat,
                 size: 38,
                 color: VColors.primary,
               ),
@@ -157,7 +158,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           const SizedBox(height: VSpace.sm),
           _GoalOption(
             keyName: 'lose',
-            icon: Icons.local_fire_department_outlined,
+            icon: PhosphorIconsRegular.flame,
             iconColor: VColors.primary,
             title: 'Kilo Vermek & Yağ Yakmak',
             subtitle: 'Metabolik hız ve kalori açığı odağı',
@@ -167,7 +168,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           const SizedBox(height: VSpace.sm),
           _GoalOption(
             keyName: 'maintain',
-            icon: Icons.favorite_border,
+            icon: PhosphorIconsRegular.heart,
             iconColor: VColors.secondary,
             title: 'Formu Korumak & Zinde Kalmak',
             subtitle: 'Günlük hareket ve dengeli nabız',
@@ -177,7 +178,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           const SizedBox(height: VSpace.sm),
           _GoalOption(
             keyName: 'gain',
-            icon: Icons.fitness_center,
+            icon: PhosphorIconsRegular.barbell,
             iconColor: VColors.tertiary,
             title: 'Kas Kütlesi ve Kuvvet Kazanmak',
             subtitle: 'Hipertrofi ve toparlanma periyotları',
@@ -286,7 +287,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                         borderRadius: BorderRadius.circular(VRadius.md),
                       ),
                       child: const Icon(
-                        Icons.bluetooth,
+                        PhosphorIconsRegular.bluetooth,
                         color: VColors.secondary,
                       ),
                     ),
@@ -334,7 +335,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                                   ),
                                 ),
                               ),
-                          icon: const Icon(Icons.sync, size: 18),
+                          icon: const Icon(PhosphorIconsRegular.arrowsClockwise, size: 18),
                           label: Text(
                             'Bilekliği Şimdi Tara',
                             style: VText.labelMd.copyWith(
@@ -378,7 +379,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
-                    Icons.auto_awesome,
+                    PhosphorIconsRegular.sparkle,
                     color: VColors.primary,
                     size: 20,
                   ),
@@ -433,7 +434,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   ),
                   const SizedBox(width: 6),
                   const Icon(
-                    Icons.arrow_forward,
+                    PhosphorIconsRegular.arrowRight,
                     size: 18,
                     color: VColors.onPrimary,
                   ),
@@ -445,7 +446,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.lock_outline, size: 14, color: VColors.tertiary),
+              const Icon(PhosphorIconsBold.lock, size: 14, color: VColors.tertiary),
               const SizedBox(width: 4),
               Flexible(
                 child: Text(
@@ -555,7 +556,7 @@ class _GoalOption extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: selected
-                ? const Icon(Icons.check, size: 16, color: VColors.onPrimary)
+                ? const Icon(PhosphorIconsRegular.check, size: 16, color: VColors.onPrimary)
                 : null,
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -145,7 +146,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               ListTile(
                 title: Text(e.value, style: VText.bodyLgMedium),
                 trailing: e.key == p.activity
-                    ? const Icon(Icons.check, color: VColors.primary)
+                    ? const Icon(PhosphorIconsRegular.check, color: VColors.primary)
                     : null,
                 onTap: () => Navigator.of(ctx).pop(e.key),
               ),
@@ -211,7 +212,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
-                    Icons.person,
+                    PhosphorIconsFill.user,
                     size: 34,
                     color: VColors.primary,
                   ),
@@ -254,7 +255,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       Row(
                         children: [
                           const Icon(
-                            Icons.watch_outlined,
+                            PhosphorIconsRegular.watch,
                             size: 16,
                             color: VColors.secondary,
                           ),
@@ -289,7 +290,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   label: 'BOY',
                   value: imperial ? '$ft\' $inch"' : '${p.heightCm.round()}',
                   unit: imperial ? null : 'cm',
-                  icon: Icons.height,
+                  icon: PhosphorIconsRegular.arrowsVertical,
                   onTap: () => _editHeight(p),
                 ),
               ),
@@ -300,7 +301,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   label: 'KİLO',
                   value: weightValue(p.weightKg, u),
                   unit: weightUnit(u),
-                  icon: Icons.monitor_weight_outlined,
+                  icon: PhosphorIconsRegular.scales,
                   onTap: () => _editWeight(p),
                 ),
               ),
@@ -315,7 +316,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   label: 'YAŞ',
                   value: '${p.age}',
                   unit: 'yaş',
-                  icon: Icons.calendar_today_outlined,
+                  icon: PhosphorIconsRegular.calendarBlank,
                   onTap: () => _editInt(
                     p,
                     title: 'Yaş',
@@ -333,7 +334,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   key: const ValueKey('tile-sex'),
                   label: 'CİNSİYET',
                   value: p.sex == Sex.male ? 'Erkek' : 'Kadın',
-                  icon: p.sex == Sex.male ? Icons.male : Icons.female,
+                  icon: p.sex == Sex.male ? PhosphorIconsRegular.genderMale : PhosphorIconsRegular.genderFemale,
                   onTap: () => _set(
                     p.copyWith(sex: p.sex == Sex.male ? Sex.female : Sex.male),
                   ),
@@ -357,7 +358,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       borderRadius: BorderRadius.circular(VRadius.md),
                     ),
                     child: const Icon(
-                      Icons.directions_run,
+                      PhosphorIconsRegular.personSimpleRun,
                       color: VColors.primary,
                     ),
                   ),
@@ -380,7 +381,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     ),
                   ),
                   const Icon(
-                    Icons.edit_outlined,
+                    PhosphorIconsRegular.pencilSimple,
                     size: 20,
                     color: VColors.onSurfaceVariant,
                   ),
@@ -437,7 +438,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(
-                      Icons.auto_awesome,
+                      PhosphorIconsBold.sparkle,
                       size: 14,
                       color: VColors.primary,
                     ),
@@ -506,7 +507,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           color: VColors.surfaceContainer,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.edit_outlined, size: 20),
+                        child: const Icon(PhosphorIconsRegular.pencilSimple, size: 20),
                       ),
                     ),
                   ],
@@ -595,7 +596,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         label: 'GÜNLÜK SU',
                         value: formatLiters(p.waterGoalMl),
                         unit: 'Litre',
-                        icon: Icons.water_drop_outlined,
+                        icon: PhosphorIconsRegular.drop,
                         iconBg: VColors.secondaryFixed,
                         iconColor: VColors.secondary,
                         onTap: () => _editInt(
@@ -616,7 +617,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         label: 'ADIM HEDEFİ',
                         value: formatTr(p.stepGoal),
                         unit: 'adım',
-                        icon: Icons.directions_walk,
+                        icon: PhosphorIconsRegular.personSimpleWalk,
                         iconBg: VColors.tertiaryFixed,
                         iconColor: VColors.tertiary,
                         onTap: () => _editInt(
@@ -721,7 +722,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               ),
               onPressed: () => _save(p),
               icon: const Icon(
-                Icons.check_circle_outline,
+                PhosphorIconsRegular.checkCircle,
                 color: VColors.onPrimary,
               ),
               label: Text(
@@ -845,7 +846,7 @@ class _GoalCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: selected
-                ? const Icon(Icons.check, size: 18, color: VColors.onPrimary)
+                ? const Icon(PhosphorIconsRegular.check, size: 18, color: VColors.onPrimary)
                 : null,
           ),
           const SizedBox(width: VSpace.gutter),

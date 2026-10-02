@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/v_card.dart';
@@ -22,14 +23,14 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
         backgroundColor: VColors.surface,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, size: 22, color: VColors.onSurface),
+          icon: const Icon(PhosphorIconsRegular.arrowLeft, size: 22, color: VColors.onSurface),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text('Sağlık İçgörüleri', style: VText.headlineMd),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.more_vert, color: VColors.onSurfaceVariant),
+            icon: const Icon(PhosphorIconsRegular.dotsThreeVertical, color: VColors.onSurfaceVariant),
             onPressed: () {},
           ),
         ],
@@ -61,7 +62,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.calendar_view_week, size: 16, color: _periodIndex == 0 ? VColors.onPrimary : VColors.onSurfaceVariant),
+                            Icon(PhosphorIconsRegular.calendar, size: 16, color: _periodIndex == 0 ? VColors.onPrimary : VColors.onSurfaceVariant),
                             const SizedBox(width: 4),
                             Text(
                               'Hafta',
@@ -88,7 +89,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.calendar_month, size: 16, color: _periodIndex == 1 ? VColors.onPrimary : VColors.onSurfaceVariant),
+                            Icon(PhosphorIconsFill.calendarDots, size: 16, color: _periodIndex == 1 ? VColors.onPrimary : VColors.onSurfaceVariant),
                             const SizedBox(width: 4),
                             Text(
                               'Ay',
@@ -110,7 +111,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
             // Overview Headline
             Row(
               children: [
-                const Icon(Icons.auto_graph, size: 16, color: VColors.primary),
+                const Icon(PhosphorIconsRegular.chartLineUp, size: 16, color: VColors.primary),
                 const SizedBox(width: 4),
                 Text(
                   _periodIndex == 0 ? 'HAFTALIK ANALİZ' : 'AYLIK ANALİZ',
@@ -142,7 +143,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                             color: VColors.secondaryContainer.withOpacity(0.3),
                             borderRadius: BorderRadius.circular(VRadius.sm),
                           ),
-                          child: const Icon(Icons.sync, size: 18, color: VColors.secondary),
+                          child: const Icon(PhosphorIconsRegular.arrowsClockwise, size: 18, color: VColors.secondary),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
@@ -171,7 +172,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                             color: VColors.tertiaryContainer.withOpacity(0.3),
                             borderRadius: BorderRadius.circular(VRadius.sm),
                           ),
-                          child: const Icon(Icons.bolt, size: 18, color: VColors.tertiary),
+                          child: const Icon(PhosphorIconsRegular.lightning, size: 18, color: VColors.tertiary),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
@@ -210,7 +211,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                                 color: VColors.secondaryContainer.withOpacity(0.4),
                                 borderRadius: BorderRadius.circular(VRadius.sm),
                               ),
-                              child: const Icon(Icons.bedtime, size: 18, color: VColors.secondary),
+                              child: const Icon(PhosphorIconsFill.moon, size: 18, color: VColors.secondary),
                             ),
                             const SizedBox(width: 8),
                             Expanded(
@@ -253,7 +254,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                             Text('dk derin uyku', style: VText.bodyMd.copyWith(color: VColors.onSurfaceVariant)),
                           ],
                         ),
-                        const Icon(Icons.arrow_forward, size: 16, color: VColors.onSurfaceVariant),
+                        const Icon(PhosphorIconsRegular.arrowRight, size: 16, color: VColors.onSurfaceVariant),
                         Row(
                           children: [
                             Text('-4', style: VText.headlineLg.copyWith(color: VColors.tertiary)),
@@ -307,7 +308,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                                 color: VColors.tertiaryFixed,
                                 borderRadius: BorderRadius.circular(VRadius.sm),
                               ),
-                              child: const Icon(Icons.directions_walk, size: 18, color: VColors.tertiary),
+                              child: const Icon(PhosphorIconsRegular.personSimpleWalk, size: 18, color: VColors.tertiary),
                             ),
                             const SizedBox(width: 8),
                             Expanded(
@@ -425,7 +426,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                                 color: VColors.primaryFixed,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.local_fire_department, size: 18, color: VColors.primary),
+                              child: const Icon(PhosphorIconsFill.flame, size: 18, color: VColors.primary),
                             ),
                             const SizedBox(width: 8),
                             Expanded(
@@ -524,7 +525,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                                 color: VColors.surfaceContainerHigh,
                                 borderRadius: BorderRadius.circular(VRadius.sm),
                               ),
-                              child: const Icon(Icons.monitor_heart, size: 18, color: VColors.onSurfaceVariant),
+                              child: const Icon(PhosphorIconsFill.heartbeat, size: 18, color: VColors.onSurfaceVariant),
                             ),
                             const SizedBox(width: 8),
                             Expanded(
@@ -623,7 +624,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                     const SnackBar(content: Text('PDF Raporu hazırlanıyor ve dışa aktarılıyor')),
                   );
                 },
-                icon: const Icon(Icons.ios_share, size: 18),
+                icon: const Icon(PhosphorIconsRegular.export, size: 18),
                 label: const Text('Detaylı PDF Raporu Paylaş'),
               ),
             ),
@@ -640,7 +641,7 @@ class _HealthInsightsScreenState extends State<HealthInsightsScreen> {
                     const SnackBar(content: Text('Ham veriler (.CSV) indirildi')),
                   );
                 },
-                icon: const Icon(Icons.download, size: 18, color: VColors.onSurfaceVariant),
+                icon: const Icon(PhosphorIconsRegular.download, size: 18, color: VColors.onSurfaceVariant),
                 label: Text('Ham Verileri İndir (.CSV)', style: VText.labelMd),
               ),
             ),

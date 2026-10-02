@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -97,7 +98,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          Icons.sensors,
+                          PhosphorIconsRegular.broadcast,
                           size: 16,
                           color: band.connected ? VColors.tertiary : VColors.outlineVariant,
                         ),
@@ -140,7 +141,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
-                        Icons.favorite,
+                        PhosphorIconsFill.heart,
                         color: VColors.onPrimary,
                         size: 28,
                       ),
@@ -150,7 +151,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                 const SizedBox(height: VSpace.sm),
                 Row(
                   children: [
-                    const Icon(Icons.sync, size: 16, color: VColors.secondary),
+                    const Icon(PhosphorIconsRegular.arrowsClockwise, size: 16, color: VColors.secondary),
                     const SizedBox(width: 4),
                     Text(
                       'Anlık VitaxBand Ölçümü • 0 sn gecikme',
@@ -188,7 +189,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                       ),
                     ),
                     onPressed: _isMeasuring ? null : _startMeasurement,
-                    icon: const Icon(Icons.monitor_heart, size: 20),
+                    icon: const Icon(PhosphorIconsFill.heartbeat, size: 20),
                     label: Text(_isMeasuring ? 'Ölçülüyor...' : 'Şimdi Ölç (30s PPG)'),
                   ),
                 ),
@@ -247,7 +248,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                                 color: VColors.secondaryContainer.withOpacity(0.4),
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.bedtime, size: 18, color: VColors.secondary),
+                              child: const Icon(PhosphorIconsFill.moon, size: 18, color: VColors.secondary),
                             ),
                             const SizedBox(width: 8),
                             Column(
@@ -283,7 +284,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                                 color: VColors.errorContainer,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.fitness_center, size: 18, color: VColors.error),
+                              child: const Icon(PhosphorIconsRegular.barbell, size: 18, color: VColors.error),
                             ),
                             const SizedBox(width: 8),
                             Column(
@@ -376,7 +377,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                           color: VColors.tertiary.withOpacity(0.15),
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.trending_down, size: 20, color: VColors.tertiary),
+                        child: const Icon(PhosphorIconsRegular.trendDown, size: 20, color: VColors.tertiary),
                       ),
                       const SizedBox(width: 10),
                       Column(
@@ -442,7 +443,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                         Text('Kalp Hızı Bölgeleri', style: VText.headlineMd),
                       ],
                     ),
-                    const Icon(Icons.donut_large, color: VColors.onSurfaceVariant, size: 20),
+                    const Icon(PhosphorIconsRegular.chartDonut, color: VColors.onSurfaceVariant, size: 20),
                   ],
                 ),
                 const SizedBox(height: VSpace.md),
@@ -498,7 +499,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('HRV (RMSSD)', style: VText.labelCaps.copyWith(color: VColors.onSurfaceVariant)),
-                                const Icon(Icons.monitor_heart, size: 16, color: VColors.tertiary),
+                                const Icon(PhosphorIconsFill.heartbeat, size: 16, color: VColors.tertiary),
                               ],
                             ),
                             const SizedBox(height: 6),
@@ -532,7 +533,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('Stres Endeksi', style: VText.labelCaps.copyWith(color: VColors.onSurfaceVariant)),
-                                const Icon(Icons.self_improvement, size: 16, color: VColors.secondary),
+                                const Icon(PhosphorIconsRegular.personSimpleTaiChi, size: 16, color: VColors.secondary),
                               ],
                             ),
                             const SizedBox(height: 6),
@@ -562,7 +563,7 @@ class _HeartHealthScreenState extends ConsumerState<HeartHealthScreen> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.nightlight_outlined, size: 16, color: VColors.onSurfaceVariant),
+                      const Icon(PhosphorIconsRegular.moon, size: 16, color: VColors.onSurfaceVariant),
                       const SizedBox(width: 6),
                       Expanded(
                         child: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/detail_scaffold.dart';
@@ -69,7 +70,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.tune, size: 18, color: VColors.secondary),
+                    const Icon(PhosphorIconsRegular.slidersHorizontal, size: 18, color: VColors.secondary),
                     const SizedBox(width: 6),
                     Text('Önizleme Modu', style: VText.labelMd),
                   ],
@@ -133,7 +134,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
           // SENSOR 1: SpO2
           _buildSensorSection(
             title: 'SpO2 (Kandaki Oksijen)',
-            icon: Icons.bloodtype,
+            icon: PhosphorIconsRegular.drop,
             iconColor: VColors.secondary,
             badge: _showSupported ? 'AKTİF MODÜL' : 'DOĞRULANMADI',
             badgeBg: _showSupported ? VColors.secondary : VColors.surfaceContainerHighest,
@@ -178,7 +179,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
                         ),
                         child: Row(
                           children: [
-                            const Icon(Icons.sensors, size: 16, color: VColors.primary),
+                            const Icon(PhosphorIconsRegular.broadcast, size: 16, color: VColors.primary),
                             const SizedBox(width: 6),
                             Text('Son: 12 dk önce • Kızılötesi Sensör', style: VText.microTag.copyWith(color: VColors.onSurfaceVariant)),
                           ],
@@ -197,7 +198,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
           // SENSOR 2: Tansiyon
           _buildSensorSection(
             title: 'Tansiyon Ölçümü',
-            icon: Icons.monitor_heart,
+            icon: PhosphorIconsFill.heartbeat,
             iconColor: VColors.primary,
             badge: 'MEVCUT MODELDE YOK',
             badgeBg: VColors.surfaceContainerHighest,
@@ -214,7 +215,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
                       const SnackBar(content: Text('Manuel tansiyon girişi açılıyor')),
                     );
                   },
-                  icon: const Icon(Icons.add, size: 18),
+                  icon: const Icon(PhosphorIconsRegular.plus, size: 18),
                   label: const Text('Manuel Tansiyon Gir'),
                 ),
               ),
@@ -225,7 +226,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
           // SENSOR 3: Cilt Sıcaklığı
           _buildSensorSection(
             title: 'Cilt Sıcaklığı',
-            icon: Icons.thermostat,
+            icon: PhosphorIconsRegular.thermometerSimple,
             iconColor: VColors.tertiary,
             badge: _showSupported ? 'AKTİF MODÜL' : 'DOĞRULANMADI',
             badgeBg: _showSupported ? VColors.tertiary : VColors.surfaceContainerHighest,
@@ -272,7 +273,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
           // SENSOR 4: EKG
           _buildSensorSection(
             title: 'Tıbbi EKG & Aritmi Tespiti',
-            icon: Icons.favorite_border,
+            icon: PhosphorIconsRegular.heart,
             iconColor: VColors.error,
             badge: 'EK DONANIM GEREKLİ',
             badgeBg: VColors.surfaceContainerHighest,
@@ -290,7 +291,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.verified_user, size: 16, color: VColors.outline),
+                const Icon(PhosphorIconsRegular.shieldCheck, size: 16, color: VColors.outline),
                 const SizedBox(width: 6),
                 Text(
                   'Tıbbi cihaz değildir. Ölçümler referans ve zindelik amaçlıdır.',
@@ -364,7 +365,7 @@ class _ExtraSensorsScreenState extends State<ExtraSensorsScreen> {
                 color: VColors.errorContainer.withOpacity(0.4),
                 borderRadius: BorderRadius.circular(VRadius.sm),
               ),
-              child: const Icon(Icons.warning_amber_rounded, color: VColors.error, size: 20),
+              child: const Icon(PhosphorIconsRegular.warning, color: VColors.error, size: 20),
             ),
             const SizedBox(width: 10),
             Column(

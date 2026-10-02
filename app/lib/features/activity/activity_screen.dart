@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -76,7 +77,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                           color: VColors.primary,
                           borderRadius: BorderRadius.circular(VRadius.sm),
                         ),
-                        child: const Icon(Icons.bolt, color: VColors.onPrimary, size: 20),
+                        child: const Icon(PhosphorIconsRegular.lightning, color: VColors.onPrimary, size: 20),
                       ),
                       const SizedBox(width: 8),
                       Text('Vital Precision', style: VText.headlineMd),
@@ -108,7 +109,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                         ),
                         const SizedBox(width: 6),
                         Icon(
-                          Icons.watch,
+                          PhosphorIconsBold.watch,
                           size: 15,
                           color: band.connected ? VColors.tertiary : VColors.outlineVariant,
                         ),
@@ -211,7 +212,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                             if (band.connected)
                               Row(
                                 children: [
-                                  const Icon(Icons.battery_5_bar, size: 16, color: VColors.tertiary),
+                                  const Icon(PhosphorIconsRegular.batteryHigh, size: 16, color: VColors.tertiary),
                                   const SizedBox(width: 4),
                                   Text(
                                     'Pil: %${band.battery ?? 92}',
@@ -247,7 +248,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                         height: 14,
                                         child: CircularProgressIndicator(strokeWidth: 2),
                                       )
-                                    : const Icon(Icons.sync, size: 16),
+                                    : const Icon(PhosphorIconsRegular.arrowsClockwise, size: 16),
                                 label: Text(_isSyncing ? 'Eşitleniyor...' : 'Şimdi senkronla'),
                               )
                             else
@@ -286,7 +287,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Adım Sayısı', style: VText.labelCaps.copyWith(color: VColors.onSurfaceVariant)),
-                                  const Icon(Icons.directions_walk, size: 18, color: VColors.secondary),
+                                  const Icon(PhosphorIconsRegular.personSimpleWalk, size: 18, color: VColors.secondary),
                                 ],
                               ),
                               const SizedBox(height: VSpace.md),
@@ -345,7 +346,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Aktif Kalori', style: VText.labelCaps.copyWith(color: VColors.onSurfaceVariant)),
-                                  const Icon(Icons.local_fire_department, size: 18, color: VColors.primary),
+                                  const Icon(PhosphorIconsFill.flame, size: 18, color: VColors.primary),
                                 ],
                               ),
                               const SizedBox(height: VSpace.md),
@@ -376,7 +377,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                               const SizedBox(height: VSpace.md),
                               Row(
                                 children: [
-                                  const Icon(Icons.watch, size: 14, color: VColors.primary),
+                                  const Icon(PhosphorIconsBold.watch, size: 14, color: VColors.primary),
                                   const SizedBox(width: 4),
                                   Expanded(
                                     child: Text(
@@ -420,7 +421,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                             children: [
                               Row(
                                 children: [
-                                  const Icon(Icons.favorite, size: 20, color: VColors.error),
+                                  const Icon(PhosphorIconsFill.heart, size: 20, color: VColors.error),
                                   const SizedBox(width: 6),
                                   Text('Canlı: $liveHr bpm', style: VText.headlineMd),
                                 ],
@@ -498,7 +499,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                   children: [
                                     Row(
                                       children: [
-                                        const Icon(Icons.battery_charging_full, size: 18, color: VColors.tertiary),
+                                        const Icon(PhosphorIconsRegular.batteryCharging, size: 18, color: VColors.tertiary),
                                         const SizedBox(width: 6),
                                         Text('TOPARLANMA ANALİZİ', style: VText.labelCaps.copyWith(color: VColors.onSurfaceVariant)),
                                       ],
@@ -571,7 +572,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                 color: VColors.secondaryFixed,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.air, size: 20, color: VColors.onSecondaryFixed),
+                              child: const Icon(PhosphorIconsRegular.wind, size: 20, color: VColors.onSecondaryFixed),
                             ),
                             const SizedBox(width: 10),
                             Column(
@@ -609,7 +610,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                 color: VColors.primaryFixed,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.thermostat, size: 20, color: VColors.onPrimaryFixed),
+                              child: const Icon(PhosphorIconsRegular.thermometerSimple, size: 20, color: VColors.onPrimaryFixed),
                             ),
                             const SizedBox(width: 10),
                             Column(
@@ -652,7 +653,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                                 color: VColors.surfaceContainerHighest,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.monitor_heart_outlined, size: 20, color: VColors.onSurfaceVariant),
+                              child: const Icon(PhosphorIconsRegular.heartbeat, size: 20, color: VColors.onSurfaceVariant),
                             ),
                             const SizedBox(width: 10),
                             Column(
@@ -697,7 +698,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                           const SnackBar(content: Text('Manuel ölçüm ve aktivite penceresi açılıyor')),
                         );
                       },
-                      icon: const Icon(Icons.add_circle, size: 20),
+                      icon: const Icon(PhosphorIconsFill.plusCircle, size: 20),
                       label: const Text('Manuel Ölçüm veya Aktivite Gir'),
                     ),
                   ),

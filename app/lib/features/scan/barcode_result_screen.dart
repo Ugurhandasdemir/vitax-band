@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -53,10 +54,10 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
   };
 
   static const _mealIcons = {
-    MealType.breakfast: Icons.wb_sunny_outlined,
-    MealType.lunch: Icons.restaurant,
-    MealType.dinner: Icons.nightlight_outlined,
-    MealType.snack: Icons.local_cafe_outlined,
+    MealType.breakfast: PhosphorIconsRegular.sun,
+    MealType.lunch: PhosphorIconsRegular.forkKnife,
+    MealType.dinner: PhosphorIconsRegular.moon,
+    MealType.snack: PhosphorIconsRegular.coffee,
   };
 
   int get _currentCal => ((widget.baseCal * _quantity * _multiplier)).round();
@@ -98,14 +99,14 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
         elevation: 0,
         leading: IconButton(
           key: const ValueKey('barcode-back-btn'),
-          icon: const Icon(Icons.arrow_back_ios_new, size: 20, color: VColors.onSurface),
+          icon: const Icon(PhosphorIconsRegular.caretLeft, size: 20, color: VColors.onSurface),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text('Barcode Result', style: VText.headlineMd),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.more_vert, color: VColors.onSurfaceVariant),
+            icon: const Icon(PhosphorIconsRegular.dotsThreeVertical, color: VColors.onSurfaceVariant),
             onPressed: () {},
           ),
         ],
@@ -130,7 +131,7 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
                       children: [
                         Row(
                           children: [
-                            const Icon(Icons.verified, size: 16, color: VColors.tertiary),
+                            const Icon(PhosphorIconsFill.sealCheck, size: 16, color: VColors.tertiary),
                             const SizedBox(width: 8),
                             Text(widget.barcode, style: VText.bodyMd),
                           ],
@@ -176,7 +177,7 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              const Icon(Icons.local_drink, size: 40, color: VColors.secondary),
+                              const Icon(PhosphorIconsFill.pintGlass, size: 40, color: VColors.secondary),
                               Positioned(
                                 bottom: 4,
                                 right: 4,
@@ -266,7 +267,7 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
                                   backgroundColor: VColors.surfaceContainerLowest,
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.sm)),
                                 ),
-                                icon: const Icon(Icons.remove, size: 20),
+                                icon: const Icon(PhosphorIconsRegular.minus, size: 20),
                                 onPressed: _quantity > 1 ? () => setState(() => _quantity--) : null,
                               ),
                               Column(
@@ -282,7 +283,7 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
                                   foregroundColor: VColors.onPrimaryContainer,
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.sm)),
                                 ),
-                                icon: const Icon(Icons.add, size: 20),
+                                icon: const Icon(PhosphorIconsRegular.plus, size: 20),
                                 onPressed: _quantity < 10 ? () => setState(() => _quantity++) : null,
                               ),
                             ],
@@ -579,7 +580,7 @@ class _BarcodeResultScreenState extends ConsumerState<BarcodeResultScreen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.button)),
                   ),
                   onPressed: _handleAddToMeal,
-                  icon: const Icon(Icons.add_circle, size: 20),
+                  icon: const Icon(PhosphorIconsFill.plusCircle, size: 20),
                   label: Text(
                     '${mealLabel}ya Ekle ($_currentCal kcal)',
                     style: VText.labelMd.copyWith(fontWeight: FontWeight.bold),

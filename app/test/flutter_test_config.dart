@@ -28,5 +28,38 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
       ..addFont(Future.value(ByteData.sublistView(iconFile.readAsBytesSync())));
     await icons.load();
   }
+
+  // Phosphor ikon yazı tipleri: golden görüntülerde gerçek ikon çıksın.
+  final pubCache =
+      Platform.environment['PUB_CACHE'] ??
+      '${Platform.environment['HOME']}/.pub-cache';
+  final phosphorFonts = {
+    'packages/phosphor_flutter/PhosphorRegular': 'Phosphor.ttf',
+    'packages/phosphor_flutter/PhosphorFill': 'Phosphor-Fill.ttf',
+    'packages/phosphor_flutter/PhosphorBold': 'Phosphor-Bold.ttf',
+    'packages/phosphor_flutter/PhosphorLight': 'Phosphor-Light.ttf',
+    'packages/phosphor_flutter/PhosphorThin': 'Phosphor-Thin.ttf',
+    'packages/phosphor_flutter/PhosphorDuotone': 'Phosphor-Duotone.ttf',
+  };
+  final pubDevDir = Directory('$pubCache/hosted/pub.dev');
+  if (pubDevDir.existsSync()) {
+    final phosphorDirs = pubDevDir
+        .listSync()
+        .whereType<Directory>()
+        .where((d) => d.path.split('/').last.startsWith('phosphor_flutter-'))
+        .toList();
+    if (phosphorDirs.isNotEmpty) {
+      final pDir = phosphorDirs.first;
+      for (final entry in phosphorFonts.entries) {
+        final f = File('${pDir.path}/lib/fonts/${entry.value}');
+        if (f.existsSync()) {
+          final fl = FontLoader(entry.key)
+            ..addFont(Future.value(ByteData.sublistView(f.readAsBytesSync())));
+          await fl.load();
+        }
+      }
+    }
+  }
+
   await testMain();
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/v_card.dart';
@@ -88,14 +89,14 @@ class WeeklyPlanScreen extends StatelessWidget {
         backgroundColor: VColors.surface,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, size: 22, color: VColors.onSurface),
+          icon: const Icon(PhosphorIconsRegular.arrowLeft, size: 22, color: VColors.onSurface),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text('Haftalık Ai Planı', style: VText.headlineMd),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.more_vert, color: VColors.onSurfaceVariant),
+            icon: const Icon(PhosphorIconsRegular.dotsThreeVertical, color: VColors.onSurfaceVariant),
             onPressed: () {},
           ),
         ],
@@ -123,7 +124,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(Icons.auto_awesome, size: 14, color: VColors.onPrimaryFixed),
+                            const Icon(PhosphorIconsBold.sparkle, size: 14, color: VColors.onPrimaryFixed),
                             const SizedBox(width: 4),
                             Text(
                               'AI Döngüsü v4.2',
@@ -181,7 +182,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                             color: VColors.primaryFixed,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(Icons.local_fire_department, size: 16, color: VColors.primary),
+                          child: const Icon(PhosphorIconsFill.flame, size: 16, color: VColors.primary),
                         ),
                         const SizedBox(height: 4),
                         Text('Kalori Ort.', style: VText.microTag.copyWith(color: VColors.onSurfaceVariant)),
@@ -205,7 +206,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                             color: VColors.secondaryFixed,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(Icons.egg_alt, size: 16, color: VColors.secondary),
+                          child: const Icon(PhosphorIconsRegular.egg, size: 16, color: VColors.secondary),
                         ),
                         const SizedBox(height: 4),
                         Text('Protein', style: VText.microTag.copyWith(color: VColors.onSurfaceVariant)),
@@ -229,7 +230,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                             color: VColors.secondaryFixed,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(Icons.water_drop, size: 16, color: VColors.secondary),
+                          child: const Icon(PhosphorIconsFill.drop, size: 16, color: VColors.secondary),
                         ),
                         const SizedBox(height: 4),
                         Text('Hidrasyon', style: VText.microTag.copyWith(color: VColors.onSurfaceVariant)),
@@ -251,7 +252,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                 Text('HAFTALIK GÜN DAĞILIMI', style: VText.labelCaps.copyWith(color: VColors.onSurfaceVariant)),
                 Row(
                   children: [
-                    const Icon(Icons.tune, size: 12, color: VColors.tertiary),
+                    const Icon(PhosphorIconsBold.slidersHorizontal, size: 12, color: VColors.tertiary),
                     const SizedBox(width: 4),
                     Text('HRV Uyarlanabilir', style: VText.microTag.copyWith(color: VColors.tertiary, fontWeight: FontWeight.bold)),
                   ],
@@ -343,15 +344,15 @@ class WeeklyPlanScreen extends StatelessWidget {
                                     scrollDirection: Axis.horizontal,
                                     child: Row(
                                       children: [
-                                        const Icon(Icons.timer_outlined, size: 14, color: VColors.primary),
+                                        const Icon(PhosphorIconsBold.timer, size: 14, color: VColors.primary),
                                         const SizedBox(width: 4),
                                         Text(day.time, style: VText.bodyMd.copyWith(color: VColors.onSurfaceVariant)),
                                         const SizedBox(width: 12),
-                                        const Icon(Icons.local_fire_department, size: 14, color: VColors.onSurfaceVariant),
+                                        const Icon(PhosphorIconsBold.flame, size: 14, color: VColors.onSurfaceVariant),
                                         const SizedBox(width: 4),
                                         Text(day.cal, style: VText.bodyMd.copyWith(color: VColors.onSurfaceVariant)),
                                         const SizedBox(width: 12),
-                                        const Icon(Icons.restaurant, size: 14, color: VColors.secondary),
+                                        const Icon(PhosphorIconsBold.forkKnife, size: 14, color: VColors.secondary),
                                         const SizedBox(width: 4),
                                         Text(day.protein, style: VText.bodyMd.copyWith(color: VColors.secondary)),
                                       ],
@@ -384,7 +385,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                           color: VColors.primaryFixed,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.person, color: VColors.primary),
+                        child: const Icon(PhosphorIconsFill.user, color: VColors.primary),
                       ),
                       const SizedBox(width: 10),
                       Column(
@@ -394,7 +395,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                             children: [
                               Text('Dr. Selin Demir', style: VText.labelMd),
                               const SizedBox(width: 4),
-                              const Icon(Icons.verified, size: 14, color: VColors.primary),
+                              const Icon(PhosphorIconsBold.sealCheck, size: 14, color: VColors.primary),
                             ],
                           ),
                           Text('Vitax AI Biyometrik Koçu', style: VText.microTag.copyWith(color: VColors.onSurfaceVariant)),
@@ -406,19 +407,19 @@ class WeeklyPlanScreen extends StatelessWidget {
                   Text('Bu Plan Neden Oluşturuldu?', style: VText.labelMd),
                   const SizedBox(height: 8),
                   _RationaleTile(
-                    icon: Icons.bedtime,
+                    icon: PhosphorIconsFill.moon,
                     iconColor: VColors.secondary,
                     text: 'Geçen haftaki VitaxBand ortalama uyku süreniz 7s 18dk ve toparlanma skorunuz %88 ölçüldü.',
                   ),
                   const SizedBox(height: 6),
                   _RationaleTile(
-                    icon: Icons.favorite,
+                    icon: PhosphorIconsFill.heart,
                     iconColor: VColors.primary,
                     text: "Dinlenik nabzınız 63'ten 58 BPM'e gerileyerek kardiyovasküler verimliliğinizin arttığını kanıtladı.",
                   ),
                   const SizedBox(height: 6),
                   _RationaleTile(
-                    icon: Icons.flash_auto,
+                    icon: PhosphorIconsRegular.lightningA,
                     iconColor: VColors.tertiary,
                     text: 'Çarşamba ve Pazar günlerine yerleştirilen toparlanma blokları, overtraining riskini önlemek için HRV dengenize göre uyarlandı.',
                   ),
@@ -442,7 +443,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                     const SnackBar(content: Text('Haftalık AI planı kabul edildi ve takvime işlendi')),
                   );
                 },
-                icon: const Icon(Icons.calendar_today, size: 18),
+                icon: const Icon(PhosphorIconsFill.calendarBlank, size: 18),
                 label: const Text('Planı Kabul Et ve Takvime Ekle'),
               ),
             ),
@@ -459,7 +460,7 @@ class WeeklyPlanScreen extends StatelessWidget {
                     const SnackBar(content: Text('Yeniden oluşturma parametreleri hazırlanıyor')),
                   );
                 },
-                icon: const Icon(Icons.tune, size: 18, color: VColors.onSurfaceVariant),
+                icon: const Icon(PhosphorIconsRegular.slidersHorizontal, size: 18, color: VColors.onSurfaceVariant),
                 label: Text('Yeniden Oluştur (Parametreleri Değiştir)', style: VText.labelMd),
               ),
             ),

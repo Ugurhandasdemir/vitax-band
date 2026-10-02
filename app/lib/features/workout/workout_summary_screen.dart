@@ -1,4 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -143,7 +144,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                 Row(
                   children: [
                     const Icon(
-                      Icons.verified,
+                      PhosphorIconsFill.sealCheck,
                       size: 18,
                       color: VColors.tertiary,
                     ),
@@ -160,7 +161,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                 Row(
                   children: [
                     const Icon(
-                      Icons.schedule,
+                      PhosphorIconsBold.clock,
                       size: 14,
                       color: VColors.onSurfaceVariant,
                     ),
@@ -187,7 +188,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
               child: Row(
                 children: [
                   const Icon(
-                    Icons.emoji_events_outlined,
+                    PhosphorIconsRegular.trophy,
                     color: VColors.onPrimary,
                   ),
                   const SizedBox(width: VSpace.gutter),
@@ -339,7 +340,7 @@ class _WorkoutSummaryScreenState extends ConsumerState<WorkoutSummaryScreen> {
                 ),
               ),
               onPressed: _saveAndClose,
-              icon: const Icon(Icons.save_alt, color: VColors.onPrimary),
+              icon: const Icon(PhosphorIconsRegular.floppyDisk, color: VColors.onPrimary),
               label: Text(
                 'Özeti Kaydet ve Kapat',
                 style: VText.labelMd.copyWith(color: VColors.onPrimary),

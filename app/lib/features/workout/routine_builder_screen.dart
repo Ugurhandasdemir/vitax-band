@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/format.dart';
@@ -195,7 +196,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
                   ),
                 ),
                 const Icon(
-                  Icons.edit_outlined,
+                  PhosphorIconsRegular.pencilSimple,
                   color: VColors.onSurfaceVariant,
                 ),
               ],
@@ -271,7 +272,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
                                   vertical: 26,
                                 ),
                                 child: Icon(
-                                  Icons.drag_indicator,
+                                  PhosphorIconsRegular.dotsSixVertical,
                                   color: VColors.outline,
                                 ),
                               ),
@@ -323,7 +324,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           const Icon(
-                                            Icons.timer_outlined,
+                                            PhosphorIconsBold.timer,
                                             size: 12,
                                             color: VColors.secondary,
                                           ),
@@ -347,7 +348,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
                               child: const Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Icon(
-                                  Icons.delete_outline,
+                                  PhosphorIconsRegular.trashSimple,
                                   color: VColors.outline,
                                 ),
                               ),
@@ -402,7 +403,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.add_circle_outline, color: VColors.primary),
+                  const Icon(PhosphorIconsRegular.plusCircle, color: VColors.primary),
                   const SizedBox(width: 8),
                   Text(
                     'Egzersiz Ekle',
@@ -451,7 +452,7 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
                 ),
               ),
               onPressed: _start,
-              icon: const Icon(Icons.play_arrow, color: VColors.onPrimary),
+              icon: const Icon(PhosphorIconsRegular.play, color: VColors.onPrimary),
               label: Text(
                 'Antrenmanı Başlat ($minutes dk)',
                 style: VText.labelMd.copyWith(color: VColors.onPrimary),
@@ -484,13 +485,13 @@ class _RoutineBuilderScreenState extends ConsumerState<RoutineBuilderScreen> {
                       IconButton(
                         onPressed: () =>
                             setSt(() => value = (value - 15).clamp(15, 300)),
-                        icon: const Icon(Icons.remove_circle_outline),
+                        icon: const Icon(PhosphorIconsRegular.minusCircle),
                       ),
                       Text('$value sn', style: VText.headlineLg),
                       IconButton(
                         onPressed: () =>
                             setSt(() => value = (value + 15).clamp(15, 300)),
-                        icon: const Icon(Icons.add_circle_outline),
+                        icon: const Icon(PhosphorIconsRegular.plusCircle),
                       ),
                     ],
                   ),
@@ -579,25 +580,25 @@ class _SetRow extends ConsumerWidget {
           ),
           _Mini(
             key: ValueKey('r-minus-$index-$setIndex'),
-            icon: Icons.remove,
+            icon: PhosphorIconsRegular.minus,
             onTap: () => ctl.setReps(index, setIndex, set.reps - 1),
           ),
           _Mini(
             key: ValueKey('r-plus-$index-$setIndex'),
-            icon: Icons.add,
+            icon: PhosphorIconsRegular.plus,
             onTap: () => ctl.setReps(index, setIndex, set.reps + 1),
           ),
           const SizedBox(width: 6),
           _Mini(
             key: ValueKey('w-minus-$index-$setIndex'),
-            icon: Icons.fitness_center,
+            icon: PhosphorIconsRegular.barbell,
             small: true,
             onTap: () => ctl.setWeight(index, setIndex, set.weightKg - 2.5),
             badge: '-',
           ),
           _Mini(
             key: ValueKey('w-plus-$index-$setIndex'),
-            icon: Icons.fitness_center,
+            icon: PhosphorIconsRegular.barbell,
             small: true,
             onTap: () => ctl.setWeight(index, setIndex, set.weightKg + 2.5),
             badge: '+',
@@ -608,7 +609,7 @@ class _SetRow extends ConsumerWidget {
               onTap: () => ctl.removeSet(index, setIndex),
               child: const Padding(
                 padding: EdgeInsets.only(left: 6),
-                child: Icon(Icons.close, size: 18, color: VColors.outline),
+                child: Icon(PhosphorIconsRegular.x, size: 18, color: VColors.outline),
               ),
             ),
         ],

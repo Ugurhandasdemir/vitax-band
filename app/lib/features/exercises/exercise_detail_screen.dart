@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -55,21 +56,21 @@ class _ExerciseDetailScreenState extends ConsumerState<ExerciseDetailScreen> {
             if (active != null)
               ListTile(
                 leading: const Icon(
-                  Icons.timer_outlined,
+                  PhosphorIconsRegular.timer,
                   color: VColors.primary,
                 ),
                 title: const Text('Aktif antrenmana ekle'),
                 onTap: () => Navigator.of(ctx).pop('active'),
               ),
             ListTile(
-              leading: const Icon(Icons.add, color: VColors.primary),
+              leading: const Icon(PhosphorIconsRegular.plus, color: VColors.primary),
               title: const Text('Yeni Rutin'),
               onTap: () => Navigator.of(ctx).pop('new'),
             ),
             for (final r in routines)
               ListTile(
                 leading: const Icon(
-                  Icons.bolt,
+                  PhosphorIconsRegular.lightning,
                   color: VColors.onSurfaceVariant,
                 ),
                 title: Text(r.name),
@@ -174,7 +175,7 @@ class _ExerciseDetailScreenState extends ConsumerState<ExerciseDetailScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(
-                            Icons.loop,
+                            PhosphorIconsBold.repeat,
                             size: 14,
                             color: VColors.primary,
                           ),
@@ -262,7 +263,7 @@ class _ExerciseDetailScreenState extends ConsumerState<ExerciseDetailScreen> {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            _playing ? Icons.pause : Icons.play_arrow,
+                            _playing ? PhosphorIconsRegular.pause : PhosphorIconsRegular.play,
                             size: 20,
                             color: VColors.inverseOnSurface,
                           ),
@@ -305,7 +306,7 @@ class _ExerciseDetailScreenState extends ConsumerState<ExerciseDetailScreen> {
             child: Row(
               children: [
                 const Icon(
-                  Icons.fitness_center,
+                  PhosphorIconsRegular.barbell,
                   color: VColors.secondary,
                   size: 22,
                 ),
@@ -397,7 +398,7 @@ class _ExerciseDetailScreenState extends ConsumerState<ExerciseDetailScreen> {
                 ),
               ),
               onPressed: () => _addToWorkout(ex),
-              icon: const Icon(Icons.add, color: VColors.onPrimary),
+              icon: const Icon(PhosphorIconsRegular.plus, color: VColors.onPrimary),
               label: Text(
                 'Antrenmana Ekle',
                 style: VText.labelMd.copyWith(color: VColors.onPrimary),
@@ -445,7 +446,7 @@ class _MuscleCard extends StatelessWidget {
           Row(
             children: [
               const Icon(
-                Icons.accessibility_new,
+                PhosphorIconsRegular.personArmsSpread,
                 size: 20,
                 color: VColors.primary,
               ),
@@ -518,7 +519,7 @@ class _HistoryCard extends ConsumerWidget {
         children: [
           Row(
             children: [
-              const Icon(Icons.history, size: 20, color: VColors.primary),
+              const Icon(PhosphorIconsRegular.clockCounterClockwise, size: 20, color: VColors.primary),
               const SizedBox(width: 8),
               Text('Geçmişim', style: VText.headlineMd),
             ],
@@ -564,7 +565,7 @@ class _HistoryCard extends ConsumerWidget {
               Row(
                 children: [
                   const Icon(
-                    Icons.favorite_border,
+                    PhosphorIconsRegular.heart,
                     size: 16,
                     color: VColors.error,
                   ),

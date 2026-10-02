@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'dart:math' as math;
 
 import 'package:fl_chart/fl_chart.dart';
@@ -154,7 +155,7 @@ class _LiveWorkoutScreenState extends ConsumerState<LiveWorkoutScreen> {
       actions: [
         IconButton(
           key: const ValueKey('finish-workout'),
-          icon: const Icon(Icons.check_circle_outline, color: VColors.primary),
+          icon: const Icon(PhosphorIconsRegular.checkCircle, color: VColors.primary),
           onPressed: _confirmFinish,
         ),
       ],
@@ -219,7 +220,7 @@ class _LiveWorkoutScreenState extends ConsumerState<LiveWorkoutScreen> {
             child: Row(
               children: [
                 const Icon(
-                  Icons.timer_outlined,
+                  PhosphorIconsRegular.timer,
                   color: VColors.secondary,
                   size: 20,
                 ),
@@ -279,7 +280,7 @@ class _LiveWorkoutScreenState extends ConsumerState<LiveWorkoutScreen> {
                   const SizedBox(height: VSpace.gutter),
                   FilledButton.icon(
                     onPressed: _addExercise,
-                    icon: const Icon(Icons.add),
+                    icon: const Icon(PhosphorIconsRegular.plus),
                     label: const Text('Hareket Ekle'),
                   ),
                 ],
@@ -516,7 +517,7 @@ class _SuggestionBanner extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(Icons.sensors, size: 16, color: VColors.primary),
+              const Icon(PhosphorIconsRegular.broadcast, size: 16, color: VColors.primary),
               const SizedBox(width: 6),
               Text(
                 'VİTAX AKILLI ALGILAMA',
@@ -541,7 +542,7 @@ class _SuggestionBanner extends StatelessWidget {
                       ),
                     ),
                     onPressed: onAccept,
-                    icon: const Icon(Icons.check, size: 18),
+                    icon: const Icon(PhosphorIconsRegular.check, size: 18),
                     label: const Text('Onayla'),
                   ),
                 ),
@@ -593,7 +594,7 @@ class _MovementCard extends ConsumerWidget {
     Widget primary;
     if (working) {
       primary = _Primary(
-        icon: Icons.stop_circle_outlined,
+        icon: PhosphorIconsRegular.stopCircle,
         label: 'Seti Bitir (Set $setNo)',
         color: VColors.primary,
         onTap: () => ctl.endSet(),
@@ -601,20 +602,20 @@ class _MovementCard extends ConsumerWidget {
     } else if (s.exerciseDone) {
       primary = s.isLastExercise
           ? _Primary(
-              icon: Icons.flag_outlined,
+              icon: PhosphorIconsRegular.flag,
               label: 'Antrenmanı Bitir',
               color: VColors.tertiary,
               onTap: onFinish,
             )
           : _Primary(
-              icon: Icons.skip_next,
+              icon: PhosphorIconsRegular.skipForward,
               label: 'Sonraki Hareket',
               color: VColors.primaryContainer,
               onTap: ctl.nextExercise,
             );
     } else {
       primary = _Primary(
-        icon: Icons.play_circle_outline,
+        icon: PhosphorIconsRegular.playCircle,
         label: 'Seti Başlat (Set $setNo)',
         color: VColors.primaryContainer,
         onTap: ctl.startSet,
@@ -685,7 +686,7 @@ class _MovementCard extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(
-                          Icons.loop,
+                          PhosphorIconsBold.repeat,
                           size: 10,
                           color: VColors.inverseOnSurface,
                         ),
@@ -757,7 +758,7 @@ class _MovementCard extends ConsumerWidget {
                       color: VColors.surfaceContainer,
                       borderRadius: BorderRadius.circular(VRadius.button),
                     ),
-                    child: const Icon(Icons.skip_next),
+                    child: const Icon(PhosphorIconsRegular.skipForward),
                   ),
                 ),
               ],
@@ -833,7 +834,7 @@ class _Stepper extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
     children: [
-      _b(minusKey, Icons.remove, onMinus),
+      _b(minusKey, PhosphorIconsRegular.minus, onMinus),
       Expanded(
         child: Text(
           label,
@@ -841,7 +842,7 @@ class _Stepper extends StatelessWidget {
           style: VText.headlineMd.copyWith(fontSize: 16),
         ),
       ),
-      _b(plusKey, Icons.add, onPlus),
+      _b(plusKey, PhosphorIconsRegular.plus, onPlus),
     ],
   );
 }
@@ -877,7 +878,7 @@ class _RestCard extends StatelessWidget {
             Row(
               children: [
                 const Icon(
-                  Icons.hourglass_bottom,
+                  PhosphorIconsRegular.hourglassSimple,
                   color: VColors.secondary,
                   size: 20,
                 ),
@@ -919,7 +920,7 @@ class _RestCard extends StatelessWidget {
                 child: Row(
                   children: [
                     const Icon(
-                      Icons.monitor_heart_outlined,
+                      PhosphorIconsRegular.heartbeat,
                       color: VColors.tertiary,
                       size: 20,
                     ),
@@ -1107,7 +1108,7 @@ class _SetHistory extends StatelessWidget {
           Text(trailing, style: VText.microTag.copyWith(color: fg)),
           if (state == _RowState.done) ...[
             const SizedBox(width: 6),
-            const Icon(Icons.check_circle, size: 18, color: VColors.tertiary),
+            const Icon(PhosphorIconsFill.checkCircle, size: 18, color: VColors.tertiary),
           ],
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -108,7 +109,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(
-                            Icons.edit_outlined,
+                            PhosphorIconsBold.pencilSimple,
                             size: 14,
                             color: VColors.secondary,
                           ),
@@ -212,7 +213,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
               Expanded(
                 child: _QuickButton(
                   key: const ValueKey('quick-200'),
-                  icon: Icons.local_drink_outlined,
+                  icon: PhosphorIconsRegular.pintGlass,
                   amount: '+200',
                   label: 'Bardak',
                   onTap: () => actions.addWater(day, 200, label: 'Bardak'),
@@ -222,7 +223,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
               Expanded(
                 child: _QuickButton(
                   key: const ValueKey('quick-300'),
-                  icon: Icons.coffee_outlined,
+                  icon: PhosphorIconsRegular.coffee,
                   amount: '+300',
                   label: 'Kupa',
                   onTap: () => actions.addWater(day, 300, label: 'Kupa'),
@@ -232,7 +233,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
               Expanded(
                 child: _QuickButton(
                   key: const ValueKey('quick-500'),
-                  icon: Icons.water_drop_outlined,
+                  icon: PhosphorIconsRegular.drop,
                   amount: '+500',
                   label: 'Şişe',
                   filled: true,
@@ -266,7 +267,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
                           children: [
                             _StepBtn(
                               key: const ValueKey('custom-minus'),
-                              icon: Icons.remove,
+                              icon: PhosphorIconsRegular.minus,
                               onTap: () => setState(
                                 () => _custom = (_custom - 50).clamp(50, 2000),
                               ),
@@ -290,7 +291,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
                             ),
                             _StepBtn(
                               key: const ValueKey('custom-plus'),
-                              icon: Icons.add,
+                              icon: PhosphorIconsRegular.plus,
                               onTap: () => setState(
                                 () => _custom = (_custom + 50).clamp(50, 2000),
                               ),
@@ -315,7 +316,7 @@ class _HydrationScreenState extends ConsumerState<HydrationScreen> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             const Icon(
-                              Icons.add_circle_outline,
+                              PhosphorIconsRegular.plusCircle,
                               size: 18,
                               color: VColors.onPrimary,
                             ),
@@ -368,7 +369,7 @@ class _StatusCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: const Icon(
-              Icons.water_drop_outlined,
+              PhosphorIconsRegular.drop,
               color: VColors.secondary,
             ),
           ),
@@ -589,7 +590,7 @@ class _EntriesCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Icon(Icons.history, size: 20, color: VColors.secondary),
+            const Icon(PhosphorIconsRegular.clockCounterClockwise, size: 20, color: VColors.secondary),
             const SizedBox(width: 8),
             Text('Bugünün Kayıtları', style: VText.headlineMd),
             const Spacer(),
@@ -633,9 +634,9 @@ class _EntriesCard extends StatelessWidget {
                     ),
                     child: Icon(
                       switch (e.label) {
-                        'Kupa' => Icons.coffee_outlined,
-                        'Şişe' => Icons.water_drop_outlined,
-                        _ => Icons.local_drink_outlined,
+                        'Kupa' => PhosphorIconsRegular.coffee,
+                        'Şişe' => PhosphorIconsRegular.drop,
+                        _ => PhosphorIconsRegular.pintGlass,
                       },
                       size: 18,
                       color: VColors.secondary,
@@ -787,7 +788,7 @@ class _WeekCard extends StatelessWidget {
             child: Row(
               children: [
                 const Icon(
-                  Icons.verified_outlined,
+                  PhosphorIconsRegular.sealCheck,
                   size: 20,
                   color: VColors.tertiary,
                 ),
@@ -865,7 +866,7 @@ class _Bar extends StatelessWidget {
           height: 16,
           child: reached
               ? const Icon(
-                  Icons.check_circle_outline,
+                  PhosphorIconsBold.checkCircle,
                   size: 14,
                   color: VColors.tertiary,
                 )

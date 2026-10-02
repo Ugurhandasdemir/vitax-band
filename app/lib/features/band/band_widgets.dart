@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -101,7 +102,7 @@ class BandStatusBanner extends ConsumerWidget {
     if (s.link == BandLink.connecting) {
       return BandBanner(
         color: VColors.primary,
-        icon: Icons.sync,
+        icon: PhosphorIconsRegular.arrowsClockwise,
         title: 'Bağlanıyor',
         message: 'VitaxBand aranıyor, bilekliği telefona yaklaştır.',
       );
@@ -109,7 +110,7 @@ class BandStatusBanner extends ConsumerWidget {
     if (s.error != null) {
       return BandBanner(
         color: VColors.error,
-        icon: Icons.sync_problem,
+        icon: PhosphorIconsRegular.warningCircle,
         title: 'Bağlantı Başarısız',
         message: s.error!,
         actionLabel: 'Tekrar Dene',
@@ -118,7 +119,7 @@ class BandStatusBanner extends ConsumerWidget {
     }
     return BandBanner(
       color: VColors.error,
-      icon: Icons.bluetooth_disabled,
+      icon: PhosphorIconsRegular.bluetoothSlash,
       title: 'Bağlantı Kesildi',
       tag: 'Kritik',
       message: 'VitaxBand bağlantısı yok (menzil dışı veya Bluetooth kapalı).',

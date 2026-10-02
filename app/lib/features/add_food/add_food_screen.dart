@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -243,7 +244,7 @@ class _AddFoodScreenState extends ConsumerState<AddFoodScreen> {
             children: [
               Expanded(
                 child: _ActionCard(
-                  icon: Icons.restaurant_menu,
+                  icon: PhosphorIconsRegular.bowlFood,
                   title: 'Özel Yemek',
                   subtitle: 'Kendi tarifini veya besin değerini gir',
                   onTap: () => _openCustom(context),
@@ -252,7 +253,7 @@ class _AddFoodScreenState extends ConsumerState<AddFoodScreen> {
               const SizedBox(width: VSpace.gutter),
               Expanded(
                 child: _ActionCard(
-                  icon: Icons.bolt,
+                  icon: PhosphorIconsRegular.lightning,
                   title: 'Hızlı Kalori',
                   subtitle: 'Sadece kalori ve öğün ile tek dokunuş',
                   onTap: () => showQuickAddSheet(context, meal: _meal),
@@ -273,7 +274,7 @@ class _AddFoodScreenState extends ConsumerState<AddFoodScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Icon(
-                  Icons.lightbulb_outline,
+                  PhosphorIconsRegular.lightbulb,
                   color: VColors.primary,
                   size: 20,
                 ),
@@ -335,7 +336,7 @@ class _SearchField extends StatelessWidget {
     ),
     child: Row(
       children: [
-        const Icon(Icons.search, color: VColors.onSurfaceVariant),
+        const Icon(PhosphorIconsRegular.magnifyingGlass, color: VColors.onSurfaceVariant),
         const SizedBox(width: 8),
         Expanded(
           child: TextField(
@@ -361,7 +362,7 @@ class _SearchField extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: const Icon(
-              Icons.qr_code_scanner,
+              PhosphorIconsRegular.scan,
               size: 20,
               color: VColors.primary,
             ),
@@ -608,7 +609,7 @@ class _FoodRow extends StatelessWidget {
             width: VSpace.touchMin,
             height: VSpace.touchMin,
             child: Icon(
-              isFav ? Icons.star : Icons.star_border,
+              isFav ? PhosphorIconsFill.star : PhosphorIconsRegular.star,
               color: isFav ? VColors.primaryContainer : VColors.outline,
             ),
           ),
@@ -623,7 +624,7 @@ class _FoodRow extends StatelessWidget {
               color: VColors.primary,
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.add, color: VColors.onPrimary),
+            child: const Icon(PhosphorIconsRegular.plus, color: VColors.onPrimary),
           ),
         ),
       ],

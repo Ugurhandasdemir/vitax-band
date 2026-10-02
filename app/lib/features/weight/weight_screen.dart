@@ -1,4 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -174,7 +175,7 @@ class _WeightScreenState extends ConsumerState<WeightScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      change7 <= 0 ? Icons.trending_down : Icons.trending_up,
+                      change7 <= 0 ? PhosphorIconsRegular.trendDown : PhosphorIconsRegular.trendUp,
                       size: 16,
                       color: change7 <= 0 ? VColors.tertiary : VColors.primary,
                     ),
@@ -319,7 +320,7 @@ class _WeightScreenState extends ConsumerState<WeightScreen> {
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(
-                          Icons.check,
+                          PhosphorIconsRegular.check,
                           size: 18,
                           color: VColors.tertiary,
                         ),
@@ -388,7 +389,7 @@ class _WeightScreenState extends ConsumerState<WeightScreen> {
               ),
               onPressed: () => _openLogSheet(units),
               icon: const Icon(
-                Icons.monitor_weight_outlined,
+                PhosphorIconsRegular.scales,
                 color: VColors.onPrimary,
               ),
               label: Text(
@@ -624,7 +625,7 @@ class _BmiCard extends StatelessWidget {
           Row(
             children: [
               const Icon(
-                Icons.badge_outlined,
+                PhosphorIconsRegular.identificationBadge,
                 size: 20,
                 color: VColors.secondary,
               ),
@@ -817,7 +818,7 @@ class _RecentRow extends StatelessWidget {
               borderRadius: BorderRadius.circular(VRadius.md),
             ),
             child: Icon(
-              isToday ? Icons.today : Icons.event_note_outlined,
+              isToday ? PhosphorIconsRegular.calendarBlank : PhosphorIconsRegular.calendar,
               size: 20,
               color: isToday ? VColors.primary : VColors.onSurfaceVariant,
             ),

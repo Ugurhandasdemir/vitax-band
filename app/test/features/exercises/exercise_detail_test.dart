@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:vitax_app/data/exercise_catalog.dart';
 import 'package:vitax_app/features/exercises/exercise_detail_screen.dart';
 import 'package:vitax_app/features/workout/active_workout.dart';
@@ -39,10 +40,10 @@ void main() {
 
   testWidgets('hız ve duraklat düğmeleri durum değiştirir', (tester) async {
     await pumpDetail(tester);
-    expect(find.byIcon(Icons.pause), findsOneWidget);
+    expect(find.byIcon(PhosphorIconsRegular.pause), findsOneWidget);
     await tester.tap(find.byKey(const ValueKey('media-toggle')));
     await tester.pumpAndSettle();
-    expect(find.byIcon(Icons.play_arrow), findsOneWidget);
+    expect(find.byIcon(PhosphorIconsRegular.play), findsOneWidget);
     Color? c(String k) =>
         ((tester.widget<Container>(find.byKey(ValueKey('speed-$k'))).decoration)
                 as BoxDecoration)

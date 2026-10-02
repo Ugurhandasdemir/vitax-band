@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -85,7 +86,7 @@ class _DiaryScreenState extends ConsumerState<DiaryScreen> {
             children: [
               Expanded(
                 child: _ChipButton(
-                  icon: Icons.copy_outlined,
+                  icon: PhosphorIconsRegular.copy,
                   label: 'Dünü Kopyala',
                   onTap: () => _copyYesterday(day),
                 ),
@@ -93,7 +94,7 @@ class _DiaryScreenState extends ConsumerState<DiaryScreen> {
               const SizedBox(width: VSpace.gutter),
               Expanded(
                 child: _ChipButton(
-                  icon: Icons.bolt,
+                  icon: PhosphorIconsRegular.lightning,
                   label: 'Hızlı Ekle',
                   onTap: () => showQuickAddSheet(context),
                 ),
@@ -116,7 +117,7 @@ class _DiaryScreenState extends ConsumerState<DiaryScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
-                Icons.swipe_left_alt,
+                PhosphorIconsRegular.handSwipeLeft,
                 size: 16,
                 color: VColors.outline,
               ),
@@ -158,7 +159,7 @@ class _DiaryScreenState extends ConsumerState<DiaryScreen> {
                 ),
               ),
               onPressed: () => _openAdd(null),
-              icon: const Icon(Icons.add, color: VColors.onPrimary),
+              icon: const Icon(PhosphorIconsRegular.plus, color: VColors.onPrimary),
               label: Text(
                 'Yemek Ekle',
                 style: VText.labelMd.copyWith(color: VColors.onPrimary),
@@ -253,7 +254,7 @@ class _SummaryCard extends ConsumerWidget {
           Row(
             children: [
               const Icon(
-                Icons.local_fire_department_outlined,
+                PhosphorIconsRegular.flame,
                 size: 18,
                 color: VColors.primary,
               ),
@@ -310,7 +311,7 @@ class _SummaryCard extends ConsumerWidget {
           Row(
             children: [
               const Icon(
-                Icons.watch_outlined,
+                PhosphorIconsBold.watch,
                 size: 14,
                 color: VColors.secondary,
               ),
@@ -486,10 +487,10 @@ class _MealSection extends ConsumerWidget {
   final void Function(FoodEntry) onDelete;
 
   static const _icons = {
-    MealType.breakfast: Icons.wb_sunny_outlined,
-    MealType.lunch: Icons.restaurant_menu,
-    MealType.dinner: Icons.nightlight_outlined,
-    MealType.snack: Icons.eco_outlined,
+    MealType.breakfast: PhosphorIconsRegular.sun,
+    MealType.lunch: PhosphorIconsRegular.bowlFood,
+    MealType.dinner: PhosphorIconsRegular.moon,
+    MealType.snack: PhosphorIconsRegular.leaf,
   };
 
   @override
@@ -577,7 +578,7 @@ class _MealSection extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(
-                            Icons.add,
+                            PhosphorIconsRegular.plus,
                             size: 18,
                             color: VColors.primary,
                           ),
@@ -606,7 +607,7 @@ class _MealSection extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(VRadius.md),
                     ),
                     child: const Icon(
-                      Icons.delete_outline,
+                      PhosphorIconsRegular.trashSimple,
                       color: VColors.error,
                     ),
                   ),
@@ -663,7 +664,7 @@ class _MealSection extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.add, size: 18, color: VColors.primary),
+                    const Icon(PhosphorIconsRegular.plus, size: 18, color: VColors.primary),
                     const SizedBox(width: 6),
                     Text(
                       'Yemek Ekle',
@@ -701,7 +702,7 @@ class _WaterRow extends ConsumerWidget {
               shape: BoxShape.circle,
             ),
             child: const Icon(
-              Icons.water_drop_outlined,
+              PhosphorIconsRegular.drop,
               color: VColors.secondary,
               size: 22,
             ),
@@ -743,7 +744,7 @@ class _WaterRow extends ConsumerWidget {
                 color: VColors.secondaryFixed,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.add, color: VColors.secondary),
+              child: const Icon(PhosphorIconsRegular.plus, color: VColors.secondary),
             ),
           ),
         ],

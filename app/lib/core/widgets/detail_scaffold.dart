@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../theme/tokens.dart';
 
@@ -27,7 +28,7 @@ class VDetailScaffold extends StatelessWidget {
       centerTitle: true,
       leading: IconButton(
         key: const ValueKey('detail-back'),
-        icon: const Icon(Icons.arrow_back, color: VColors.onSurface),
+        icon: const Icon(PhosphorIconsRegular.arrowLeft, color: VColors.onSurface),
         onPressed: () => Navigator.of(context).maybePop(),
       ),
       title: Text(title, style: VText.headlineMd),

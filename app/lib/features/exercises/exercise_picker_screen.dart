@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/tokens.dart';
@@ -59,7 +60,7 @@ class _ExercisePickerScreenState extends ConsumerState<ExercisePickerScreen> {
               itemBuilder: (_, i) => ExerciseRow(
                 exercise: results[i],
                 trailing: const Icon(
-                  Icons.add_circle_outline,
+                  PhosphorIconsRegular.plusCircle,
                   color: VColors.primary,
                 ),
                 onTap: () => Navigator.of(context).pop(results[i].id),

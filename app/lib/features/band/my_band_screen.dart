@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -37,7 +38,7 @@ class MyBandScreen extends ConsumerWidget {
                     const CircleAvatar(
                       radius: 28,
                       backgroundColor: VColors.surfaceContainer,
-                      child: Icon(Icons.watch, color: VColors.primary),
+                      child: Icon(PhosphorIconsFill.watch, color: VColors.primary),
                     ),
                     const SizedBox(width: VSpace.gutter),
                     Expanded(
@@ -93,7 +94,7 @@ class MyBandScreen extends ConsumerWidget {
                       child: FilledButton.icon(
                         key: const ValueKey('band-sync-btn'),
                         onPressed: s.connected ? c.pollNow : null,
-                        icon: const Icon(Icons.sync),
+                        icon: const Icon(PhosphorIconsRegular.arrowsClockwise),
                         label: Text('Şimdi Senkronla'),
                       ),
                     ),
@@ -128,7 +129,7 @@ class MyBandScreen extends ConsumerWidget {
             child: TextButton.icon(
               key: const ValueKey('band-disconnect-btn'),
               onPressed: s.connected ? c.disconnect : null,
-              icon: const Icon(Icons.link_off),
+              icon: const Icon(PhosphorIconsRegular.linkBreak),
               label: Text('Cihazın Bağlantısını Kes'),
             ),
           ),

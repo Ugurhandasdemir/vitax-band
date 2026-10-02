@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -107,7 +108,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                           color: VColors.secondary,
                           borderRadius: BorderRadius.circular(VRadius.sm),
                         ),
-                        child: const Icon(Icons.smart_toy, color: Colors.white, size: 20),
+                        child: const Icon(PhosphorIconsFill.robot, color: Colors.white, size: 20),
                       ),
                       const SizedBox(width: 8),
                       Text('Vital AI Koç', style: VText.headlineMd),
@@ -117,7 +118,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                     children: [
                       IconButton(
                         tooltip: 'Haftalık Plan',
-                        icon: const Icon(Icons.calendar_month, color: VColors.primary, size: 22),
+                        icon: const Icon(PhosphorIconsFill.calendarDots, color: VColors.primary, size: 22),
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute<void>(builder: (_) => const WeeklyPlanScreen()),
@@ -126,7 +127,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                       ),
                       IconButton(
                         tooltip: 'İçgörüler',
-                        icon: const Icon(Icons.insights, color: VColors.secondary, size: 22),
+                        icon: const Icon(PhosphorIconsRegular.trendUp, color: VColors.secondary, size: 22),
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute<void>(builder: (_) => const HealthInsightsScreen()),
@@ -164,7 +165,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                           ),
                         ),
                         const SizedBox(width: 6),
-                        const Icon(Icons.bolt, size: 14, color: VColors.secondary),
+                        const Icon(PhosphorIconsBold.lightning, size: 14, color: VColors.secondary),
                         const SizedBox(width: 4),
                         Text(
                           'VitaxBand Canlı',
@@ -174,13 +175,13 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  _MetricPill(icon: Icons.bedtime, iconColor: VColors.secondary, label: 'Uyku 7s 12dk'),
+                  _MetricPill(icon: PhosphorIconsFill.moon, iconColor: VColors.secondary, label: 'Uyku 7s 12dk'),
                   const SizedBox(width: 8),
-                  _MetricPill(icon: Icons.favorite, iconColor: VColors.error, label: 'Dinlenik $hr bpm'),
+                  _MetricPill(icon: PhosphorIconsFill.heart, iconColor: VColors.error, label: 'Dinlenik $hr bpm'),
                   const SizedBox(width: 8),
-                  _MetricPill(icon: Icons.directions_walk, iconColor: VColors.tertiary, label: '$steps Adım'),
+                  _MetricPill(icon: PhosphorIconsRegular.personSimpleWalk, iconColor: VColors.tertiary, label: '$steps Adım'),
                   const SizedBox(width: 8),
-                  _MetricPill(icon: Icons.restaurant, iconColor: VColors.primary, label: '1.420 kcal'),
+                  _MetricPill(icon: PhosphorIconsRegular.forkKnife, iconColor: VColors.primary, label: '1.420 kcal'),
                 ],
               ),
             ),
@@ -215,7 +216,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                           color: VColors.secondary,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.smart_toy, size: 18, color: Colors.white),
+                        child: const Icon(PhosphorIconsFill.robot, size: 18, color: Colors.white),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
@@ -270,7 +271,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                                           children: [
                                             Row(
                                               children: [
-                                                const Icon(Icons.track_changes, size: 16, color: VColors.primary),
+                                                const Icon(PhosphorIconsRegular.target, size: 16, color: VColors.primary),
                                                 const SizedBox(width: 4),
                                                 Text('Günün Önerisi', style: VText.labelCaps.copyWith(color: VColors.primary)),
                                               ],
@@ -290,14 +291,14 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                                         ),
                                         const SizedBox(height: 8),
                                         _InnerRecoItem(
-                                          icon: Icons.fitness_center,
+                                          icon: PhosphorIconsRegular.barbell,
                                           iconColor: VColors.secondary,
                                           title: 'Aktif Toparlanma',
                                           desc: '45 dk hafif tempo koşu veya alt vücut kuvvet rutini.',
                                         ),
                                         const SizedBox(height: 6),
                                         _InnerRecoItem(
-                                          icon: Icons.dinner_dining,
+                                          icon: PhosphorIconsRegular.cookingPot,
                                           iconColor: VColors.tertiary,
                                           title: 'Akşam Menüsü Odağı',
                                           desc: 'Kalan 38g protein & 680 kcal. Fırın somon ve brokoli harika eşleşir.',
@@ -317,7 +318,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                                                 const SnackBar(content: Text('Aktif toparlanma antrenmanı başlatılıyor')),
                                               );
                                             },
-                                            icon: const Icon(Icons.play_arrow, size: 16),
+                                            icon: const Icon(PhosphorIconsRegular.play, size: 16),
                                             label: const Text('Antrenmanı Başlat'),
                                           ),
                                         ),
@@ -414,7 +415,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                     child: Row(
                       children: [
                         IconButton(
-                          icon: const Icon(Icons.add_a_photo, size: 20, color: VColors.onSurfaceVariant),
+                          icon: const Icon(PhosphorIconsRegular.cameraPlus, size: 20, color: VColors.onSurfaceVariant),
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text('Fotoğraf analizi ve besin tarama açılıyor')),
@@ -436,7 +437,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                           ),
                         ),
                         IconButton(
-                          icon: const Icon(Icons.mic, size: 20, color: VColors.onSurfaceVariant),
+                          icon: const Icon(PhosphorIconsRegular.microphone, size: 20, color: VColors.onSurfaceVariant),
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text('Sesli giriş hazırlanıyor')),
@@ -450,7 +451,7 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                             foregroundColor: VColors.onPrimary,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.sm)),
                           ),
-                          icon: const Icon(Icons.send, size: 18),
+                          icon: const Icon(PhosphorIconsRegular.paperPlaneTilt, size: 18),
                           onPressed: () => _sendMessage(_inputController.text),
                         ),
                       ],

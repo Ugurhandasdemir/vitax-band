@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/tokens.dart';
 
@@ -126,7 +127,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.sm)),
                     ),
-                    icon: Icon(_isSaved ? Icons.check_circle : Icons.save, size: 20),
+                    icon: Icon(_isSaved ? PhosphorIconsFill.checkCircle : PhosphorIconsRegular.floppyDisk, size: 20),
                     label: Text(
                       _isSaved ? 'Kaydedildi!' : 'Tercihleri Kaydet',
                       style: VText.labelMd.copyWith(color: Colors.white),
@@ -159,7 +160,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               color: VColors.primaryFixed,
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.vibration, color: VColors.primary, size: 18),
+            child: const Icon(PhosphorIconsRegular.vibrate, color: VColors.primary, size: 18),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -182,7 +183,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
           children: [
             Row(
               children: [
-                const Icon(Icons.watch, color: VColors.primary, size: 18),
+                const Icon(PhosphorIconsFill.watch, color: VColors.primary, size: 18),
                 const SizedBox(width: 6),
                 Text(
                   'Donanım & Sağlık Uyarıları',
@@ -233,7 +234,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       color: VColors.surfaceContainer,
                       borderRadius: BorderRadius.circular(VRadius.sm),
                     ),
-                    child: const Icon(Icons.accessibility_new, color: VColors.primary, size: 20),
+                    child: const Icon(PhosphorIconsRegular.personArmsSpread, color: VColors.primary, size: 20),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -265,7 +266,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.schedule, size: 16, color: VColors.onSurfaceVariant),
+                        const Icon(PhosphorIconsRegular.clock, size: 16, color: VColors.onSurfaceVariant),
                         const SizedBox(width: 4),
                         Text('Zaman Aralığı', style: VText.bodyMd.copyWith(color: VColors.onSurfaceVariant, fontSize: 12)),
                       ],
@@ -306,7 +307,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       color: VColors.errorContainer.withAlpha(100),
                       borderRadius: BorderRadius.circular(VRadius.sm),
                     ),
-                    child: const Icon(Icons.favorite, color: VColors.error, size: 20),
+                    child: const Icon(PhosphorIconsFill.heart, color: VColors.error, size: 20),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -390,7 +391,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   color: VColors.surfaceContainer,
                   borderRadius: BorderRadius.circular(VRadius.sm),
                 ),
-                child: const Icon(Icons.battery_alert, color: VColors.outline, size: 20),
+                child: const Icon(PhosphorIconsRegular.batteryWarning, color: VColors.outline, size: 20),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -424,7 +425,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       children: [
         Row(
           children: [
-            const Icon(Icons.fact_check, color: VColors.secondary, size: 18),
+            const Icon(PhosphorIconsRegular.listChecks, color: VColors.secondary, size: 18),
             const SizedBox(width: 6),
             Text(
               'Alışkanlık & Takip Hatırlatıcıları',
@@ -454,7 +455,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       color: VColors.secondaryFixed,
                       borderRadius: BorderRadius.circular(VRadius.sm),
                     ),
-                    child: const Icon(Icons.water_drop, color: VColors.secondary, size: 20),
+                    child: const Icon(PhosphorIconsFill.drop, color: VColors.secondary, size: 20),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -522,7 +523,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       color: VColors.surfaceContainer,
                       borderRadius: BorderRadius.circular(VRadius.sm),
                     ),
-                    child: const Icon(Icons.restaurant, color: VColors.tertiary, size: 20),
+                    child: const Icon(PhosphorIconsRegular.forkKnife, color: VColors.tertiary, size: 20),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -545,11 +546,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    _buildMealChip('Kahvaltı 09:00', Icons.breakfast_dining, _breakfastReminder, (v) => setState(() => _breakfastReminder = v)),
+                    _buildMealChip('Kahvaltı 09:00', PhosphorIconsRegular.egg, _breakfastReminder, (v) => setState(() => _breakfastReminder = v)),
                     const SizedBox(width: 6),
-                    _buildMealChip('Öğle 13:00', Icons.lunch_dining, _lunchReminder, (v) => setState(() => _lunchReminder = v)),
+                    _buildMealChip('Öğle 13:00', PhosphorIconsRegular.bowlFood, _lunchReminder, (v) => setState(() => _lunchReminder = v)),
                     const SizedBox(width: 6),
-                    _buildMealChip('Akşam 19:30', Icons.dinner_dining, _dinnerReminder, (v) => setState(() => _dinnerReminder = v)),
+                    _buildMealChip('Akşam 19:30', PhosphorIconsRegular.cookingPot, _dinnerReminder, (v) => setState(() => _dinnerReminder = v)),
                   ],
                 ),
               ),
@@ -578,7 +579,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       color: VColors.tertiaryFixed,
                       borderRadius: BorderRadius.circular(VRadius.sm),
                     ),
-                    child: const Icon(Icons.bedtime, color: VColors.tertiary, size: 20),
+                    child: const Icon(PhosphorIconsFill.moon, color: VColors.tertiary, size: 20),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -657,7 +658,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               color: VColors.surfaceContainerHigh,
               borderRadius: BorderRadius.circular(VRadius.sm),
             ),
-            child: const Icon(Icons.do_not_disturb_on, color: VColors.onSurfaceVariant, size: 20),
+            child: const Icon(PhosphorIconsRegular.bellSlash, color: VColors.onSurfaceVariant, size: 20),
           ),
           const SizedBox(width: 12),
           Expanded(

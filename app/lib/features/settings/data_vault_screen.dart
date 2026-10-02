@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import '../../core/theme/tokens.dart';
 
 /// Faz 5 — Veri Kasası ve Gizlilik Ekranı
@@ -29,7 +30,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.card)),
           title: Row(
             children: [
-              const Icon(Icons.warning_amber_rounded, color: VColors.error, size: 24),
+              const Icon(PhosphorIconsRegular.warning, color: VColors.error, size: 24),
               const SizedBox(width: 8),
               Text('Emin misiniz?', style: VText.headlineMd),
             ],
@@ -137,7 +138,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.lock, size: 14, color: VColors.tertiary),
+                    const Icon(PhosphorIconsBold.lock, size: 14, color: VColors.tertiary),
                     const SizedBox(width: 4),
                     Text(
                       'Cihaz İçi Şifreli Bellek',
@@ -213,7 +214,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.verified_user, size: 18, color: VColors.tertiary),
+                const Icon(PhosphorIconsRegular.shieldCheck, size: 18, color: VColors.tertiary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -250,7 +251,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
           child: Column(
             children: [
               _buildCategoryTile(
-                icon: Icons.favorite,
+                icon: PhosphorIconsFill.heart,
                 iconColor: VColors.primary,
                 title: 'Canlı Nabız Akışı',
                 subtitle: 'VitaxBand PPG • 1.4M veri noktası',
@@ -258,7 +259,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildCategoryTile(
-                icon: Icons.directions_walk,
+                icon: PhosphorIconsRegular.personSimpleWalk,
                 iconColor: VColors.secondary,
                 title: 'Adım & Hareket Verileri',
                 subtitle: 'İvmeölçer logları ve kadans',
@@ -266,7 +267,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildCategoryTile(
-                icon: Icons.bedtime,
+                icon: PhosphorIconsFill.moon,
                 iconColor: VColors.secondary,
                 title: 'Uyku Evreleri ve Hipnogram',
                 subtitle: '30 günlük derin/REM ham veri',
@@ -274,7 +275,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildCategoryTile(
-                icon: Icons.fitness_center,
+                icon: PhosphorIconsRegular.barbell,
                 iconColor: VColors.tertiary,
                 title: 'Antrenman ve Efor Kayıtları',
                 subtitle: 'Set/tekrar ve nabız haritası',
@@ -282,7 +283,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildCategoryTile(
-                icon: Icons.restaurant,
+                icon: PhosphorIconsRegular.forkKnife,
                 iconColor: VColors.primary,
                 title: 'Beslenme ve Öğün Günlüğü',
                 subtitle: 'Fotoğraf analizleri ve kaloriler',
@@ -290,7 +291,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildCategoryTile(
-                icon: Icons.straighten,
+                icon: PhosphorIconsRegular.ruler,
                 iconColor: VColors.onSurfaceVariant,
                 title: 'Kilo ve Beden Ölçüleri',
                 subtitle: 'Manuel ölçüm geçmişi',
@@ -376,7 +377,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
           child: Column(
             children: [
               _buildPermissionSwitch(
-                icon: Icons.monitor_heart,
+                icon: PhosphorIconsFill.heartbeat,
                 iconColor: VColors.primary,
                 title: 'Nabız ve Biyometri',
                 value: _allowHeart,
@@ -384,7 +385,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildPermissionSwitch(
-                icon: Icons.bedtime,
+                icon: PhosphorIconsFill.moon,
                 iconColor: VColors.secondary,
                 title: 'Uyku ve Toparlanma',
                 value: _allowSleep,
@@ -392,7 +393,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildPermissionSwitch(
-                icon: Icons.fitness_center,
+                icon: PhosphorIconsRegular.barbell,
                 iconColor: VColors.tertiary,
                 title: 'Antrenman Günlükleri',
                 value: _allowWorkout,
@@ -400,7 +401,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildPermissionSwitch(
-                icon: Icons.restaurant,
+                icon: PhosphorIconsRegular.forkKnife,
                 iconColor: VColors.primary,
                 title: 'Öğün ve Kalori Takibi',
                 value: _allowMeal,
@@ -408,7 +409,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
               ),
               _buildDivider(),
               _buildPermissionSwitch(
-                icon: Icons.scale,
+                icon: PhosphorIconsRegular.scales,
                 iconColor: VColors.onSurfaceVariant,
                 title: 'Vücut Kilosu ve Hedefler',
                 value: _allowWeight,
@@ -480,7 +481,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                   color: VColors.surfaceContainerLow,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.bluetooth_connected, color: VColors.secondary, size: 20),
+                child: const Icon(PhosphorIconsRegular.bluetoothConnected, color: VColors.secondary, size: 20),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -496,7 +497,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                 ),
               ),
               IconButton(
-                icon: const Icon(Icons.sync, color: VColors.onSurface, size: 20),
+                icon: const Icon(PhosphorIconsRegular.arrowsClockwise, color: VColors.onSurface, size: 20),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('BLE Senkronizasyonu başlatıldı.')),
@@ -533,7 +534,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                           color: VColors.surfaceContainer,
                           borderRadius: BorderRadius.circular(VRadius.sm),
                         ),
-                        child: const Icon(Icons.download, color: VColors.secondary, size: 20),
+                        child: const Icon(PhosphorIconsRegular.download, color: VColors.secondary, size: 20),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -545,7 +546,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                           ],
                         ),
                       ),
-                      const Icon(Icons.chevron_right, color: VColors.onSurfaceVariant, size: 20),
+                      const Icon(PhosphorIconsRegular.caretRight, color: VColors.onSurfaceVariant, size: 20),
                     ],
                   ),
                 ),
@@ -569,7 +570,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                           color: VColors.surfaceContainer,
                           borderRadius: BorderRadius.circular(VRadius.sm),
                         ),
-                        child: const Icon(Icons.security, color: VColors.tertiary, size: 20),
+                        child: const Icon(PhosphorIconsRegular.shieldCheck, color: VColors.tertiary, size: 20),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -581,7 +582,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                           ],
                         ),
                       ),
-                      const Icon(Icons.chevron_right, color: VColors.onSurfaceVariant, size: 20),
+                      const Icon(PhosphorIconsRegular.caretRight, color: VColors.onSurfaceVariant, size: 20),
                     ],
                   ),
                 ),
@@ -622,7 +623,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(Icons.warning_amber_rounded, color: VColors.error, size: 20),
+                    child: const Icon(PhosphorIconsRegular.warning, color: VColors.error, size: 20),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -648,7 +649,7 @@ class _DataVaultScreenState extends State<DataVaultScreen> {
                   minimumSize: const Size.fromHeight(44),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(VRadius.sm)),
                 ),
-                icon: const Icon(Icons.delete_forever, size: 20),
+                icon: const Icon(PhosphorIconsRegular.trash, size: 20),
                 label: const Text('Veri Kasasını Kalıcı Olarak Temizle'),
                 onPressed: () => _showDeleteConfirmation(context),
               ),

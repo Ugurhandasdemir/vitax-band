@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -48,7 +49,7 @@ class BandConnectScreen extends ConsumerWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.help_outline, color: VColors.onSurfaceVariant),
+                Icon(PhosphorIconsRegular.question, color: VColors.onSurfaceVariant),
                 SizedBox(width: VSpace.gutter),
                 Expanded(
                   child: Text(
@@ -92,7 +93,7 @@ class _Hero extends StatelessWidget {
           const CircleAvatar(
             radius: 44,
             backgroundColor: VColors.primaryFixed,
-            child: Icon(Icons.watch, size: 40, color: VColors.primary),
+            child: Icon(PhosphorIconsFill.watch, size: 40, color: VColors.primary),
           ),
           const SizedBox(height: VSpace.md),
           Text(
@@ -123,7 +124,7 @@ class _Hero extends StatelessWidget {
               child: FilledButton.icon(
                 key: const ValueKey('band-connect-btn'),
                 onPressed: onConnect,
-                icon: const Icon(Icons.bluetooth),
+                icon: const Icon(PhosphorIconsRegular.bluetooth),
                 label: Text(s.error != null ? 'Tekrar Dene' : 'Bağlan'),
               ),
             ),
@@ -145,7 +146,7 @@ class _Success extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Icon(Icons.check_circle, color: VColors.tertiary),
+            const Icon(PhosphorIconsFill.checkCircle, color: VColors.tertiary),
             const SizedBox(width: VSpace.sm),
             Expanded(
               child: Text('Bağlantı Başarılı!', style: VText.headlineMd),
@@ -159,7 +160,7 @@ class _Success extends StatelessWidget {
           children: [
             Expanded(
               child: BandMetricTile(
-                icon: Icons.battery_std,
+                icon: PhosphorIconsRegular.batteryMedium,
                 label: 'PİL',
                 value: s.battery == null ? '--' : '%${s.battery}',
               ),
@@ -167,7 +168,7 @@ class _Success extends StatelessWidget {
             const SizedBox(width: VSpace.sm),
             Expanded(
               child: BandMetricTile(
-                icon: Icons.directions_walk,
+                icon: PhosphorIconsRegular.personSimpleWalk,
                 label: 'ADIM',
                 value: s.steps == null ? 'Bekleniyor' : formatTr(s.steps!),
               ),

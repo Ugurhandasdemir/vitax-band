@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'dart:ui' as ui;
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -99,7 +100,7 @@ Widget _cachedImage(String url, double size, BoxFit fit) => CachedNetworkImage(
     width: size,
     height: size,
     color: VColors.surfaceContainer,
-    child: Icon(Icons.fitness_center, color: VColors.outline, size: size * 0.4),
+    child: Icon(PhosphorIconsRegular.barbell, color: VColors.outline, size: size * 0.4),
   ),
 );
 
@@ -231,7 +232,7 @@ class _GifPlayerState extends State<GifPlayer> {
         height: widget.size,
         color: VColors.surfaceContainer,
         child: Icon(
-          Icons.fitness_center,
+          PhosphorIconsRegular.barbell,
           color: VColors.outline,
           size: widget.size * 0.3,
         ),
